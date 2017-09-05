@@ -1,0 +1,41 @@
+{
+  "id": "1",
+  "text": "组件",
+  "children": [
+    {
+      "id": "2",
+      "text": "表格",
+      "children": [
+        {
+          "id": "3",
+          "text": "表格（静态dom）",
+          "type": "file",
+          "state": {
+            "selected": true
+          }
+        },
+        {
+          "id": "4",
+          "text": "表格（服务端json）",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "text": "日期控件",
+      "children": [
+        {
+          "id": "6",
+          "text": "单日期控件",
+          "type": "file"
+        },
+        {
+          "id": "7",
+          "text": "区间日期控件",
+          "type": "file"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{% extends "../shared/layout.html" %} 
+
+{% block title %}登录页{% endblock %} 
+
+{% block content %}
+		<div class="page-container">
+			<div class="navi">
+	            <a href="#" target="_blank">
+	                <p class="navi-logo"></p>
+	            </a>
+		    </div>
+		</div>
+		<div class="page-container">
+			<div class="body">
+		        <div class="container">
+		            <div class="form">
+		                <div class="animate">
+		                    <div class="hand-2"></div>
+		                    <div class="hand-3"></div>
+		                </div>
+		                <div class="hand-1"></div>
+		                <form action="?" method="post">
+		
+		                    <input type="text" id="txtEmail" name="email" placeholder="帐号" size="23" value="">
+		
+		                    <input type="password" name="password" placeholder="密码" size="23">
+		
+		                    <label style="display: none">
+		                        <input type="checkbox" name="persistent" value="true">一周免登录</label>
+		
+		                    <label>
+		                        <input type="checkbox" name="persistent" value="true"></label>
+		                    <button type="submit" id="btnSubmit">登录</button>
+		
+		                </form>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+		<div class="page-container">
+			<div class="foot">
+		        <p>
+		            <a href="http://www.samples.com.cn/" target="_blank">三宝集团</a>丨
+		                <a href="http://www.sampletech.cn/" target="_blank">三宝科技</a>丨
+		                <a href="http://www.rfiderc.com/index.php" target="_blank">RFID技术研究中心</a>丨
+		                <a href="http://www.ebiaoju.com/" target="_blank">云镖局</a>丨
+		            <a href="http://mall.kuajing.com.cn/" target="_blank">跨境贸</a>丨
+		            <a href="http://www.51zhimao.com/" target="_blank">知贸网</a>
+		        </p>
+		        <p>Copyright © 2015 江苏跨境电子商务服务有限公司 版权所有</p>
+		        <p><a href="http://www.miibeian.gov.cn/state/outPortal/loginPortal.action" target="_blank">苏ICP备14025269号-5</a></p>
+		    </div>
+		</div>
+ {% endblock %}

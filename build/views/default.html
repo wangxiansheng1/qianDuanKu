@@ -1,0 +1,67 @@
+{% extends "./shared/layout.html" %}
+
+{% block title %}江苏跨境--前端框架DEMO{% endblock %}
+
+{% block css %}{% endblock %}
+
+{% block bodyClass %}skin-blue fixed sidebar-mini{% endblock %}
+
+{% block content %}
+			<!--header-->
+{% include "./shared/header.html" %}
+			<!--sidebar-->
+{% include "./shared/sidebar.html" %}
+			<!--main-->
+{% include "./shared/main.html" %}
+{% endblock %}
+
+
+{% block js %}
+		<script src="{{ path.plugins }}jqueryui/jquery-ui-drag-drop-resize-sortable-1.12.1.js"></script>
+		<script type="text/javascript">
+			var richNavTabs;
+
+			
+			$(function(){
+				richNavTabs = $.jkj.richNavTabs({
+					// 必须引用jQuery UI 的 sortable
+					sortHandle: 'sortable'
+				});
+				
+			    //新开导航标签
+			    $('a[data-type="menu"]').on('click',function(e){
+			    	e.preventDefault();
+			    	var menuId = $(this).attr("data-id"),
+			    		menuUrl = $(this).attr("data-src"),
+			    		menuTitle = $(this).text();
+			    		menuFullTitle = $(this).attr("data-title")||menuTitle;
+			    	richNavTabs.addNavTab(menuId, menuTitle, 'page', menuUrl, true, menuFullTitle);
+			    });
+			    //window.open('/AdminJKJ/src/pages/order/index.html','订单管理','',true);
+			});
+			
+			$(window).on('load', function () {
+				$('#pageTabs').richNavTabs.addNavTab('workbench','我的工作台','page','{{path.src}}pages/home/home.html',false,'我的工作台');
+				//$('#pageTabs').richNavTabs.addNavTab('baidu','百度','page','http://www.baidu.com',true,'我的百度');
+				//richNavTabs.addNavTab('nunjucks','nunjucks','page','http://mozilla.github.io/nunjucks/getting-started.html',true,'前端js模板引擎');
+			});
+			
+			function MyWork(){
+				var date = new Date();
+				return '我的工作台' + date.toLocaleDateString() + date.toLocaleTimeString();
+			}
+			//电视切换展示
+			//var t = 0; 
+			//var menuNum = $('a[data-type="menu"]').length;
+			//setInterval("refer()",5000); //启动1秒定时 
+			//function refer(){ 
+			//	if(t <= menuNum){
+			//		$('#pageTabs').richNavTabs.removeAllNavTab();
+			//		$('a[data-type="menu"]').eq(t).click();
+			//	}else{
+			//		t=-1;
+			//	}
+			//	t++;
+			//} 
+		</script>
+{% endblock %}

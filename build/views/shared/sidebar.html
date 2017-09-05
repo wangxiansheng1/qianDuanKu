@@ -1,0 +1,198 @@
+			<aside class="main-sidebar" id="sidebar">
+				<!-- sidebar: style can be found in sidebar.less -->
+				<section class="sidebar">
+					<!-- Sidebar user panel -->
+					<div class="user-panel">
+				        <div class="pull-left image img-normal">
+				            <img src="{{ path.src }}images/ico-photo.png" class="img-circle" alt="User Image">
+				        </div>
+				        <div class="pull-left info">
+				            <p>Admin</p>
+				            <span>系统管理员</span>
+				        </div>
+				    </div>
+					<!-- search form -->
+					<!--<form action="#" method="get" class="sidebar-form">
+							        <div class="input-group">
+							          <input type="text" name="q" class="form-control" placeholder="Search...">
+							              <span class="input-group-btn">
+							                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+							                </button>
+							              </span>
+							        </div>
+						      	</form>-->
+					<!-- /.search form -->
+					<!-- sidebar menu: : style can be found in sidebar.less -->
+					<ul class="sidebar-menu">
+						<li class="treeview">
+							<a href="#">
+								<i class="fa fa-share"></i> <span>组件</span>
+								<span class="pull-right-container">
+						             			<i class="fa fa-angle-left pull-right"></i>
+						            		</span>
+							</a>
+							<ul class="treeview-menu">
+								<li>
+									<a href="#"><i class="ico-circle-o"></i> 表格
+										<span class="pull-right-container">
+						                  				<i class="fa fa-angle-left pull-right"></i>
+						                			</span>
+									</a>
+									<ul class="treeview-menu">
+										<li>
+											<a href="#" data-id="dataTable1" data-src="{{path.src}}pages/components/tablelist/list1.html" data-title="表格(静态dom)" data-type="menu">表格(静态dom)</a>
+										</li>
+										<li>
+											<a href="#" data-id="dataTable2" data-src="{{path.src}}pages/components/tablelist/list2.html" data-title="表格(服务端json)" data-type="menu">表格(服务端json)</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="#"><i class="ico-circle-o"></i> 日期控件
+										<span class="pull-right-container">
+						                  				<i class="fa fa-angle-left pull-right"></i>
+						                			</span>
+									</a>
+									<ul class="treeview-menu">
+										<li>
+											<a href="#" data-id="datepicker" data-src="{{path.src}}pages/components/datepicker/datepicker.html" data-title="单日期控件" data-type="menu">单日期控件</a>
+										</li>
+										<li>
+											<a href="#" data-id="daterangepicker" data-src="{{path.src}}pages/components/datepicker/daterangepicker.html" data-title="区间日期控件" data-type="menu">区间日期控件</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="#" data-id="notifications" data-src="{{path.src}}pages/components/notifications/notifications.html" data-title="信息提示" data-type="menu"><i class="ico-circle-o"></i> 信息提示</a>
+								</li>
+								<li>
+									<a href="#"><i class="ico-circle-o"></i> 树
+										<span class="pull-right-container">
+						                  				<i class="fa fa-angle-left pull-right"></i>
+						                			</span>
+									</a>
+									<ul class="treeview-menu">
+										<li>
+											<a href="#" data-id="tree" data-src="{{path.src}}pages/components/tree/tree.html" data-title="树视图" data-type="menu">树视图</a>
+										</li>
+										<li>
+											<a href="#" data-id="treeTable" data-src="{{path.src}}pages/components/tree/treeTable.html" data-title="树表格" data-type="menu">树表格</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="#" data-id="cxSelect" data-src="{{path.src}}pages/components/selectLinkage/cxSelect.html" data-title="级联选择" data-type="menu"><i class="ico-circle-o"></i> 级联选择</a>
+								</li>
+								<li>
+									<a href="#" data-id="forms" data-src="{{path.src}}pages/components/forms/forms.html" data-title="表单" data-type="menu"><i class="ico-circle-o"></i> 表单</a>
+								</li>
+								<li>
+									<a href="#" data-id="model" data-src="{{path.src}}pages/components/modal/modal.html" data-title="模态框" data-type="menu"><i class="ico-circle-o"></i> 模态框</a>
+								</li>
+								<li>
+									<a href="#"><i class="ico-circle-o"></i> 数据验证
+										<span class="pull-right-container">
+						                  				<i class="fa fa-angle-left pull-right"></i>
+						                			</span>
+									</a>
+									<ul class="treeview-menu">
+										<li>
+											<a href="#" data-id="validator1" data-src="{{path.src}}pages/components/jquery-validation/validate.html" data-title="数据验证(tooltip)" data-type="menu">数据验证(tooltip)</a>
+										</li>
+										<!--<li>
+											<a href="#" data-id="validator2" data-src="{{path.src}}pages/components/jquery-validation/validate2.html" data-title="默认数据验证" data-type="menu">默认数据验证</a>
+										</li>-->
+									</ul>
+								</li>
+								<li>
+									<a href="#" data-id="select2" data-src="{{path.src}}pages/components/select/select2.html" data-title="自动完成" data-type="menu"><i class="ico-circle-o"></i> 自动完成</a>
+								</li>
+								<li>
+									<a href="#" data-id="fileinput" data-src="{{path.src}}pages/components/bootstrap-fileinput/fileinput.html" data-title="文件上传" data-type="menu"><i class="ico-circle-o"></i> 上传</a>
+								</li>
+								<li>
+									<a href="#" data-id="layer" data-src="{{path.src}}pages/components/loading-layer/layer.html" data-title="遮罩层" data-type="menu"><i class="ico-circle-o"></i> 遮罩层</a>
+								</li>
+								<li>
+									<a href="#" data-id="loadingLayer" data-src="{{path.src}}pages/components/loading-layer/loadingLayer.html" data-title="加载页面" data-type="menu"><i class="ico-circle-o"></i> 加载页面</a>
+								</li>
+								<li>
+									<a href="#" data-id="asyncLoading" data-src="{{path.src}}pages/components/loading-layer/asyncLoading.html" data-title="异步加载" data-type="menu"><i class="ico-circle-o"></i> 异步加载</a>
+								</li>
+								<li>
+									<a href="#" data-id="asyncSubmit" data-src="{{path.src}}pages/components/submit/asyncSubmit.html" data-title="异步提交" data-type="menu"><i class="ico-circle-o"></i> 异步提交</a>
+								</li>
+							</ul>
+						</li>
+						<li class="treeview">
+							<a href="#">
+								<i class="fa fa-share"></i> <span>示例</span>
+								<span class="pull-right-container">
+						             			<i class="fa fa-angle-left pull-right"></i>
+						            		</span>
+							</a>
+							<ul class="treeview-menu">
+								<li>
+									<a href="#" data-id="accountIndex" data-src="{{path.src}}pages/account/index.html" data-title="帐号管理" data-type="menu"><i class="ico-circle-o"></i> 账户管理</a>
+								</li>
+								<!--<li>
+									<a href="#" data-id="orderDefault" data-src="{{path.src}}pages/order/index.html" data-title="订单管理" data-type="menu"><i class="ico-circle-o"></i> 订单管理</a>
+								</li>-->
+								<!--<li>
+									<a href="#" data-id="details" data-src="{{path.src}}pages/order/detail-new.html" data-title="订单详情" data-type="menu"><i class="ico-circle-o"></i> 订单详情</a>
+								</li>-->
+							</ul>
+						</li>
+						<li class="treeview">
+							<a href="#">
+								<i class="fa fa-share"></i> <span>独立页面</span>
+								<span class="pull-right-container">
+						             			<i class="fa fa-angle-left pull-right"></i>
+						            		</span>
+							</a>
+							<ul class="treeview-menu">
+								<li>
+									<a href="#" data-id="login" data-src="{{path.src}}pages/account/login.html" data-title="登录" data-type="menu"><i class="ico-circle-o"></i> 登录</a>
+								</li>
+								<li>
+									<a href="#" data-id="401" data-src="{{path.src}}pages/error/401.html" data-title="HTTP 401" data-type="menu"><i class="ico-circle-o"></i> HTTP 401</a>
+								</li>
+								<li>
+									<a href="#" data-id="403" data-src="{{path.src}}pages/error/403.html" data-title="HTTP 403" data-type="menu"><i class="ico-circle-o"></i> HTTP 403</a>
+								</li>
+								<li>
+									<a href="#" data-id="404" data-src="{{path.src}}pages/error/404.html" data-title="HTTP 404" data-type="menu"><i class="ico-circle-o"></i> HTTP 404</a>
+								</li>
+								<li>
+									<a href="#" data-id="500" data-src="{{path.src}}pages/error/500.html" data-title="HTTP 500" data-type="menu"><i class="ico-circle-o"></i> HTTP 500</a>
+								</li>
+								<li>
+									<a href="#" data-id="mintenance" data-src="{{path.src}}pages/error/maintenance.html" data-title="系统维护" data-type="menu"><i class="ico-circle-o"></i> 系统维护</a>
+								</li>
+							</ul>
+						</li>
+						<li class="treeview">
+							<a href="#">
+								<i class="fa fa-share"></i> <span>页面规范</span>
+								<span class="pull-right-container">
+						             			<i class="fa fa-angle-left pull-right"></i>
+						            		</span>
+							</a>
+							<ul class="treeview-menu">
+								<li>
+									<a href="#" data-id="standardIndex1" data-src="{{path.src}}pages/standard/standard1.html" data-title="布局规范" data-type="menu"><i class="ico-circle-o"></i> 布局规范</a>
+								</li>
+								<li>
+									<a href="#" data-id="standardIndex2" data-src="{{path.src}}pages/standard/standard2.html" data-title="颜色规范" data-type="menu"><i class="ico-circle-o"></i> 颜色规范</a>
+								</li>
+								<li>
+									<a href="#" data-id="standardIndex3" data-src="{{path.src}}pages/standard/standard3.html" data-title="按钮规范" data-type="menu"><i class="ico-circle-o"></i> 按钮规范</a>
+								</li>
+								<li>
+									<a href="#" data-id="standardIndex4" data-src="{{path.src}}pages/standard/standard4.html" data-title="字体规范" data-type="menu"><i class="ico-circle-o"></i> 字体规范</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+			</aside>

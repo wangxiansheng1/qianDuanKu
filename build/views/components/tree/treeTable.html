@@ -1,0 +1,431 @@
+{% extends "../../shared/layout.html" %}
+{% block title %}
+{% endblock %}
+
+{% block css %}
+			<!-- treeTable -->
+			<link rel="stylesheet" href="{{ path.plugins }}jquery-treetable/css/jquery.treetable.css">
+			<style>
+
+			</style>
+{% endblock %}
+{% block content %}
+				<table id="treeTable" class="table table-striped table-bordered table-hover">
+					<thead>
+					<tr>
+						<th>名称</th>
+						<th>链接</th>
+						<th>排序</th>
+						<th>操作</th>
+					</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+
+				<!-- Modal -->
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+					 data-backdrop="static">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+										aria-hidden="true">&times;</span></button>
+								<h4 class="modal-title" id="myModalLabel">标题</h4>
+							</div>
+							<form id="modalForm" class="form-horizontal tooltip-validate">
+								<div class="modal-body">
+									<input type="hidden" id="id" name="id">
+									<div class="form-group">
+										<label class="col-lg-4 control-label">名称：</label>
+										<div class="col-lg-6">
+											<input type="text" class="form-control required " id="name" name="name"/>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="col-lg-4 control-label">父节点：</label>
+										<div class="col-lg-6">
+											<input type="text" class="form-control required" id="parentId" name="parentId"/>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="col-lg-4 control-label">连接地址：</label>
+										<div class="col-lg-6">
+											<input type="text" class="form-control required" id="href" name="href"/>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="col-lg-4 control-label">排序：</label>
+										<div class="col-lg-6">
+											<input type="text" class="form-control required" id="sort" name="sort"/>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="col-lg-4 control-label">备注：</label>
+										<div class="col-lg-6">
+											<input type="text" class="form-control required" id="remark" name="remark"/>
+										</div>
+									</div>
+
+								</div>
+								<div class="modal-footer">
+									<button type="submit" class="btn btn-primary">保存</button>
+									<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				
+<div class="container-fluid">			
+	<i class="fa fa-file-code-o"></i> 
+	<a href="javascript:;" data-xmp = "">展开代码</a>
+<xmp>
+	<table id="treeTable" class="table table-striped table-bordered table-hover">
+		<thead>
+		<tr>
+			<th>名称</th>
+			<th>链接</th>
+			<th>排序</th>
+			<th>操作</th>
+		</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+		 data-backdrop="static">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+							aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">标题</h4>
+				</div>
+				<form id="modalForm" class="form-horizontal tooltip-validate">
+					<div class="modal-body">
+						<input type="hidden" id="id" name="id">
+						<div class="form-group">
+							<label class="col-lg-4 control-label">名称：</label>
+							<div class="col-lg-6">
+								<input type="text" class="form-control required " id="name" name="name"/>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-lg-4 control-label">父节点：</label>
+							<div class="col-lg-6">
+								<input type="text" class="form-control required" id="parentId" name="parentId"/>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-lg-4 control-label">连接地址：</label>
+							<div class="col-lg-6">
+								<input type="text" class="form-control required" id="href" name="href"/>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-lg-4 control-label">排序：</label>
+							<div class="col-lg-6">
+								<input type="text" class="form-control required" id="sort" name="sort"/>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-lg-4 control-label">备注：</label>
+							<div class="col-lg-6">
+								<input type="text" class="form-control required" id="remark" name="remark"/>
+							</div>
+						</div>
+
+					</div>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-primary">保存</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	<!-- jquery validation -->
+	<script src="{{ path.plugins }}jquery-validation/jquery.validate.js"></script>
+	<script src="{{ path.plugins }}jquery-validation/additional-methods.js"></script>
+	<script src="{{ path.plugins }}jquery-validation/messages_zh.js"></script>
+
+	<!-- treeTable -->
+	<script src="{{ path.plugins }}jquery-treetable/jquery.treetable.js"></script>
+
+	<script>
+        var table;
+        $(function () {
+
+            //刷新树表格
+            refreshTable();
+
+			//新增或修改菜单
+            $.jkj.validate('#modalForm', {
+                submitHandler: function (form) {
+                    var item = $(form).serializeObject();
+                    $.get('{{ path.src }}data/treeTableAjaxData.json',
+                        $(form).serialize(),
+                        function (data) {
+                        	$.jkj.modal.hide('#myModal');
+                           	//刷新
+							window.location.reload();
+                        }, 'JSON');
+                }
+            });
+
+        });
+
+        /**
+         * 刷新树数据
+         */
+        function refreshTable() {
+            $.get('{{ path.src }}data/treeTableAjaxData.json', {}, function (data) {
+                var html = '';
+                $.each(data.list, function (index, item) {
+                    html += data2html(item);
+                });
+                $('#treeTable').find('tbody').html(html);
+
+                //渲染成树
+                table = $.jkj.treeTable("#treeTable", {
+
+                });
+                //展开所有节点
+                table.treetable('expandAll');
+            });
+        }
+
+		function data2html(item) {
+            var rows = '';
+            rows += '<tr data-tt-id="' + item.id + '" data-tt-parent-id="' + item.parentId + '"' + (item.hasChilds == '1' ? ' data-tt-branch="true"' : 'data-tt-branch="false"') + '>';
+
+            rows += '<td nowrap>';
+            rows += '<a href="#">' + item.name + '</a>';
+            rows += '</td>';
+
+            rows += '<td title="' + item.href + '">';
+            rows += item.href;
+            rows += '</td>';
+
+            rows += '<td>';
+            rows += item.sort;
+            rows += '</td>';
+
+            rows += '<td nowrap>';
+            rows += '<a href="javascript:updateItem(\'' + item.id + '\',\'' + item.parentId + '\')">修改</a>';
+            rows += ' <a href="javascript:deleteItem(\'' + item.id + '\')">';
+            rows += '删除';
+            rows += '</a>';
+            rows += ' <a href="javascript:createItem(\'' + item.id + '\')">添加下级菜单</a>';
+            rows += '</td>';
+
+            rows += '</tr>';
+            return rows;
+        }
+
+        /**
+         * 新增
+         * @param id
+         */
+        function createItem(id) {
+            $('#myModalLabel').html('新增菜单');
+            $('#modalForm')[0].reset();
+            $.jkj.modal.showLocalModal('#myModal');
+        }
+
+        /**
+         * 修改
+         * @param id
+         * @param parentId
+         */
+        function updateItem(id, parentId) {
+            //请求对象具体属性
+            $.get('{{ path.src }}data/treeTableAjaxData.json',
+                {id: id},
+                function (data) {
+                    data = {
+                        id: id,
+                        parentId: parentId,
+						name: '表格',
+						href: 'pages/components/tablelist/list1.html',
+                        sort: 1,
+                        remark: '备注内容'
+					};
+
+					$('#myModalLabel').html('修改菜单');
+					$('#id').val(data.id);
+					$('#parentId').val(data.parentId);
+					$('#name').val(data.name);
+					$('#href').val(data.href);
+					$('#sort').val(data.sort);
+					$('#remark').val(data.remark);
+
+					$.jkj.modal.showLocalModal('#myModal');
+                }, 'JSON');
+        }
+
+        /**
+         * 删除
+         * @param id
+         */
+        function deleteItem(id) {
+            //删除 post
+            $.get('{{ path.src }}data/treeTableAjaxData.json',
+                {id: id},
+                function (data) {
+                    table.treetable('removeNode', id);
+                }, 'JSON');
+        }
+	</script>
+	
+</xmp>
+</div>
+{% endblock %}
+
+{% block js %}
+			<!-- jquery validation -->
+			<script src="{{ path.plugins }}jquery-validation/jquery.validate.js"></script>
+			<script src="{{ path.plugins }}jquery-validation/additional-methods.js"></script>
+			<script src="{{ path.plugins }}jquery-validation/messages_zh.js"></script>
+
+			<!-- treeTable -->
+			<script src="{{ path.plugins }}jquery-treetable/jquery.treetable.js"></script>
+
+			<script>
+                var table;
+                $(function () {
+
+                    //刷新树表格
+                    refreshTable();
+
+					//新增或修改菜单
+                    $.jkj.validate('#modalForm', {
+                        submitHandler: function (form) {
+                            var item = $(form).serializeObject();
+                            $.get('{{ path.src }}data/treeTableAjaxData.json',
+                                $(form).serialize(),
+                                function (data) {
+                                	$.jkj.modal.hide('#myModal');
+                                   	//刷新
+									window.location.reload();
+                                }, 'JSON');
+                        }
+                    });
+
+                });
+
+                /**
+                 * 刷新树数据
+                 */
+                function refreshTable() {
+                    $.get('{{ path.src }}data/treeTableAjaxData.json', {}, function (data) {
+                        var html = '';
+                        $.each(data.list, function (index, item) {
+                            html += data2html(item);
+                        });
+                        $('#treeTable').find('tbody').html(html);
+
+                        //渲染成树
+                        table = $.jkj.treeTable("#treeTable", {
+
+                        });
+                        //展开所有节点
+                        table.treetable('expandAll');
+                    });
+                }
+
+				function data2html(item) {
+                    var rows = '';
+                    rows += '<tr data-tt-id="' + item.id + '" data-tt-parent-id="' + item.parentId + '"' + (item.hasChilds == '1' ? ' data-tt-branch="true"' : 'data-tt-branch="false"') + '>';
+
+                    rows += '<td nowrap>';
+                    rows += '<a href="#">' + item.name + '</a>';
+                    rows += '</td>';
+
+                    rows += '<td title="' + item.href + '">';
+                    rows += item.href;
+                    rows += '</td>';
+
+                    rows += '<td>';
+                    rows += item.sort;
+                    rows += '</td>';
+
+                    rows += '<td nowrap>';
+                    rows += '<a href="javascript:updateItem(\'' + item.id + '\',\'' + item.parentId + '\')">修改</a>';
+                    rows += ' <a href="javascript:deleteItem(\'' + item.id + '\')">';
+                    rows += '删除';
+                    rows += '</a>';
+                    rows += ' <a href="javascript:createItem(\'' + item.id + '\')">添加下级菜单</a>';
+                    rows += '</td>';
+
+                    rows += '</tr>';
+                    return rows;
+                }
+
+                /**
+                 * 新增
+                 * @param id
+                 */
+                function createItem(id) {
+                    $('#myModalLabel').html('新增菜单');
+                    $('#modalForm')[0].reset();
+                    $.jkj.modal.showLocalModal('#myModal');
+                }
+
+                /**
+                 * 修改
+                 * @param id
+                 * @param parentId
+                 */
+                function updateItem(id, parentId) {
+                    //请求对象具体属性
+                    $.get('{{ path.src }}data/treeTableAjaxData.json',
+                        {id: id},
+                        function (data) {
+                            data = {
+                                id: id,
+                                parentId: parentId,
+								name: '表格',
+								href: 'pages/components/tablelist/list1.html',
+                                sort: 1,
+                                remark: '备注内容'
+							};
+
+							$('#myModalLabel').html('修改菜单');
+							$('#id').val(data.id);
+							$('#parentId').val(data.parentId);
+							$('#name').val(data.name);
+							$('#href').val(data.href);
+							$('#sort').val(data.sort);
+							$('#remark').val(data.remark);
+
+							$.jkj.modal.showLocalModal('#myModal');
+                        }, 'JSON');
+                }
+
+                /**
+                 * 删除
+                 * @param id
+                 */
+                function deleteItem(id) {
+                    //删除 post
+                    $.get('{{ path.src }}data/treeTableAjaxData.json',
+                        {id: id},
+                        function (data) {
+                            table.treetable('removeNode', id);
+                        }, 'JSON');
+                }
+			</script>
+{% endblock %}

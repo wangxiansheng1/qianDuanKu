@@ -1,0 +1,136 @@
+/*
+ * 组件: 工作台
+ * ----------------
+ */
+.workbench-operation{
+    height: 120px;
+    width: 30px;
+    position: fixed;
+    top: 120px;
+    right: 0px;
+    z-index: 99;
+    .workbench-operation-custom,.workbench-operation-cancel,.workbench-operation-save{
+        width: 30px;
+        color: #fff;
+        background: rgba(0,140,238,0.5);
+        border: 0;
+        cursor: pointer;
+        font-weight: bold;
+        word-wrap: break-word;
+        white-space: normal;
+        border-radius: 10px 0 0 10px;
+        height: 120px;
+        &:hover, &:active, &.hover {
+            background: rgba(0,140,238,0.7);
+            border: 0;
+        }
+    }
+    .workbench-operation-cancel{
+        display: none;
+    }
+    .workbench-operation-cancel{
+        border-bottom: 1px solid #fff;
+        background: rgb(217,217,217);
+        color: #7b7b7b;
+        &:hover{
+            background: rgba(217,217,217,0.7);
+        }
+    }
+}
+.workbench-bottom-widgets{
+    bottom: 0;
+    border-width: 1px 0 0;
+    border-radius: 0;
+    left: 0;
+    margin-bottom: 0;
+    position: fixed;
+    right: 0;
+    z-index: 1030;   
+}
+.workbench-widgets-wrapper{
+    display: block;
+    overflow: hidden;
+    overflow-x: auto;
+    width: 100%;
+    .workbench-widget{
+        display: inline-block;
+        max-width: 400px;
+        margin-left: 2px;
+        margin-right: 3px;
+        min-width: 200px;
+        overflow: hidden;
+        .workbench-widget-header{
+            cursor: move;
+        }
+    }
+}
+.workbench-widgets-empty{
+    height: 173px;
+    background: #FFF url(../images/bg-workbench-widgets.jpg) 50% no-repeat;
+}
+.workbench-widgets{
+    display: table;
+    padding-top: 5px;
+    white-space: nowrap;
+    .workbench-widget{
+        margin-left: 2px;
+        margin-right: 3px;
+        .workbench-widget-body{
+            
+        }
+    }
+}
+.workbench-widget{
+    border: 1px solid #7b7b7b;
+    width: 218px;
+    .workbench-widget-header{
+        border-bottom: 3px solid #f6855b;
+        cursor: move;
+        height: 34px;
+        .workbench-widget-title{
+            font-size: 13px;
+            font-weight: 200;
+            line-height: 34px;
+            margin: 0;
+            padding: 0 5px;
+        }
+    }
+    .workbench-widget-body{
+        height: 127px;
+        overflow: hidden;
+    }
+}
+.grid-stack-item{
+    .workbench-widget-header{
+        position: relative;
+        z-index: 1;
+        .workbench-widget-close{
+            border: 0;
+            background: transparent;
+            color: #000;
+            cursor: pointer;
+            display: none;
+            filter: alpha(opacity=20);
+            font-weight: bold;
+            font-size: 21px;
+            line-height: 1;
+            opacity: 0.2;
+            padding: 5px;
+            position: absolute;
+            right: 0;
+            text-shadow: 0 1px 0 #fff;
+            top: 0;
+            z-index: 10;
+            -webkit-appearance: none;
+        }
+    }
+    .workbench-widget-body{
+        height: 100%;
+        margin-top: -24px;
+        padding: 0;
+        padding-top: 24px;
+    }
+}
+.grid-stack{
+    margin-bottom: -15px;
+}

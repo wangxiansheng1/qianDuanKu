@@ -1,0 +1,254 @@
+/*
+ * Component: Table
+ * ----------------
+ */
+
+.table {
+  //Cells
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        border-top: 1px solid @box-border-color;
+      }
+    }
+  }
+  //thead cells
+  > thead > tr > th {
+    border-bottom: 1px solid @box-border-color;
+  }
+  //progress bars in tables
+  tr td .progress {
+    margin-top: 5px;
+  }
+}
+
+//Bordered Table
+.table-bordered {
+  border: 1px solid @box-border-color;
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        padding: 8px;
+        border: 1px solid @box-border-color;
+        line-height: 22px;
+      }
+    }
+  }
+  > thead > tr {
+    > th,
+    > td {
+      border-bottom-width: 1px;
+    }
+  }
+}
+
+.table.no-border {
+  &,
+  td,
+  th {
+    border: 0;
+  }
+}
+
+/* .text-center in tables */
+table.text-center {
+  &, td, th {
+    text-align: center;
+  }
+}
+
+.table.align {
+  th {
+    text-align: left;
+  }
+  td {
+    text-align: right;
+  }
+}
+
+.table{
+    thead{
+        tr{
+            th{
+                background: #e5e8ef;
+                text-align: center;
+                line-height: 19px;
+            }
+            td{
+                a{
+                    margin: 0 3px;
+                }
+            }
+        }
+    }
+    button{
+        padding: 0;
+        margin: 0 3px;
+        border: none;
+        background: none;
+        display: inline;
+        color: #498ed2;
+        line-height: 13px;
+        &:hover, &:active, &:focus{
+            color: #2e75ba;
+            border: none;
+            outline: none;
+        }
+    }
+    //table-data
+    &.table-data{
+        table-layout: fixed;
+        tr{
+            td{
+                word-break: break-all;
+                word-wrap: break-word;
+                textarea{
+                    height:120px;
+                    width:100%;
+                }
+                select, input[type="text"]{
+                    width:80%;
+                }
+            }
+            th{
+                text-align:right;
+                font-weight:normal;
+                line-height:30px;
+            }
+            
+        }
+    }
+    .table-darkgreen {
+        padding:0 3px;
+        display:inline-block;
+        background:green;
+        color:#fff;
+        &:hover, &:active, &:focus{
+            color:#fff;
+        }
+    }
+    .table-red {
+        padding:0 3px;
+        display:inline-block;
+        background:red;
+        color:#fff;
+        &:hover, &:active, &:focus{
+            color:#fff;
+        }
+    }
+    .table-yellow {
+        padding:0 3px;
+        display:inline-block;
+        background:#ffce55;
+        color:#fff;
+        &:hover, &:active, &:focus{
+            color:#fff;
+        }
+    }
+    .table-blue {
+        padding:0 3px;
+        display:inline-block;
+        background:#0000ff;
+        color:#fff;
+        &:hover, &:active, &:focus{
+            color:#fff;
+        }
+    }
+    .table-green {
+        padding:0 3px;
+        display:inline-block;
+        background:#00ff00;
+        color:#fff;
+        &:hover, &:active, &:focus{
+            color:#fff;
+        }
+    }
+    .table-purple {
+        padding:0 3px;
+        display:inline-block;
+        background:#800080;
+        color:#fff;
+        &:hover, &:active, &:focus{
+            color:#fff;
+        }
+    }
+}
+.dataTables_wrapper{
+    margin-top: -6px;
+    position: relative;
+    .col-sm-6{
+        position: static;
+        padding: 0 5px;
+    }
+    .dataTables_length{
+        position: absolute;
+        bottom: 18px;
+        left: 0;
+        z-index: 2;
+        select{
+            width: 60px !important;
+            height: 20px;
+        }
+    }
+    .dataTables_info{
+        margin-top: 6px;
+        margin-left: 150px;
+    }
+    .dataTables_paginate{
+        margin-top: 6px !important;
+        height:41px;
+    }
+}
+//.tableD
+.tableD{
+    width: 100%;
+    th{
+        line-height:30px;
+        padding: 5px;
+        border: none;
+        vertical-align:top;
+        font-weight: normal;
+        text-align: right;  
+    }
+    td{
+        line-height:30px;
+        padding: 5px;
+        border: none;
+        vertical-align:top;
+    }
+    label{
+        height:22px;
+        line-height:22px;
+    }
+}
+.table-condensed{
+    thead{
+        tr{
+            th{
+                background: #FFF;
+            }
+        }
+    }
+}
+.pagination > .active > a, 
+.pagination > .active > span, 
+.pagination > .active > a:hover, 
+.pagination > .active > span:hover, 
+.pagination > .active > a:focus, 
+.pagination > .active > span:focus{
+    background-color: #498ed2;
+    border-color: #498ed2;
+}
+.overflow-word {
+    overflow: hidden; 
+    white-space: nowrap; 
+    text-overflow: ellipsis; 
+    width: 200px; 
+    display: block;
+}

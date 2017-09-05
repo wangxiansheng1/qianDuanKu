@@ -1,0 +1,75 @@
+{% extends "../../shared/layout.html" %} 
+{% block title %}
+{% endblock %} 
+
+{% block css %}
+			<!-- bootstrap datepicker -->
+			<link rel="stylesheet" href="{{ path.plugins }}datepicker/datepicker3.css"> 
+{% endblock %} 
+{% block content %}
+				<form>
+					<div class="search-area">
+						<div class="search-group">
+							<label>下单日期：</label>
+							<input type="text" class="form-control" id="datepicker">
+						</div>
+					</div>
+				</form>
+
+<div class="container-fluid">			
+	<i class="fa fa-file-code-o"></i> 
+	<a href="javascript:;" data-xmp = "">展开代码</a>
+<xmp>
+	<div>
+		<label>下单日期：</label>
+		<input type="text" class="form-control" id="datepicker">
+	</div>
+	
+	<!-- bootstrap datepicker -->
+	<script src="{{ path.plugins }}datepicker/bootstrap-datepicker.js"></script>
+	<script src="{{ path.plugins }}datepicker/locales/bootstrap-datepicker.zh-CN.js"></script>
+	
+	<script type="text/javascript">
+		$(function() {
+			//Date picker
+			$('#datepicker').datepicker({
+				language: 'zh-CN',
+				autoclose: true,
+        		//todayHighlight: true,
+        		format: 'yyyy-mm-dd'
+			});
+			
+		});
+	</script>
+</xmp>
+</div>
+			
+{% endblock %}
+			
+{% block js %}
+			<!-- bootstrap datepicker -->
+			<script src="{{ path.plugins }}datepicker/bootstrap-datepicker.js"></script>
+			<script src="{{ path.plugins }}datepicker/locales/bootstrap-datepicker.zh-CN.js"></script>
+			
+			<script type="text/javascript">
+				$(function() {
+					//Date picker
+					$('#datepicker').datepicker({
+						language: 'zh-CN',
+						autoclose: true,
+                		//todayHighlight: true,
+                		format: 'yyyy-mm-dd'
+					});
+					
+					//显示到月份，选择年月
+//					$('#datepicker').datepicker({
+//						language: 'zh-CN',
+//						autoclose: true,
+//              		//todayHighlight: true,
+//              		format: 'yyyy-mm',
+//              		startView: 'year',
+//              		minViewMode: 'months'
+//					});		
+				});
+			</script>
+{% endblock %}

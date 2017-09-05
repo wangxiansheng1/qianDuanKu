@@ -1,0 +1,56 @@
+{% extends "../../shared/layout.html" %} 
+{% block title %}
+{% endblock %} 
+
+{% block css %}{% endblock %} 
+
+{% block content %}
+				<div id="divDatas">
+					<div></div>
+				</div>
+				<button class="btn btn-confirm">加载</button>
+				
+<div class="container-fluid">			
+	<i class="fa fa-file-code-o"></i> 
+	<a href="javascript:;" data-xmp = "">展开代码</a>
+<xmp>
+	<div id="divDatas">
+		<div></div>
+	</div>
+	<button class="btn btn-confirm">加载</button>
+	
+	<script type="text/javascript">
+		$(function() {
+			var url = '{{ path.src }}pages/components/loading-layer/loadTable.html';
+			$("button").click(function(){
+	            $('#divDatas').loadWithZoneLayer(url, null, function (data, myLayer) {
+	                myLayer.setMessage('加载成功...');
+	                
+	                setTimeout(function(){
+	                	myLayer.close();
+	                },1000);
+	            }, false);
+			});
+		});
+	</script>
+</xmp>
+</div>
+			
+{% endblock %}
+			
+{% block js %}
+			<script type="text/javascript">
+				$(function() {
+					var url = '{{ path.src }}pages/components/loading-layer/loadTable.html';
+					$("button").click(function(){
+			            $('#divDatas').loadWithZoneLayer(url, null, function (data, myLayer) {
+			                myLayer.setMessage('加载成功...');
+			                
+			                setTimeout(function(){
+			                	myLayer.close();
+			                },1000);
+			            }, false);
+					});
+				});
+			</script>
+{% endblock %}

@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<!-- Meta, title, CSS, favicons, etc. -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=9">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="keywords" content="HTML，CSS，JS，JavaScript，framework，bootstrap，front-end，web development，江苏跨境">
+		<meta name="description" content="江苏跨境电子商务服务有限公司">
+		<meta name="author" content="潘明星，尹喜晨">
+		<title></title>
+		<!-- Bootstrap 3.3.6 -->
+		<link rel="stylesheet" href="/AdminJKJ/src/css/bootstrap.css">
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="/AdminJKJ/src/css/font-awesome.css">
+		<!-- Ionicons -->
+		<link rel="stylesheet" href="/AdminJKJ/src/css/ionicons.css">
+		<!-- AdminJKJ style -->
+		<link rel="stylesheet" href="/AdminJKJ/src/css/adminjkj-1.0.281.css">
+		<link rel="stylesheet" href="/AdminJKJ/src/css/adminjkj-themes-1.0.0.css">
+		<!--子页面样式-->
+		 
+			<!-- Select2 -->
+			<link rel="stylesheet" href="/AdminJKJ/plugins/select2/select2.css">
+
+		
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="/AdminJKJ/src/js/html5shiv.js"></script>
+		<script src="/AdminJKJ/src/js/respond.js"></script>
+		<![endif]-->   
+	</head>
+	<body class="" style=" overflow-x: auto;">
+  		<!-- Site wrapper -->
+		<div class=" page-body ">
+			<!--子页面内容-->
+			
+			<div id="city_china">
+
+				<h3>默认</h1>
+				<div class="row">
+					<div class="col-xs-4">
+						<div class="row-void row-form">
+							<div class="col-xs-4 text-right">
+								省份：
+							</div>
+							<div class="col-xs-8">
+								<select class="province form-control" disabled="disabled" name="province"></select>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-4">
+						<div class="row-void row-form">
+							<div class="col-xs-4 text-right">
+								城市：
+							</div>
+							<div class="col-xs-8">
+								<select class="city form-control" disabled="disabled" name="city"></select>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-4">
+						<div class="row-void row-form">
+							<div class="col-xs-4 text-right">
+								地区：
+							</div>
+							<div class="col-xs-8">
+								<select class="area form-control" disabled="disabled" name="area"></select>
+							</div>
+						</div>
+					</div>
+				</div>
+		
+			</div>
+
+<div class="container-fluid">			
+	<i class="fa fa-file-code-o"></i> 
+	<a href="javascript:;" data-xmp = "">展开代码</a>
+<xmp>
+	<div id="city_china">
+		<h3>默认</h1>
+		<div class="row">
+			<div class="col-xs-4">
+				<div class="row-void row-form">
+					<div class="col-xs-4 text-right">
+						省份：
+					</div>
+					<div class="col-xs-8">
+						<select class="province form-control" disabled="disabled" name="province"></select>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<div class="row-void row-form">
+					<div class="col-xs-4 text-right">
+						城市：
+					</div>
+					<div class="col-xs-8">
+						<select class="city form-control" disabled="disabled" name="city"></select>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<div class="row-void row-form">
+					<div class="col-xs-4 text-right">
+						地区：
+					</div>
+					<div class="col-xs-8">
+						<select class="area form-control" disabled="disabled" name="area"></select>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script src="/AdminJKJ/plugins/cxSelect/jquery.cxSelect.js"></script>
+	<!-- Select2 -->
+	<script src="/AdminJKJ/plugins/select2/select2.full.js"></script>
+	<script src="/AdminJKJ/plugins/select2/i18n/zh-CN.js"></script>
+	
+	<script type="text/javascript">
+		$.cxSelect.defaults.url = '/AdminJKJ/src/data/cityData.json';
+
+		$('#city_china').cxSelect({
+		
+			selects: ['province', 'city', 'area']
+		
+		});
+	</script>
+</xmp>
+</div>
+		
+		
+			<div id="city_china_val">
+		
+				<h3>设置默认值及选项标题</h1>
+				
+				<div class="row row-void row-form">
+					<div class="col-xs-1 text-right">
+						所在地区：
+					</div>
+					<div class="col-xs-3">
+						<select class="province form-control" data-value="浙江省" data-first-title="选择省" disabled="disabled"></select>
+					</div>
+					<div class="col-xs-3">
+						<select class="citys form-control" data-value="杭州市" data-first-title="选择市" disabled="disabled"></select>
+					</div>
+					<div class="col-xs-3">
+						<select class="area form-control" data-value="西湖区" data-first-title="选择地区" disabled="disabled"></select>
+					</div>
+				</div>
+		
+			</div>
+
+<div class="container-fluid">			
+	<i class="fa fa-file-code-o"></i> 
+	<a href="javascript:;" data-xmp = "">展开代码</a>
+<xmp>
+	<div id="city_china_val">
+		<h3>设置默认值及选项标题</h1>
+		<div class="row row-void row-form">
+			<div class="col-xs-1 text-right">
+				所在地区：
+			</div>
+			<div class="col-xs-3">
+				<select class="province form-control" data-value="浙江省" data-first-title="选择省" disabled="disabled"></select>
+			</div>
+			<div class="col-xs-3">
+				<select class="citys form-control" data-value="杭州市" data-first-title="选择市" disabled="disabled"></select>
+			</div>
+			<div class="col-xs-3">
+				<select class="area form-control" data-value="西湖区" data-first-title="选择地区" disabled="disabled"></select>
+			</div>
+		</div>
+	</div>
+	
+	<script src="/AdminJKJ/plugins/cxSelect/jquery.cxSelect.js"></script>
+	<!-- Select2 -->
+	<script src="/AdminJKJ/plugins/select2/select2.full.js"></script>
+	<script src="/AdminJKJ/plugins/select2/i18n/zh-CN.js"></script>
+	
+	<script type="text/javascript">
+		$.cxSelect.defaults.url = '/AdminJKJ/src/data/cityData.json';
+
+		$('#city_china_val').cxSelect({
+				
+			selects: ['province', 'citys', 'area'],
+		
+			nodata: 'none'
+		
+		});
+	</script>
+</xmp>
+</div>
+					
+		
+			<div id="global_select">
+		
+				<h3>全球主要国家城市自动完成联动</h3>
+				
+				<div class="row row-void row-form">
+					<div class="col-xs-1 text-right">
+						所在地区：
+					</div>
+					<div class="col-xs-3">
+						<select id="select1" class="province form-control" data-value="浙江省" data-first-title="选择省" disabled="disabled"></select>
+					</div>
+					<div class="col-xs-3">
+						<select id="select2" class="citys form-control" data-value="杭州市" data-first-title="选择市" disabled="disabled"></select>
+					</div>
+					<div class="col-xs-3">
+						<select class="area form-control" data-value="西湖区" data-first-title="选择地区" disabled="disabled"></select>
+					</div>
+				</div>
+		
+			</div>
+			
+<div class="container-fluid">			
+	<i class="fa fa-file-code-o"></i> 
+	<a href="javascript:;" data-xmp = "">展开代码</a>
+<xmp>
+	<div id="global_select">
+		<h3>全球主要国家城市自动完成联动</h3>
+		<div class="row row-void row-form">
+			<div class="col-xs-1 text-right">
+				所在地区：
+			</div>
+			<div class="col-xs-3">
+				<select id="select1" class="province form-control" data-value="浙江省" data-first-title="选择省" disabled="disabled"></select>
+			</div>
+			<div class="col-xs-3">
+				<select id="select2" class="citys form-control" data-value="杭州市" data-first-title="选择市" disabled="disabled"></select>
+			</div>
+			<div class="col-xs-3">
+				<select class="area form-control" data-value="西湖区" data-first-title="选择地区" disabled="disabled"></select>
+			</div>
+		</div>
+	</div>
+	
+	<script src="/AdminJKJ/plugins/cxSelect/jquery.cxSelect.js"></script>
+	<!-- Select2 -->
+	<script src="/AdminJKJ/plugins/select2/select2.full.js"></script>
+	<script src="/AdminJKJ/plugins/select2/i18n/zh-CN.js"></script>
+	
+	<script type="text/javascript">
+		$.cxSelect.defaults.url = '/AdminJKJ/src/data/cityData.json';
+
+		$('#global_select').cxSelect({
+				
+			selects: ['province', 'citys', 'area'],
+		
+			nodata: 'none'
+		
+		});
+	</script>
+</xmp>
+</div>
+			
+			<div id="global_location">
+		
+				<h3>全球主要国家城市联动</h3>
+				
+				<div class="row row-void row-form">
+					<div class="col-xs-1 text-right">
+						所在地区：
+					</div>
+					<div class="col-xs-2">
+						<select class="country form-control" data-first-title="选择国家" disabled="disabled"></select>
+					</div>
+					<div class="col-xs-2">
+						<select class="state form-control" disabled="disabled"></select>
+					</div>
+					<div class="col-xs-2">
+						<select class="city form-control" disabled="disabled"></select>
+					</div>
+					<div class="col-xs-2">
+						<select class="region form-control" disabled="disabled"></select>
+					</div>
+				</div>
+		
+			</div>
+			
+<div class="container-fluid">			
+	<i class="fa fa-file-code-o"></i> 
+	<a href="javascript:;" data-xmp = "">展开代码</a>
+<xmp>
+	<div id="global_location">		
+		<h3>全球主要国家城市联动</h3>
+		<div class="row row-void row-form">
+			<div class="col-xs-1 text-right">
+				所在地区：
+			</div>
+			<div class="col-xs-2">
+				<select class="country form-control" data-first-title="选择国家" disabled="disabled"></select>
+			</div>
+			<div class="col-xs-2">
+				<select class="state form-control" disabled="disabled"></select>
+			</div>
+			<div class="col-xs-2">
+				<select class="city form-control" disabled="disabled"></select>
+			</div>
+			<div class="col-xs-2">
+				<select class="region form-control" disabled="disabled"></select>
+			</div>
+		</div>
+	</div>
+	
+	<script src="/AdminJKJ/plugins/cxSelect/jquery.cxSelect.js"></script>
+	<!-- Select2 -->
+	<script src="/AdminJKJ/plugins/select2/select2.full.js"></script>
+	<script src="/AdminJKJ/plugins/select2/i18n/zh-CN.js"></script>
+	
+	<script type="text/javascript">
+		$('#global_location').cxSelect({
+		
+			url: '/AdminJKJ/src/data/globalData.json',
+		
+			selects: ['country', 'state', 'city', 'region'],
+		
+			nodata: 'none'
+		
+		});
+	</script>
+</xmp>
+</div>
+		
+			
+		
+			<div id="city_custom">
+		
+				<h3>自定义选项</h3>
+				
+				<div id="global_location">
+							
+					<div class="row row-void row-form">
+						<div class="col-xs-1 text-right">
+							所在地区：
+						</div>
+						<div class="col-xs-2">
+							<select class="first form-control" data-value="Boolean" disabled="disabled"></select>
+						</div>
+						<div class="col-xs-2">
+							<select class="second form-control" data-value="0" disabled="disabled"></select>
+						</div>
+						<div class="col-xs-2">
+							<select class="third form-control" disabled="disabled"></select>
+						</div>
+						<div class="col-xs-2">
+							<select class="fourth form-control" disabled="disabled"></select>
+						</div>
+						<div class="col-xs-2">
+							<select class="fifth form-control" disabled="disabled"></select>
+						</div>
+					</div>
+			
+				</div>
+		
+			</div>
+			
+<div class="container-fluid">			
+	<i class="fa fa-file-code-o"></i> 
+	<a href="javascript:;" data-xmp = "">展开代码</a>
+<xmp>
+	<div id="city_custom">
+		<h3>自定义选项</h3>
+		<div id="global_location">
+			<div class="row row-void row-form">
+				<div class="col-xs-1 text-right">
+					所在地区：
+				</div>
+				<div class="col-xs-2">
+					<select class="first form-control" data-value="Boolean" disabled="disabled"></select>
+				</div>
+				<div class="col-xs-2">
+					<select class="second form-control" data-value="0" disabled="disabled"></select>
+				</div>
+				<div class="col-xs-2">
+					<select class="third form-control" disabled="disabled"></select>
+				</div>
+				<div class="col-xs-2">
+					<select class="fourth form-control" disabled="disabled"></select>
+				</div>
+				<div class="col-xs-2">
+					<select class="fifth form-control" disabled="disabled"></select>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+		$('#city_custom').cxSelect({
+
+			selects: ['first', 'second', 'third', 'fourth', 'fifth'],
+		
+			required: true,
+		
+			url: [
+		
+				{'v': 1, 'n': '第一级 >', 's': [
+		
+					{'v': 2, 'n': '第二级 >', 's': [
+		
+						{'v': 3, 'n': '第三级 >', 's': [
+		
+							{'v': 4, 'n': '第四级 >', 's': [
+		
+								{'v': 5, 'n': '第五级 >', 's': [
+		
+									{'v': 6, 'n': '第六级 >', 's': [
+		
+										{'v': 7, 'n': '第七级 >', 's': [
+		
+											{'v': 8, 'n': '第八级 >', 's': [
+		
+												{'v': 9, 'n': '第九级 >', 's': [
+		
+													{'v': 10, 'n': '第十级'}
+		
+												]}
+		
+											]}
+		
+										]}
+		
+									]}
+		
+								]}
+		
+							]}
+		
+						]}
+		
+					]}
+		
+				]},
+		
+				{'v': 'Number', 'n': '数字 >', 's': [
+		
+					{'v': 'Dice', 'n': '骰子 >', 's': [
+		
+						{'v': 'Small', 'n': '小', 's': [
+		
+							{'n': '4'},
+		
+							{'n': '5'},
+		
+							{'n': '6'},
+		
+							{'n': '7'},
+		
+							{'n': '8'},
+		
+							{'n': '9'},
+		
+							{'n': '10'}
+		
+						]},
+		
+						{'v': 'Big', 'n': '大', 's': [
+		
+							{'n': '11'},
+		
+							{'n': '12'},
+		
+							{'n': '13'},
+		
+							{'n': '14'},
+		
+							{'n': '15'},
+		
+							{'n': '16'},
+		
+							{'n': '17'}
+		
+						]}
+		
+					]},
+		
+					{'v': 'Hundred', 'n': '百位', 's': [
+		
+						{'n': '100'},
+		
+						{'n': '200'},
+		
+						{'n': '300'},
+		
+						{'n': '400'},
+		
+						{'n': '500'},
+		
+						{'n': '600'},
+		
+						{'n': '700'},
+		
+						{'n': '800'},
+		
+						{'n': '900'}
+		
+					]},
+		
+					{'v': 'Thousand', 'n': '千位', 's': [
+		
+						{'n': '1000'},
+		
+						{'n': '2000'},
+		
+						{'n': '3000'},
+		
+						{'n': '4000'},
+		
+						{'n': '5000'},
+		
+						{'n': '6000'},
+		
+						{'n': '7000'},
+		
+						{'n': '8000'},
+		
+						{'n': '9000'}
+		
+					]}
+		
+				]},
+		
+				{'v': 'ABC', 'n': '字母 >', 's': [
+		
+					{'v': 'Upper case', 'n': '大写 >', 's': [
+		
+						{'n': 'A'},
+		
+						{'n': 'B'},
+		
+						{'n': 'C'},
+		
+						{'n': 'D'},
+		
+						{'n': 'E'},
+		
+						{'n': 'F'},
+		
+						{'n': 'G'}
+		
+					]},
+		
+					{'v': 'Lower case', 'n': '小写 >','s': [
+		
+						{'n': 'a'},
+		
+						{'n': 'b'},
+		
+						{'n': 'c'},
+		
+						{'n': 'd'},
+		
+						{'n': 'e'},
+		
+						{'n': 'f'},
+		
+						{'n': 'g'}
+		
+					]}
+		
+				]},
+		
+				{'v': 'Boolean','n': '真假 >', 's': [
+		
+					{'v': true ,'n': '真 (Ture)'},
+		
+					{'v': false ,'n': '假 (False)'},
+		
+					{'v': 1 ,'n': '真 (1)'},
+		
+					{'v': 0 ,'n': '假 (0)'}
+		
+				]},
+		
+				{'n': '无子级'}
+		
+			]
+		
+		});
+	</script>
+</xmp>
+</div>
+
+		</div>
+		
+		<!-- jquery 2.2.3 -->
+		<script src="/AdminJKJ/plugins/jquery/jquery-2.2.3.min.js"></script>
+		<!-- Bootstrap 3.3.6 -->
+		<script src="/AdminJKJ/src/js/bootstrap.js"></script>
+		<!-- SlimScroll -->
+		<script src="/AdminJKJ/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+		<!-- FastClick -->
+		<script src="/AdminJKJ/plugins/fastclick/fastclick.js"></script>
+		<!-- Notify -->
+		<script src="/AdminJKJ/plugins/bootstrap-notify/bootstrap-notify.js"></script>
+
+		<script src="/AdminJKJ/src/js/adminjkj-1.0.281.js" type="text/javascript"></script>
+		<!--子页面脚本-->
+		 
+			<script src="/AdminJKJ/plugins/cxSelect/jquery.cxSelect.js"></script>
+			<!-- Select2 -->
+			<script src="/AdminJKJ/plugins/select2/select2.full.js"></script>
+			<script src="/AdminJKJ/plugins/select2/i18n/zh-CN.js"></script>
+			
+			<script type="text/javascript">
+				$.cxSelect.defaults.url = '/AdminJKJ/src/data/cityData.json';
+	
+	
+	
+				$('#city_china').cxSelect({
+				
+					selects: ['province', 'city', 'area']
+				
+				});
+				
+				
+				
+				$('#city_china_val').cxSelect({
+				
+					selects: ['province', 'citys', 'area'],
+				
+					nodata: 'none'
+				
+				});
+				
+				$('#global_select').cxSelect({
+				
+					selects: ['province', 'citys', 'area'],
+				
+					nodata: 'none'
+				
+				});
+				
+				
+				
+				$('#global_location').cxSelect({
+				
+					url: '/AdminJKJ/src/data/globalData.json',
+				
+					selects: ['country', 'state', 'city', 'region'],
+				
+					nodata: 'none'
+				
+				});
+				
+				$('#city_custom').cxSelect({
+
+					selects: ['first', 'second', 'third', 'fourth', 'fifth'],
+				
+					required: true,
+				
+					url: [
+				
+						{'v': 1, 'n': '第一级 >', 's': [
+				
+							{'v': 2, 'n': '第二级 >', 's': [
+				
+								{'v': 3, 'n': '第三级 >', 's': [
+				
+									{'v': 4, 'n': '第四级 >', 's': [
+				
+										{'v': 5, 'n': '第五级 >', 's': [
+				
+											{'v': 6, 'n': '第六级 >', 's': [
+				
+												{'v': 7, 'n': '第七级 >', 's': [
+				
+													{'v': 8, 'n': '第八级 >', 's': [
+				
+														{'v': 9, 'n': '第九级 >', 's': [
+				
+															{'v': 10, 'n': '第十级'}
+				
+														]}
+				
+													]}
+				
+												]}
+				
+											]}
+				
+										]}
+				
+									]}
+				
+								]}
+				
+							]}
+				
+						]},
+				
+						{'v': 'Number', 'n': '数字 >', 's': [
+				
+							{'v': 'Dice', 'n': '骰子 >', 's': [
+				
+								{'v': 'Small', 'n': '小', 's': [
+				
+									{'n': '4'},
+				
+									{'n': '5'},
+				
+									{'n': '6'},
+				
+									{'n': '7'},
+				
+									{'n': '8'},
+				
+									{'n': '9'},
+				
+									{'n': '10'}
+				
+								]},
+				
+								{'v': 'Big', 'n': '大', 's': [
+				
+									{'n': '11'},
+				
+									{'n': '12'},
+				
+									{'n': '13'},
+				
+									{'n': '14'},
+				
+									{'n': '15'},
+				
+									{'n': '16'},
+				
+									{'n': '17'}
+				
+								]}
+				
+							]},
+				
+							{'v': 'Hundred', 'n': '百位', 's': [
+				
+								{'n': '100'},
+				
+								{'n': '200'},
+				
+								{'n': '300'},
+				
+								{'n': '400'},
+				
+								{'n': '500'},
+				
+								{'n': '600'},
+				
+								{'n': '700'},
+				
+								{'n': '800'},
+				
+								{'n': '900'}
+				
+							]},
+				
+							{'v': 'Thousand', 'n': '千位', 's': [
+				
+								{'n': '1000'},
+				
+								{'n': '2000'},
+				
+								{'n': '3000'},
+				
+								{'n': '4000'},
+				
+								{'n': '5000'},
+				
+								{'n': '6000'},
+				
+								{'n': '7000'},
+				
+								{'n': '8000'},
+				
+								{'n': '9000'}
+				
+							]}
+				
+						]},
+				
+						{'v': 'ABC', 'n': '字母 >', 's': [
+				
+							{'v': 'Upper case', 'n': '大写 >', 's': [
+				
+								{'n': 'A'},
+				
+								{'n': 'B'},
+				
+								{'n': 'C'},
+				
+								{'n': 'D'},
+				
+								{'n': 'E'},
+				
+								{'n': 'F'},
+				
+								{'n': 'G'}
+				
+							]},
+				
+							{'v': 'Lower case', 'n': '小写 >','s': [
+				
+								{'n': 'a'},
+				
+								{'n': 'b'},
+				
+								{'n': 'c'},
+				
+								{'n': 'd'},
+				
+								{'n': 'e'},
+				
+								{'n': 'f'},
+				
+								{'n': 'g'}
+				
+							]}
+				
+						]},
+				
+						{'v': 'Boolean','n': '真假 >', 's': [
+				
+							{'v': true ,'n': '真 (Ture)'},
+				
+							{'v': false ,'n': '假 (False)'},
+				
+							{'v': 1 ,'n': '真 (1)'},
+				
+							{'v': 0 ,'n': '假 (0)'}
+				
+						]},
+				
+						{'n': '无子级'}
+				
+					]
+				
+				});
+				
+				$(function(){
+					var data = [{ id: 1, text: "南京" }, { id: 2, text: "北京" },{ id: 3, text: "西安" }, 
+                                { id: 4, text: "重庆" }, { id: 5, text: "广州" }];
+					// 单选 local data
+                    var select1 = $.jkj.select2.local("#select1", {data: data});
+				});
+				
+			
+			</script>
+ 
+	</body>
+</html>

@@ -1,0 +1,63 @@
+/*
+ * Component: customizable
+ * ----------------
+ */
+.grid-stack {
+    > .grid-stack-item.ui-draggable{
+        padding: 0 15px 0 0;
+        border: none;
+        .workbench-widget{
+            border: 1px solid #ddd;
+            width: 100%;
+            box-shadow: -2px 2px 5px #ddd;
+            height: 100%;
+            overflow: hidden;
+            .workbench-widget-header{
+                border-bottom: 3px solid #f6855b;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                background: #FFF;
+                .workbench-widget-title{
+                    padding-left: 7px;
+                    color: @light-black;
+                    font-size: 17px;
+                    line-height: 32px;
+                }
+            }
+            .workbench-widget-body{
+                margin-top: -1px;
+                padding: 10px 7px;
+                height: auto;
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+                background: #FFF;
+                
+            }
+        }
+    }
+}
+
+.workbench-bottom-widgets{
+    background: #e5e8ef;
+    .workbench-widgets-wrapper{
+        padding: 10px 15px 5px;
+        .workbench-widget{
+            border-color: #ddd;
+            box-shadow: -3px 3px 5px #ddd;
+            border-radius: 5px;
+            background: #FFF;
+            .workbench-widget-header{
+                border-bottom-color: #f6855b;
+                .workbench-widget-title{
+                    padding-left: 7px;
+                    color: @light-black;
+                    font-size: 17px;
+                    line-height: 32px;
+                }
+            }
+            .workbench-widget-body{
+                padding: 10px 7px;
+            }
+        }
+    }
+}

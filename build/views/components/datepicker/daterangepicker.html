@@ -1,0 +1,78 @@
+{% extends "../../shared/layout.html" %} 
+{% block title %}
+{% endblock %} 
+
+{% block css %}
+			<!-- daterange picker -->
+			<link rel="stylesheet" href="{{ path.plugins }}daterangepicker/daterangepicker-bs3.css">
+{% endblock %}
+{% block content %}		
+				<form>
+					<div class="search-area">
+						<div class="search-group">
+							<label>出口日期：</label>
+							<input type="text" class="form-control" id="reservation">
+						</div>
+					</div>
+				</form>
+				
+<div class="container-fluid">			
+	<i class="fa fa-file-code-o"></i> 
+	<a href="javascript:;" data-xmp = "">展开代码</a>
+<xmp>
+	<div>
+		<label>出口日期：</label>
+		<input type="text" class="form-control" id="reservation">
+	</div>
+	
+	<!-- date-range-picker -->
+	<script src="{{ path.plugins }}daterangepicker/moment.js"></script>
+	<script src="{{ path.plugins }}daterangepicker/daterangepicker.js"></script>
+	
+	
+	<script type="text/javascript">
+	    $(function () {
+	        var startDate= '2017-02-19';
+	        var endDate= '2017-02-26';
+	        $.jkj.daterangepicker('#reservation',{
+	        	startDate: startDate,
+				endDate: endDate,
+				//timePicker: true,
+				//timePickerIncrement : 5,
+				//timePicker12Hour : false,
+				//format : 'YYYY-MM-DD HH:mm',
+				//startElementName: 'createdAtBegin',
+				//endElementName:'createdAtEnd'
+	        });
+	        //$('#reservation').clearDate();
+	    });
+	</script>
+</xmp>
+</div>
+			
+{% endblock %} 
+			
+{% block js %}
+			<!-- date-range-picker -->
+			<script src="{{ path.plugins }}daterangepicker/moment.js"></script>
+			<script src="{{ path.plugins }}daterangepicker/daterangepicker.js"></script>
+			
+			
+			<script type="text/javascript">
+			    $(function () {
+			        var startDate= '2017-02-19';
+			        var endDate= '2017-02-26';
+			        $.jkj.daterangepicker('#reservation',{
+			        	startDate: startDate,
+        				endDate: endDate,
+						//timePicker: true,
+						//timePickerIncrement : 5,
+						//timePicker12Hour : false,
+						//format : 'YYYY-MM-DD HH:mm',
+						//startElementName: 'createdAtBegin',
+						//endElementName:'createdAtEnd'
+			        });
+			        //$('#reservation').clearDate();
+			    });
+			</script>
+{% endblock %}

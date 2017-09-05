@@ -1,0 +1,189 @@
+{% extends "../../shared/layout.html" %} 
+
+{% block title %}{% endblock %} 
+
+{% block css %} 
+<link rel="stylesheet" href="{{ path.plugins }}datatables/dataTables.bootstrap.css">
+<link rel="stylesheet" href="{{ path.plugins }}datatables/jquery.dataTables_themeroller.css">
+{% endblock %} 
+
+{% block content %}
+				<div class="row">
+	            	<div class="col-xs-12">
+						<table id="example2" class="table table-hover table-bordered" width="100%">
+			                <thead>
+					            <tr>
+					                <th>First Name</th>
+					                <th>Last Name</th>
+					                <th>Position</th>
+					                <th>Office</th>
+					                <th>Start date</th>
+					                <th>Salary</th>
+					                <th>操作</th>
+					            </tr>
+					        </thead>
+			            </table>
+	            	</div>
+				</div>
+<div class="container-fluid">			
+	<i class="fa fa-file-code-o"></i> 
+	<a href="javascript:;" data-xmp = "">展开代码</a>
+<xmp>
+	<div class="row">
+    	<div class="col-xs-12">
+			<table id="example2" class="table table-hover table-bordered" width="100%">
+                <thead>
+		            <tr>
+		                <th>First Name</th>
+		                <th>Last Name</th>
+		                <th>Position</th>
+		                <th>Office</th>
+		                <th>Start date</th>
+		                <th>Salary</th>
+		                <th>操作</th>
+		            </tr>
+		        </thead>
+            </table>
+    	</div>
+	</div>
+	<script type="text/javascript">
+		var myLayer,myTable;
+		var i=0;
+	$(function () {
+		myLayer=$.jkj.layer.loadingZone($('.row'),'数据加载中123...');
+		myTable = $.jkj.dataTable.remote('#example2',
+					{
+						// 支持字符串类型和方法两种方式
+						"formId": null,
+						"ajaxMethod":function(data, callback, settings){
+							setTimeout(function(){
+								myLayer.close();
+								myLayer=$.jkj.layer.loadingZone($('#example2_wrapper'),'数据加载中...');
+								$.get('{{ path.src }}data/tablelist.json',data,function(data){
+									/* 名称				    类型	 				描述
+									 * draw				integer		必要。Datatables发送的draw是多少那么服务器就返回多少。
+									 * 								这里注意，作者出于安全的考虑，强烈要求把这个转换为整形，
+									 * 								即数字后再返回，而不是纯粹的接受然后返回，这是 为了防止
+									 * 								跨站脚本（XSS）攻击。
+									 * recordsTotal		integer		必要。即没有过滤的记录数（数据库里总共记录数）
+									 * recordsFiltered	integer		必要。过滤后的记录数（如果有接收到前台的过滤条件，则返回
+									 *  							的是过滤后的记录数）。
+									 * data				arrayType	必要。表中中需要显示的数据。这是一个对象数组，也可以只是
+									 * 								数组，区别在于 纯数组前台就不需要用 columns绑定数据，会自
+									 * 								动按照顺序去显示 ，而对象数组则需要使用 columns绑定数据才
+									 * 								能正常显示。 
+									 * error			string		可选。你可以定义一个错误来描述服务器出了问题后的友好提示。
+									*/
+									myLayer.setMessage('装配数据...');
+									console.log('callback(data) brefore');
+									callback(data);
+									console.log('callback(data) after');
+									myLayer.setMessage('完成...');
+	                                setTimeout(function(){
+					                	myLayer.close();
+					                },1000);
+								});
+							},1000);
+						},
+						//"stripeClasses": [ 'warning','info'],
+				    	"columns": [
+							{ "data": "first_name", "orderable": true, "className": "text-center"},
+							{ "data": "last_name", "searchable": true, "className": "text-center"  },
+							{ "data": "position", "width": "120px" },
+							{ "data": "office", "render": function ( data, type, row, meta ) {
+								//type数据类型有这些值：filter、display、type、sort，根据不同的数据类型，该方法会被多次调用。
+									//if(type==="display" || type==="type" ){
+							    		return '<a href="http://www.baidu.com">'+data+'</a>';
+									//}
+						    	}, "className": "text-center" 
+							},
+							{ "data": "start_date" , "className": "text-center"},
+							{ "data": "salary", "className": "text-right" },
+							{ "data": null, "defaultContent": "<button type='button'>取消</button>"}
+			        	]
+				});
+		//刷新数据
+		//myTable.ajax.reload()
+		$('#example2').on('draw.dt', function(){
+			console.log('draw.dt');
+		});
+		
+	});
+	  
+	</script>
+</xmp>
+<h5></h5>
+</div>	
+
+{% endblock %} 
+
+{% block js %} 
+			<script src="{{ path.plugins }}datatables/jquery.dataTables.js"></script>
+			<script src="{{ path.plugins }}datatables/dataTables.bootstrap.js"></script>
+
+			<script type="text/javascript">
+				var myLayer,myTable;
+				var i=0;
+			$(function () {
+				myLayer=$.jkj.layer.loadingZone($('.row'),'数据加载中123...');
+				myTable = $.jkj.dataTable.remote('#example2',
+							{
+								// 支持字符串类型和方法两种方式
+								"formId": null,
+								"ajaxMethod":function(data, callback, settings){
+									setTimeout(function(){
+										myLayer.close();
+										myLayer=$.jkj.layer.loadingZone($('#example2_wrapper'),'数据加载中...');
+										$.get('{{ path.src }}data/tablelist.json',data,function(data){
+											/* 名称				    类型	 				描述
+											 * draw				integer		必要。Datatables发送的draw是多少那么服务器就返回多少。
+											 * 								这里注意，作者出于安全的考虑，强烈要求把这个转换为整形，
+											 * 								即数字后再返回，而不是纯粹的接受然后返回，这是 为了防止
+											 * 								跨站脚本（XSS）攻击。
+											 * recordsTotal		integer		必要。即没有过滤的记录数（数据库里总共记录数）
+											 * recordsFiltered	integer		必要。过滤后的记录数（如果有接收到前台的过滤条件，则返回
+											 *  							的是过滤后的记录数）。
+											 * data				arrayType	必要。表中中需要显示的数据。这是一个对象数组，也可以只是
+											 * 								数组，区别在于 纯数组前台就不需要用 columns绑定数据，会自
+											 * 								动按照顺序去显示 ，而对象数组则需要使用 columns绑定数据才
+											 * 								能正常显示。 
+											 * error			string		可选。你可以定义一个错误来描述服务器出了问题后的友好提示。
+											*/
+											myLayer.setMessage('装配数据...');
+											console.log('callback(data) brefore');
+											callback(data);
+											console.log('callback(data) after');
+											myLayer.setMessage('完成...');
+			                                setTimeout(function(){
+							                	myLayer.close();
+							                },1000);
+										});
+									},1000);
+								},
+								//"stripeClasses": [ 'warning','info'],
+						    	"columns": [
+									{ "data": "first_name", "orderable": true, "className": "text-center"},
+									{ "data": "last_name", "searchable": true, "className": "text-center"  },
+									{ "data": "position", "width": "120px" },
+									{ "data": "office", "render": function ( data, type, row, meta ) {
+										//type数据类型有这些值：filter、display、type、sort，根据不同的数据类型，该方法会被多次调用。
+											//if(type==="display" || type==="type" ){
+									    		return '<a href="http://www.baidu.com">'+data+'</a>';
+											//}
+								    	}, "className": "text-center" 
+									},
+									{ "data": "start_date" , "className": "text-center"},
+									{ "data": "salary", "className": "text-right" },
+									{ "data": null, "defaultContent": "<button type='button'>取消</button>"}
+					        	]
+						});
+				//刷新数据
+				//myTable.ajax.reload()
+				$('#example2').on('draw.dt', function(){
+					console.log('draw.dt');
+				});
+				
+			});
+			  
+			</script>
+ {% endblock %}

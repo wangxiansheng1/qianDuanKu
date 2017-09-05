@@ -1,0 +1,39 @@
+{
+  "name": "adminjkj",
+  "version": "1.0.0",
+  "description": "AdminJKJ is one kind of admin template base on bootstrap.",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "keywords": [
+    "css",
+    "js",
+    "html",
+    "admin",
+    "template",
+    "jkj",
+    "bootstrap"
+  ],
+  "author": "AdminJKJ",
+  "license": "MIT",
+  "dependencies": {
+    "R2": "^1.4.3",
+    "grunt": "^1.0.1",
+    "grunt-bootlint": "^0.10.1",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-csslint": "^2.0.0",
+    "grunt-contrib-cssmin": "^1.0.2",
+    "grunt-contrib-imagemin": "^1.0.1",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-less": "^1.4.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-cssjanus": "^0.3.2",
+    "grunt-nunjucks-2-html": "^3.0.0",
+    "grunt-replace": "^1.0.1",
+    "grunt-zip": "^0.17.1"
+  }
+}

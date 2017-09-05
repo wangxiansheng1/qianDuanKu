@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Meta, title, CSS, favicons, etc. -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="keywords" content="{{ html.page.keywords }}">
+		<meta name="description" content="{{ html.page.description }}">
+		<meta name="author" content="{{ html.page.author }}">
+		<title>{% block title %}{% endblock %}</title>
+		<!--子页面样式-->
+		{% block css %}{% endblock %}
+	</head>
+	<body class="{% block bodyClass %}{% endblock %}">
+		<!--子页面内容-->
+		{% block content %}{% endblock %}
+		<!--子页面脚本-->
+		{% block js %}{% endblock %}
+	</body>
+</html>

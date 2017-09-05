@@ -1,0 +1,225 @@
+/*
+ * Component: Sidebar
+ * ------------------
+ */
+//Main Sidebar
+// ``` .left-side has been deprecated as of 2.0.0 in favor of .main-sidebar ```
+
+.main-sidebar,
+.left-side {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  padding-top: 0px;
+  min-height: 100%;
+  width: @sidebar-width;
+  z-index: 810;
+  //Using disposable variable to join statements with a comma
+  @transition-rule: @transition-speed @transition-fn,
+  width @transition-speed @transition-fn;
+  .transition-transform(@transition-rule);
+  @media (max-width: @screen-header-collapse) {
+    padding-top: 100px;
+  }
+  @media (max-width: @screen-xs-max) {
+    .translate(-@sidebar-width, 0);
+  }
+  .sidebar-collapse & {
+    @media (min-width: @screen-sm) {
+      .translate(-@sidebar-width, 0);
+    }
+  }
+  .sidebar-open & {
+    @media (max-width: @screen-xs-max) {
+      .translate(0, 0);
+    }
+  }
+}
+
+.sidebar {
+  padding-bottom: 10px;
+  font-family: "microsoft yahei",'simsun';
+}
+
+// remove border from form
+.sidebar-form {
+  input:focus {
+    border-color: transparent;
+  }
+}
+
+//Sidebar user panel
+.user-panel {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  padding: 10px;
+  overflow: hidden;
+  .clearfix();
+  > .image > img {
+    width: 100%;
+    max-width: 50px;
+    height: auto;
+  }
+  > .info {
+    margin-left: 10px;
+    padding: 5px 5px 5px 15px;
+    line-height: 1;
+    position: absolute;
+    left: 55px;
+    > p {
+      font-weight: 600;
+      margin-bottom: 9px;
+      font-size: 14px;
+    }
+    > a {
+      text-decoration: none;
+      padding-right: 5px;
+      margin-top: 3px;
+      font-size: 11px;
+      > .fa,
+      > .ion,
+      > .glyphicon {
+        margin-right: 3px;
+      }
+    }
+  }
+}
+
+// Sidebar menu
+.sidebar-menu {
+  font-size: 14px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  //First Level
+  > li {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    > a {
+      padding: 0px 5px 0px 15px;
+      line-height: 36px;
+      display: block;
+      > .fa,
+      > .glyphicon,
+      > .ion {
+        width: 20px;
+      }
+    }
+    .label,
+    .badge {
+      margin-right: 5px;
+    }
+    .badge {
+      margin-top: 3px;
+    }
+  }
+  li.header {
+    padding: 10px 25px 10px 15px;
+    font-size: 12px;
+  }
+  li > a > .fa-angle-left,
+  li > a > .pull-right-container > .fa-angle-left {
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin-right: 10px;
+    .rotate(-180deg);
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+  }
+  li > a > .fa-angle-left {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    margin-top: -8px;
+  }
+  li.active {
+    > a > .fa-angle-left,
+    > a > .pull-right-container > .fa-angle-left {
+      .rotate(-90deg);
+    }
+    > .treeview-menu {
+      display: block;
+    }
+  }
+
+  // Tree view menu
+  .treeview-menu {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    .ico-circle-o{
+        width: 28px;
+        height: 36px;
+        background: url(../images/ico-sidebar.png) 50% no-repeat;
+        display: inline-block;
+        float: left;
+    }
+    .treeview-menu {
+        
+    }
+    > li {
+      margin: 0;
+      line-height: 36px;
+      > a {
+        width: 200px;
+        padding-left: 15px;
+        display: block;
+        font-size: 14px;
+        line-height: 36px;
+        height: 36px;
+        > .fa,
+        > .glyphicon,
+        > .ion {
+          width: 20px;
+        }
+        > .pull-right-container > .fa-angle-left,
+        > .pull-right-container > .fa-angle-down,
+        > .fa-angle-left,
+        > .fa-angle-down {
+          width: auto;
+        }
+      }
+      >ul{
+        a{
+            padding-left: 52px;
+        }
+      }
+    }
+  }
+  .menu-ico1, .menu-ico2, .menu-ico3, .menu-ico4, .menu-ico5, .menu-ico6, .menu-ico7 {
+        margin-right: 6px;
+        width:21px;
+        height:20px;
+        display:inline-block;
+        background:url(../images/ico-images.png) no-repeat;
+        vertical-align:middle;
+    }
+    .menu-ico1 {
+        background-position:-156px 0;
+    } 
+    .menu-ico2 {
+        background-position:-182px 0;
+    }
+    .menu-ico3 {
+        background-position:-208px 0;
+    }
+    .menu-ico4 {
+        background-position:-234px 0;
+    }
+    .menu-ico5 {
+        background-position:-260px 0;
+    }
+    .menu-ico6 {
+        background-position:-286px 0;
+    }
+    .menu-ico7 {
+        background-position:-459px 0;
+    }
+}

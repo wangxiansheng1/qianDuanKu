@@ -1,0 +1,60 @@
+{% extends "../../shared/layout.html" %}
+{% block title %}
+{% endblock %}
+
+{% block css %}
+			<style>
+				#divDatas {
+					min-height: 200px;
+				}
+			</style>
+{% endblock %}
+
+{% block content %}
+				<div id="divDatas-div">
+					<div id="divDatas">
+
+					</div>
+				</div>
+				<button id="div-btn" class="btn btn-confirm">模块加载</button>
+				<button id="full-screen-btn" class="btn btn-primary">全屏加载</button>
+{% endblock %}
+
+{% block js %}
+			<script src="{{ path.plugins }}jquery-blockui/jquery.blockui.js"></script>
+			<script type="text/javascript">
+				$(function() {
+					var url = '{{ path.src }}pages/components/loading-layer/loadTable.html';
+
+					//模块加载
+                    $("#div-btn").click(function () {
+
+                        $('#divDatas').html('');
+                        $.jkj.blockui.show({
+                            target: "#divDatas-div"
+                        });
+
+                        $.get(url, function (data) {
+                            window.setTimeout(function () {
+                                $('#divDatas').html(data);
+                                $.jkj.blockui.hide("#divDatas-div");
+                            }, 1000);
+                        });
+
+                    });
+
+                    //全屏加载
+                    $('#full-screen-btn').click(function () {
+                        $('#divDatas').html('');
+                        $.jkj.blockui.show();
+
+                        $.get(url, function (data) {
+                            window.setTimeout(function () {
+                                $('#divDatas').html(data);
+                                $.jkj.blockui.hide();
+                            }, 1000);
+                        });
+                    });
+				});
+			</script>
+{% endblock %}

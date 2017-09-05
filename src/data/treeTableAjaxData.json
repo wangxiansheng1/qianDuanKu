@@ -1,0 +1,28 @@
+{
+  "list": [
+    {
+      "id": "1",
+      "parentId": "0",
+      "name": "组件",
+      "href": "pages/components/tablelist/list1.html",
+      "sort": "10",
+      "hasChilds":"1"
+    },
+    {
+      "id": "2",
+      "parentId": "1",
+      "name": "表格",
+      "href": "pages/components/tablelist/list1.html",
+      "sort": "1",
+      "hasChilds":"0"
+    },
+    {
+      "id": "3",
+      "parentId": "1",
+      "name": "日期控件",
+      "href": "pages/components/datepicker/datepicker.html",
+      "sort": "2",
+      "hasChilds":"0"
+    }
+  ]
+}

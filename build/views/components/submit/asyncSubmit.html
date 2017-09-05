@@ -1,0 +1,83 @@
+{% extends "../../shared/layout.html" %} {% block title %} {% endblock %} {% block css %} {% endblock %} {% block content %}
+	<form id="myform" class="tooltip-validate" action="/AdminJKJ/src/data/upload.json">
+		<div class="row margin-top-30">
+			<div class="col-xs-6">
+				<div class="row-void row-form">
+					<div class="col-xs-4 text-right">名称：</div>
+					<div class="col-xs-8"><input type="text" name="name" class="form-control required" /></div>
+				</div>
+			</div>
+			<div class="col-xs-6">
+				<div class="row-void row-form">
+					<div class="col-xs-4 text-right">性别：</div>
+					<div class="col-xs-8"><input type="text" name="sex" class="form-control required" /></div>
+				</div>
+			</div>
+		</div>
+	</form>
+	<button id="submit" type="button" class="btn btn-primary" onclick="save(this, true)">提交</button>
+	<button id="save" type="button" class="btn btn-primary" onclick="save(this, false)">保存草稿</button>
+
+<div class="container-fluid">			
+	<i class="fa fa-file-code-o"></i> 
+	<a href="javascript:;" data-xmp = "">展开代码</a>
+<xmp>
+	<form id="myform" class="tooltip-validate" action="/AdminJKJ/src/data/upload.json">
+		<div class="row margin-top-30">
+			<div class="col-xs-6">
+				<div class="row-void row-form">
+					<div class="col-xs-4 text-right">名称：</div>
+					<div class="col-xs-8"><input type="text" name="name" class="form-control required" /></div>
+				</div>
+			</div>
+			<div class="col-xs-6">
+				<div class="row-void row-form">
+					<div class="col-xs-4 text-right">性别：</div>
+					<div class="col-xs-8"><input type="text" name="sex" class="form-control required" /></div>
+				</div>
+			</div>
+		</div>
+	</form>
+	<button id="submit" type="button" class="btn btn-primary" onclick="save(this, true)">提交</button>
+	<button id="save" type="button" class="btn btn-primary" onclick="save(this, false)">保存草稿</button>
+	
+	<script src="{{ path.plugins }}jquery-validation/jquery.validate.js"></script>
+	<script src="{{ path.plugins }}jquery-validation/additional-methods.js"></script>
+	<script src="{{ path.plugins }}jquery-validation/messages_zh.js"></script>
+	<!-- page script -->
+	<script>
+		$(function() {
+			$.jkj.initForm("#myform");
+		});
+	
+		function save(obj, validate) {
+			$("#myform").jkjSubmit({
+				btn: obj,
+				validate: validate,
+				callback: null,
+				beforeSend: null
+			});
+		}
+	</script>
+</xmp>
+</div>
+{% endblock %} {% block js %}
+<script src="{{ path.plugins }}jquery-validation/jquery.validate.js"></script>
+<script src="{{ path.plugins }}jquery-validation/additional-methods.js"></script>
+<script src="{{ path.plugins }}jquery-validation/messages_zh.js"></script>
+<!-- page script -->
+<script>
+	$(function() {
+		$.jkj.initForm("#myform");
+	});
+
+	function save(obj, validate) {
+		$("#myform").jkjSubmit({
+			btn: obj,
+			validate: validate,
+			callback: null,
+			beforeSend: null
+		});
+	}
+</script>
+{% endblock %}

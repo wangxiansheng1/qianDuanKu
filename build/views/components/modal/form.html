@@ -1,0 +1,88 @@
+<form id="form" class="form-horizontal tooltip-validate" style="height: 1300px;">
+	<div class="row">
+		<div class="col-xs-6">
+			<div class="row-void row-form">
+				<div class="col-xs-4 text-right">
+					用户名：
+				</div>
+				<div class="col-xs-8">
+					<input type="text" class="form-control required abc" name="username"/>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-6">
+			<div class="row-void row-form">
+				<div class="col-xs-4 text-right">
+					邮箱：
+				</div>
+				<div class="col-xs-8">
+					<input type="text" class="form-control required email" minlength="10" maxlength="20" name="email"/>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-6">
+			<div class="row-void row-form">
+				<div class="col-xs-4 text-right">
+					密码：
+				</div>
+				<div class="col-xs-8">
+					<input type="password" class="form-control required" id="modalPassword" name="password"/>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-6">
+			<div class="row-void row-form">
+				<div class="col-xs-4 text-right">
+					确认密码：
+				</div>
+				<div class="col-xs-8">
+					<input type="password" class="form-control required" equalTo="#modalPassword" name="confirmPassword"/>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-6">
+			<div class="row-void row-form">
+				<div class="col-xs-4 text-right">
+					select2：
+				</div>
+				<div class="col-xs-8">
+					<select id="select" class="form-control required">
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+					</select>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+<!-- 弹出确认框 -->
+    <button type="button" id="button5" class="btn btn-primary btn-lg"> 弹出确认框 </button>
+    
+    <!-- jquery 2.2.3 -->
+	<script src="{{ path.plugins }}jquery/jquery-2.2.3.min.js"></script>
+	<!-- Bootstrap 3.3.6 -->
+	<script src="{{ path.src }}js/bootstrap.js"></script>
+	<!-- SlimScroll -->
+	<script src="{{ path.plugins }}slimScroll/jquery.slimscroll.min.js"></script>
+	<!-- FastClick -->
+	<script src="{{ path.plugins }}fastclick/fastclick.js"></script>
+	<!-- Notify -->
+	<script src="{{ path.plugins }}bootstrap-notify/bootstrap-notify.js"></script>
+
+	<script src="{{ path.src }}js/adminjkj-1.0.281.js" type="text/javascript"></script>  
+    <script type="text/javascript">
+	$(function(){
+		//弹出确认框
+        $('#button5').click(function () {
+            $.jkj.modal.confirm("确定删除该对象吗?",
+                function () {
+                    $.jkj.notify.showSuccess('确定');
+                }, function () {
+                    $.jkj.notify.showError('取消');
+               }
+            );
+        });
+	});
+</script>
+

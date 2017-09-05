@@ -1,0 +1,215 @@
+{% extends "../../shared/layout.html" %}
+
+{% block title %}{% endblock %}
+
+{% block css %}
+                <!-- Select2 -->
+                <link rel="stylesheet" href="{{ path.plugins }}select2/select2.css">
+{% endblock %}
+
+{% block content %}
+
+                <!-- 弹出基本消息 -->
+                <button type="button" id="button1" class="btn btn-primary btn-lg"> 弹出基本消息 </button>
+
+                <!-- 弹出自定义内容 -->
+                <button type="button" id="button2" class="btn btn-primary btn-lg"> 弹出自定义内容 </button>
+
+                <!-- 弹出远程页面 -->
+                <button type="button" id="button3" class="btn btn-primary btn-lg"> 弹出远程页面 </button>
+
+                <!-- 弹出确认框 -->
+                <button type="button" id="button4" class="btn btn-primary btn-lg"> 弹出确认框 </button>
+
+ <div class="container-fluid">
+	<i class="fa fa-file-code-o"></i>
+	<a href="javascript:;" data-xmp = "">展开代码</a>
+<xmp>
+    <!-- Select2 -->
+    <link rel="stylesheet" href="{{ path.plugins }}select2/select2.css">
+
+
+	<!-- 弹出基本消息 -->
+    <button type="button" id="button1" class="btn btn-primary btn-lg"> 弹出基本消息 </button>
+
+    <!-- 弹出自定义内容 -->
+    <button type="button" id="button2" class="btn btn-primary btn-lg"> 弹出自定义内容 </button>
+
+    <!-- 弹出远程页面 -->
+    <button type="button" id="button3" class="btn btn-primary btn-lg"> 弹出远程页面 </button>
+
+    <!-- 弹出确认框 -->
+    <button type="button" id="button4" class="btn btn-primary btn-lg"> 弹出确认框 </button>
+
+
+    <!-- jquery validation -->
+    <script src="{{ path.plugins }}jquery-validation/jquery.validate.js"></script>
+    <script src="{{ path.plugins }}jquery-validation/additional-methods.js"></script>
+    <script src="{{ path.plugins }}jquery-validation/messages_zh.js"></script>
+
+    <!-- Select2 -->
+    <script src="{{ path.plugins }}select2/select2.full.js"></script>
+    <script src="{{ path.plugins }}select2/i18n/zh-CN.js"></script>
+
+    <!-- modal -->
+    <script>
+        $(function () {
+
+            //弹出基本消息
+            $('#button1').click(function () {
+                $.jkj.modal.show({
+                    title: '操作提示',
+                    content: '这是一条消息',
+                    footer:false
+                });
+            });
+
+            //弹出自定义内容
+            $('#button2').click(function () {
+                $.jkj.modal.show({
+                    header: false,
+                    content: function () {
+                        var $btn = $('<button class="btn btn-danger">测试按钮</button>');
+                        $btn.click(function () {
+                            $.jkj.notify.showError('测试按钮');
+                        });
+                        return $btn;
+                    }
+                });
+            });
+
+            //弹出远程页面
+            $('#button3').click(function () {
+                $.jkj.modal.show({
+                    title: '新增账户',
+                    beforeSend: function(){
+
+                    },
+                    content: {
+                        type: 'GET',
+                        url: '{{ path.src }}pages/components/modal/form.html',
+                        success: function (modal) {
+                            $.jkj.select2.local('#select');
+                            $.jkj.validate('#form', {
+                                submitHandler: function () {
+                                    $.jkj.modal.hide(modal);
+                                    $.jkj.notify.showSuccess('提交表单');
+                                }
+                            });
+                        }
+                    },
+                    buttons:[
+                        {
+                            label: '自定义按钮1', //按钮文本
+                            cssClass: 'btn-info', //按钮额外class
+                            action: function (modal) { //按钮点击回调
+                                $('#form').submit();
+                            }
+                        }
+                    ]
+                });
+            });
+
+            //弹出确认框
+            $('#button4').click(function () {
+                $.jkj.modal.confirm("确定删除该对象吗?",
+                    function () {
+                        $.jkj.notify.showSuccess('确定');
+                    }, function () {
+                        $.jkj.notify.showError('取消');
+                    }
+                );
+            });
+
+        });
+    </script>
+</xmp>
+</div>
+
+{% endblock %}
+
+{% block js %}
+
+            <!-- jquery validation -->
+            <script src="{{ path.plugins }}jquery-validation/jquery.validate.js"></script>
+            <script src="{{ path.plugins }}jquery-validation/additional-methods.js"></script>
+            <script src="{{ path.plugins }}jquery-validation/messages_zh.js"></script>
+
+            <!-- Select2 -->
+            <script src="{{ path.plugins }}select2/select2.full.js"></script>
+            <script src="{{ path.plugins }}select2/i18n/zh-CN.js"></script>
+
+			<!-- modal -->
+            <script>
+                $(function () {
+
+                    //弹出基本消息
+                    $('#button1').click(function () {
+                        $.jkj.modal.show({
+                            title: '操作提示',
+                            content: '这是一条消息',
+                            footer:false
+                        });
+                    });
+
+                    //弹出自定义内容
+                    $('#button2').click(function () {
+                        $.jkj.modal.show({
+                            header: false,
+                            content: function () {
+                                var $btn = $('<button class="btn btn-danger">测试按钮</button>');
+                                $btn.click(function () {
+                                    $.jkj.notify.showError('测试按钮');
+                                });
+                                return $btn;
+                            }
+                        });
+                    });
+
+                    //弹出远程页面
+                    $('#button3').click(function () {
+                        $.jkj.modal.show({
+                            title: '新增账户',
+                            beforeSend: function(){
+
+                            },
+                            content: {
+                                type: 'GET',
+                                url: '{{ path.src }}pages/components/modal/form.html',
+                                success: function (modal) {
+                                    $.jkj.select2.local('#select');
+                                    $.jkj.validate('#form', {
+                                        submitHandler: function () {
+                                            $.jkj.modal.hide(modal);
+                                            $.jkj.notify.showSuccess('提交表单');
+                                        }
+                                    });
+                                }
+                            },
+                            buttons:[
+                                {
+                                    label: '自定义按钮1', //按钮文本
+                                    cssClass: 'btn-info', //按钮额外class
+                                    action: function (modal) { //按钮点击回调
+                                        $('#form').submit();
+                                    }
+                                }
+                            ]
+                        });
+                    });
+
+                    //弹出确认框
+                    $('#button4').click(function () {
+                        $.jkj.modal.confirm("确定删除该对象吗?",
+                            function () {
+                                $.jkj.notify.showSuccess('确定');
+                            }, function () {
+                                $.jkj.notify.showError('取消');
+                            }
+                        );
+                    });
+
+                });
+            </script>
+
+{% endblock %}

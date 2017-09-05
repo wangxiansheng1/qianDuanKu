@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<!-- Meta, title, CSS, favicons, etc. -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=9">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="keywords" content="HTML，CSS，JS，JavaScript，framework，bootstrap，front-end，web development，江苏跨境">
+		<meta name="description" content="江苏跨境电子商务服务有限公司">
+		<meta name="author" content="潘明星，尹喜晨">
+		<title>江苏跨境--前端框架DEMO</title>
+		<!-- Bootstrap 3.3.6 -->
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="/css/font-awesome.min.css">
+		<!-- Ionicons -->
+		<link rel="stylesheet" href="/css/ionicons.min.css">
+		<!-- AdminJKJ style -->
+		<link rel="stylesheet" href="/css/adminjkj-1.0.281.min.css">
+		<link rel="stylesheet" href="/css/adminjkj-themes-1.0.0.min.css">
+		<!--子页面样式-->
+		
+		
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="/js/html5shiv.min.js"></script>
+		<script src="/js/respond.min.js"></script>
+		<![endif]-->   
+	</head>
+	<body class="skin-blue fixed sidebar-mini" style=" overflow-x: auto;">
+  		<!-- Site wrapper -->
+		<div class=" container-fluid ">
+			<!--子页面内容-->
+			
+			<!--header-->
+			<header class="main-header" id="header">
+				<a class="logo">
+			      <!-- mini logo for sidebar mini 50x50 pixels -->
+			      <span class="logo-mini"><b></b>MHD</span>
+			      <!-- logo for regular state and mobile devices -->
+			      <span class="logo-lg"><img src="/images/ico-logo.png" alt="贸互达管理系统"></span>
+			    </a>
+				<!-- Header Navbar: style can be found in header.less -->
+				<nav class="navbar navbar-static-top">
+					<!-- Sidebar toggle button-->
+					<a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="fa fa-fw fa-caret-left" ></span>
+						<span class="fa fa-fw fa-caret-right" style="display: none;margin-left: -7px;"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</a>
+					<div class="navbar-custom-menu">
+						<ul class="nav navbar-nav">
+							<!-- Messages: style can be found in dropdown.less-->
+							<li class="dropdown messages-menu">
+								<a href="#" class="dropdown-toggle wave">
+									<i class="fa fa-envelope-o"></i>
+									<span class="label label-success">4</span>
+								</a>
+							</li>
+							<!-- Notifications: style can be found in dropdown.less -->
+							<li class="dropdown notifications-menu">
+								<a href="#" class="dropdown-toggle wave">
+									<i class="fa fa-bell-o"></i>
+									<span class="label label-warning">10</span>
+								</a>
+							</li>
+							<!-- Tasks: style can be found in dropdown.less -->
+							<li class="dropdown tasks-menu">
+								<a href="#" class="dropdown-toggle">
+									<i class="fa fa-flag-o"></i>
+									<span class="label label-danger">0</span>
+								</a>
+							</li>
+							<!-- User Account: style can be found in dropdown.less -->
+							<li class="dropdown user user-menu">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+									<img src="/images/ico-photo.png" class="user-image" alt="User Image">
+									<span class="hidden-xs">帐号管理</span>
+								</a>
+								<ul class="dropdown-menu">
+									<!-- User image -->
+									<li class="user-header">
+										<img src="/images/ico-photo.png" class="img-circle" alt="User Image">
+										<p>
+											Admin
+											<small>系统管理员</small>
+										</p>
+									</li>
+									<!-- Menu Footer-->
+									<li class="user-footer">
+										<div class="pull-left">
+											<a href="#" class="btn btn-default btn-flat" data-toggle="modal" data-target="#setSystem">设&nbsp;置</a>
+										</div>
+										<div class="pull-right">
+											<a href="#" class="btn btn-default btn-flat">登&nbsp;出</a>
+										</div>
+									</li>
+								</ul>
+							</li>
+							<!-- Control Sidebar Toggle Button -->
+							<!--<li>
+								<a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+							</li>-->
+						</ul>
+					</div>
+				</nav>
+			</header>
+			<!-- Modal -->
+			<div class="modal fade set-system" id="setSystem" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			  <div class="modal-dialog" role="document" style="">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title" id="myModalLabel">系统设置</h4>
+			      </div>
+			      <div class="modal-body">
+			      	<ul id="myTab" class="nav nav-tabs nav-tabs-first">
+						<li class="active">
+							<a href="#home" data-toggle="tab">
+								<i class="fa fa-cog"></i> 基本设置
+							</a>
+						</li>
+						<li>
+							<a href="#ios" data-toggle="tab">
+								<i class="fa fa-shield"></i> 安全设置
+							</a>
+						</li>
+					</ul>
+					<div id="myTabContent" class="tab-content">
+						<div class="tab-pane fade in active" id="home" style="background: #f0f0f1;">
+							<ul class="nav nav-tabs nav-tabs-second">
+								<li class="active"><a href="#ios1" data-toggle="tab">个人信息</a></li>
+								<li><a href="#home1" data-toggle="tab">头像设置</a></li>	
+							</ul>
+							<div class="tab-content">
+								<div class="tab-pane fade" id="home1">
+									<form>
+										<div class="row">
+											<div class="col-xs-12">
+												<div class="row-void row-form form-group">
+													<div class="col-xs-2 text-right">
+														设置头像：
+													</div>
+													<div class="col-xs-8">
+														<input type="file" class="form-control required" name="username" id="" value="" />
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="btn-submit">
+											<button type="submit" class="btn btn-confirm">头像设置</button>
+										</div>
+									</form>
+								</div>
+								<div class="tab-pane fade in active" id="ios1">
+									<form>
+										<div class="row">
+											<div class="col-xs-12">
+												<div class="row-void row-form form-group">
+													<div class="col-xs-2 text-right">
+														帐号名：
+													</div>
+													<div class="col-xs-8">
+														<input type="text" class="form-control required" name="username" id="" value="" />
+													</div>
+												</div>
+											</div>
+											<div class="col-xs-12">
+												<div class="row-void row-form form-group">
+													<div class="col-xs-2 text-right">
+														年龄：
+													</div>
+													<div class="col-xs-8">
+														<input type="text" class="form-control required" name="age" id="" value="" />
+													</div>
+												</div>
+											</div>
+											<div class="col-xs-12">
+												<div class="row-void row-form form-group">
+													<div class="col-xs-2 text-right">
+														性别：
+													</div>
+													<div class="col-xs-8">
+														<label><input class="minimal" type="radio" name="sex" id="" value=""/> 男</label>
+														<label><input class="minimal" type="radio" name="sex" id="" value="" /> 女</label>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="btn-submit">
+											<button type="submit" class="btn btn-confirm">修改信息</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="ios" style="background: #f0f0f1;">
+							<ul class="nav nav-tabs nav-tabs-second">
+								<li class="active"><a href="#home2" data-toggle="tab"> 修改密码</a></li>
+							</ul>
+							<div class="tab-content">
+								<div class="tab-pane fade in active" id="home2">
+									<form>
+										<div class="row">
+											<div class="col-xs-12">
+												<div class="row-void row-form form-group">
+													<div class="col-xs-3 text-right">
+														原密码：
+													</div>
+													<div class="col-xs-7">
+														<input type="text" class="form-control required" name="password" id="" value="" />
+													</div>
+												</div>
+											</div>
+											<div class="col-xs-12">
+												<div class="row-void row-form form-group">
+													<div class="col-xs-3 text-right">
+														新密码：
+													</div>
+													<div class="col-xs-7">
+														<input type="text" class="form-control required" name="newpassword" id="" value="" />
+													</div>
+												</div>
+											</div>
+											<div class="col-xs-12">
+												<div class="row-void row-form form-group">
+													<div class="col-xs-3 text-right">
+														确认新密码：
+													</div>
+													<div class="col-xs-7">
+														<input type="text" class="form-control required" name="confirmpassword" id="" value="" />
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="btn-submit">
+											<button type="submit" class="btn btn-confirm">修改密码</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+			     </div>
+			    </div>
+			  </div>
+			</div>
+			<!--sidebar-->
+			<aside class="main-sidebar" id="sidebar">
+				<!-- sidebar: style can be found in sidebar.less -->
+				<section class="sidebar">
+					<!-- Sidebar user panel -->
+					<div class="user-panel">
+				        <div class="pull-left image img-normal">
+				            <img src="/images/ico-photo.png" class="img-circle" alt="User Image">
+				        </div>
+				        <div class="pull-left info">
+				            <p>Admin</p>
+				            <span>系统管理员</span>
+				        </div>
+				    </div>
+					<!-- search form -->
+					<!--<form action="#" method="get" class="sidebar-form">
+							        <div class="input-group">
+							          <input type="text" name="q" class="form-control" placeholder="Search...">
+							              <span class="input-group-btn">
+							                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+							                </button>
+							              </span>
+							        </div>
+						      	</form>-->
+					<!-- /.search form -->
+					<!-- sidebar menu: : style can be found in sidebar.less -->
+					<ul class="sidebar-menu">
+						<li class="treeview">
+							<a href="#">
+								<i class="fa fa-share"></i> <span>组件</span>
+								<span class="pull-right-container">
+						             			<i class="fa fa-angle-left pull-right"></i>
+						            		</span>
+							</a>
+							<ul class="treeview-menu">
+								<li>
+									<a href="#"><i class="ico-circle-o"></i> 表格
+										<span class="pull-right-container">
+						                  				<i class="fa fa-angle-left pull-right"></i>
+						                			</span>
+									</a>
+									<ul class="treeview-menu">
+										<li>
+											<a href="#" data-id="dataTable1" data-src="/html/components/tablelist/list1.html" data-title="表格(静态dom)" data-type="menu">表格(静态dom)</a>
+										</li>
+										<li>
+											<a href="#" data-id="dataTable2" data-src="/html/components/tablelist/list2.html" data-title="表格(服务端json)" data-type="menu">表格(服务端json)</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="#"><i class="ico-circle-o"></i> 日期控件
+										<span class="pull-right-container">
+						                  				<i class="fa fa-angle-left pull-right"></i>
+						                			</span>
+									</a>
+									<ul class="treeview-menu">
+										<li>
+											<a href="#" data-id="datepicker" data-src="/html/components/datepicker/datepicker.html" data-title="单日期控件" data-type="menu">单日期控件</a>
+										</li>
+										<li>
+											<a href="#" data-id="daterangepicker" data-src="/html/components/datepicker/daterangepicker.html" data-title="区间日期控件" data-type="menu">区间日期控件</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="#" data-id="notifications" data-src="/html/components/notifications/notifications.html" data-title="信息提示" data-type="menu"><i class="ico-circle-o"></i> 信息提示</a>
+								</li>
+								<li>
+									<a href="#"><i class="ico-circle-o"></i> 树
+										<span class="pull-right-container">
+						                  				<i class="fa fa-angle-left pull-right"></i>
+						                			</span>
+									</a>
+									<ul class="treeview-menu">
+										<li>
+											<a href="#" data-id="tree" data-src="/html/components/tree/tree.html" data-title="树视图" data-type="menu">树视图</a>
+										</li>
+										<li>
+											<a href="#" data-id="treeTable" data-src="/html/components/tree/treeTable.html" data-title="树表格" data-type="menu">树表格</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="#" data-id="cxSelect" data-src="/html/components/selectLinkage/cxSelect.html" data-title="级联选择" data-type="menu"><i class="ico-circle-o"></i> 级联选择</a>
+								</li>
+								<li>
+									<a href="#" data-id="forms" data-src="/html/components/forms/forms.html" data-title="表单" data-type="menu"><i class="ico-circle-o"></i> 表单</a>
+								</li>
+								<li>
+									<a href="#" data-id="model" data-src="/html/components/modal/modal.html" data-title="模态框" data-type="menu"><i class="ico-circle-o"></i> 模态框</a>
+								</li>
+								<li>
+									<a href="#"><i class="ico-circle-o"></i> 数据验证
+										<span class="pull-right-container">
+						                  				<i class="fa fa-angle-left pull-right"></i>
+						                			</span>
+									</a>
+									<ul class="treeview-menu">
+										<li>
+											<a href="#" data-id="validator1" data-src="/html/components/jquery-validation/validate.html" data-title="数据验证(tooltip)" data-type="menu">数据验证(tooltip)</a>
+										</li>
+										<!--<li>
+											<a href="#" data-id="validator2" data-src="/html/components/jquery-validation/validate2.html" data-title="默认数据验证" data-type="menu">默认数据验证</a>
+										</li>-->
+									</ul>
+								</li>
+								<li>
+									<a href="#" data-id="select2" data-src="/html/components/select/select2.html" data-title="自动完成" data-type="menu"><i class="ico-circle-o"></i> 自动完成</a>
+								</li>
+								<li>
+									<a href="#" data-id="fileinput" data-src="/html/components/bootstrap-fileinput/fileinput.html" data-title="文件上传" data-type="menu"><i class="ico-circle-o"></i> 上传</a>
+								</li>
+								<li>
+									<a href="#" data-id="layer" data-src="/html/components/loading-layer/layer.html" data-title="遮罩层" data-type="menu"><i class="ico-circle-o"></i> 遮罩层</a>
+								</li>
+								<li>
+									<a href="#" data-id="loadingLayer" data-src="/html/components/loading-layer/loadingLayer.html" data-title="加载页面" data-type="menu"><i class="ico-circle-o"></i> 加载页面</a>
+								</li>
+								<li>
+									<a href="#" data-id="asyncLoading" data-src="/html/components/loading-layer/asyncLoading.html" data-title="异步加载" data-type="menu"><i class="ico-circle-o"></i> 异步加载</a>
+								</li>
+								<li>
+									<a href="#" data-id="asyncSubmit" data-src="/html/components/submit/asyncSubmit.html" data-title="异步提交" data-type="menu"><i class="ico-circle-o"></i> 异步提交</a>
+								</li>
+							</ul>
+						</li>
+						<li class="treeview">
+							<a href="#">
+								<i class="fa fa-share"></i> <span>示例</span>
+								<span class="pull-right-container">
+						             			<i class="fa fa-angle-left pull-right"></i>
+						            		</span>
+							</a>
+							<ul class="treeview-menu">
+								<li>
+									<a href="#" data-id="accountIndex" data-src="/html/account/index.html" data-title="帐号管理" data-type="menu"><i class="ico-circle-o"></i> 账户管理</a>
+								</li>
+								<!--<li>
+									<a href="#" data-id="orderDefault" data-src="/html/order/index.html" data-title="订单管理" data-type="menu"><i class="ico-circle-o"></i> 订单管理</a>
+								</li>-->
+								<!--<li>
+									<a href="#" data-id="details" data-src="/html/order/detail-new.html" data-title="订单详情" data-type="menu"><i class="ico-circle-o"></i> 订单详情</a>
+								</li>-->
+							</ul>
+						</li>
+						<li class="treeview">
+							<a href="#">
+								<i class="fa fa-share"></i> <span>独立页面</span>
+								<span class="pull-right-container">
+						             			<i class="fa fa-angle-left pull-right"></i>
+						            		</span>
+							</a>
+							<ul class="treeview-menu">
+								<li>
+									<a href="#" data-id="login" data-src="/html/account/login.html" data-title="登录" data-type="menu"><i class="ico-circle-o"></i> 登录</a>
+								</li>
+								<li>
+									<a href="#" data-id="401" data-src="/html/error/401.html" data-title="HTTP 401" data-type="menu"><i class="ico-circle-o"></i> HTTP 401</a>
+								</li>
+								<li>
+									<a href="#" data-id="403" data-src="/html/error/403.html" data-title="HTTP 403" data-type="menu"><i class="ico-circle-o"></i> HTTP 403</a>
+								</li>
+								<li>
+									<a href="#" data-id="404" data-src="/html/error/404.html" data-title="HTTP 404" data-type="menu"><i class="ico-circle-o"></i> HTTP 404</a>
+								</li>
+								<li>
+									<a href="#" data-id="500" data-src="/html/error/500.html" data-title="HTTP 500" data-type="menu"><i class="ico-circle-o"></i> HTTP 500</a>
+								</li>
+								<li>
+									<a href="#" data-id="mintenance" data-src="/html/error/maintenance.html" data-title="系统维护" data-type="menu"><i class="ico-circle-o"></i> 系统维护</a>
+								</li>
+							</ul>
+						</li>
+						<li class="treeview">
+							<a href="#">
+								<i class="fa fa-share"></i> <span>页面规范</span>
+								<span class="pull-right-container">
+						             			<i class="fa fa-angle-left pull-right"></i>
+						            		</span>
+							</a>
+							<ul class="treeview-menu">
+								<li>
+									<a href="#" data-id="standardIndex1" data-src="/html/standard/standard1.html" data-title="布局规范" data-type="menu"><i class="ico-circle-o"></i> 布局规范</a>
+								</li>
+								<li>
+									<a href="#" data-id="standardIndex2" data-src="/html/standard/standard2.html" data-title="颜色规范" data-type="menu"><i class="ico-circle-o"></i> 颜色规范</a>
+								</li>
+								<li>
+									<a href="#" data-id="standardIndex3" data-src="/html/standard/standard3.html" data-title="按钮规范" data-type="menu"><i class="ico-circle-o"></i> 按钮规范</a>
+								</li>
+								<li>
+									<a href="#" data-id="standardIndex4" data-src="/html/standard/standard4.html" data-title="字体规范" data-type="menu"><i class="ico-circle-o"></i> 字体规范</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+			</aside>
+			<!--main-->
+			<div class="content-wrapper" >
+				<div id="pageTabs"></div>
+			</div>
+
+		</div>
+		
+		<!-- jquery 2.2.3 -->
+		<script src="/plugins/jquery/jquery-2.2.3.min.js"></script>
+		<!-- Bootstrap 3.3.6 -->
+		<script src="/js/bootstrap.min.js"></script>
+		<!-- SlimScroll -->
+		<script src="/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+		<!-- FastClick -->
+		<script src="/plugins/fastclick/fastclick.js"></script>
+		<!-- Notify -->
+		<script src="/plugins/bootstrap-notify/bootstrap-notify.js"></script>
+
+		<script src="/js/adminjkj-1.0.281.min.js" type="text/javascript"></script>
+		<!--子页面脚本-->
+		
+		<script src="/plugins/jqueryui/jquery-ui-drag-drop-resize-sortable-1.12.1.js"></script>
+		<script type="text/javascript">
+			var richNavTabs;
+
+			
+			$(function(){
+				richNavTabs = $.jkj.richNavTabs({
+					// 必须引用jQuery UI 的 sortable
+					sortHandle: 'sortable'
+				});
+				
+			    //新开导航标签
+			    $('a[data-type="menu"]').on('click',function(e){
+			    	e.preventDefault();
+			    	var menuId = $(this).attr("data-id"),
+			    		menuUrl = $(this).attr("data-src"),
+			    		menuTitle = $(this).text();
+			    		menuFullTitle = $(this).attr("data-title")||menuTitle;
+			    	richNavTabs.addNavTab(menuId, menuTitle, 'page', menuUrl, true, menuFullTitle);
+			    });
+			    //window.open('/html/order/index.html','订单管理','',true);
+			});
+			
+			$(window).on('load', function () {
+				$('#pageTabs').richNavTabs.addNavTab('workbench','我的工作台','page','/html/home/home.html',false,'我的工作台');
+				//$('#pageTabs').richNavTabs.addNavTab('baidu','百度','page','http://www.baidu.com',true,'我的百度');
+				//richNavTabs.addNavTab('nunjucks','nunjucks','page','http://mozilla.github.io/nunjucks/getting-started.html',true,'前端js模板引擎');
+			});
+			
+			function MyWork(){
+				var date = new Date();
+				return '我的工作台' + date.toLocaleDateString() + date.toLocaleTimeString();
+			}
+			//电视切换展示
+			//var t = 0; 
+			//var menuNum = $('a[data-type="menu"]').length;
+			//setInterval("refer()",5000); //启动1秒定时 
+			//function refer(){ 
+			//	if(t <= menuNum){
+			//		$('#pageTabs').richNavTabs.removeAllNavTab();
+			//		$('a[data-type="menu"]').eq(t).click();
+			//	}else{
+			//		t=-1;
+			//	}
+			//	t++;
+			//} 
+		</script>
+
+	</body>
+</html>

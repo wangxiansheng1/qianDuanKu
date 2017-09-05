@@ -1,0 +1,218 @@
+{% extends "../shared/layout.html" %} 
+
+{% block title %}订单详情{% endblock %} 
+
+{% block css %} 
+	<!-- daterange picker -->
+	<link rel="stylesheet" href="{{ path.plugins }}daterangepicker/daterangepicker-bs3.css">
+	<!-- bootstrap datepicker -->
+	<link rel="stylesheet" href="{{ path.plugins }}datepicker/datepicker3.css">
+	<!-- Select2 -->
+	<link rel="stylesheet" href="{{ path.plugins }}select2/select2.min.css">
+	<!-- iCheck for checkboxes and radio inputs -->
+	<link rel="stylesheet" href="{{ path.plugins }}iCheck/all.css">
+	<!-- dateTables -->
+	<link rel="stylesheet" href="{{ path.plugins }}datatables/dataTables.bootstrap.css">
+{% endblock %} 
+
+{% block content %}
+				<div class="page-container">
+					<div class="page-title">
+						帐号编辑
+					</div>
+					<div class="form-title">基本信息</div>
+					<div class="row">
+						<div class="col-lg-3 col-xs-4 row-void row-form">
+							<div class="col-xs-4 text-right">
+								帐号名：
+							</div>
+							<div class="col-xs-8">
+								<input type="text" class="form-control" name="" id="" value="abc123465@qq.com" />
+							</div>
+						</div>
+						<div class="col-lg-3 col-xs-4 row-void row-form">
+							<div class="col-xs-4 text-right">
+								性别：
+							</div>
+							<div class="col-xs-8">
+								<label><input class="minimal" type="radio" name="sex" id="" value="" checked="checked"/> 男</label>
+								<label><input class="minimal" type="radio" name="sex" id="" value="" /> 女</label>
+							</div>
+						</div>
+						<div class="col-lg-3 col-xs-4 row-void row-form">
+							<div class="col-xs-4 text-right">
+								年龄：
+							</div>
+							<div class="col-xs-8">
+								<input type="text" class="form-control" name="" id="" value="23" />
+							</div>
+						</div>
+						<div class="col-lg-3 col-xs-4 row-void row-form">
+							<div class="col-xs-4 text-right">
+								岗位：
+							</div>
+							<div class="col-xs-8">
+								<select class="form-control select2">
+									<option selected="selected">销售总监</option>
+									<option>客户经理</option>
+									<option>渠道经理</option>
+									<option>人事主管</option>
+									<option>产品经理</option>
+									<option>java开发工程师</option>
+									<option>财务人员</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-lg-3 col-xs-4 row-void row-form">
+							<div class="col-xs-4 text-right">
+								入职时间：
+							</div>
+							<div class="col-xs-8">
+								<input type="text" class="form-control" id="datepicker">
+							</div>
+						</div>
+						<div class="col-lg-3 col-xs-4 row-void row-form">
+							<div class="col-xs-4 text-right">
+								个性签名：
+							</div>
+							<div class="col-xs-8">
+								<input class="form-control"  type="text" name="" id="" value="技术只有起点，创新没有终点" />
+							</div>
+						</div>
+					</div>
+					<div class="btn-submit">
+				        <button type="button" class="btn btn-cancel">取消</button>
+				        <button type="button" class="btn btn-primary">保存</button>
+				    </div>
+				</div>		
+				
+<div class="container-fluid">			
+	<i class="fa fa-file-code-o"></i> 
+	<a href="javascript:;" data-xmp = "">展开代码</a>
+<xmp>
+	<div class="page-container">
+		<div class="page-title">
+			帐号编辑
+		</div>
+		<div class="form-title">基本信息</div>
+		<div class="row">
+			<div class="col-lg-3 col-xs-4 row-void row-form">
+				<div class="col-xs-4 text-right">
+					帐号名：
+				</div>
+				<div class="col-xs-8">
+					<input type="text" class="form-control" name="" id="" value="abc123465@qq.com" />
+				</div>
+			</div>
+			<div class="col-lg-3 col-xs-4 row-void row-form">
+				<div class="col-xs-4 text-right">
+					性别：
+				</div>
+				<div class="col-xs-8">
+					<label><input class="minimal" type="radio" name="sex" id="" value="" checked="checked"/> 男</label>
+					<label><input class="minimal" type="radio" name="sex" id="" value="" /> 女</label>
+				</div>
+			</div>
+			<div class="col-lg-3 col-xs-4 row-void row-form">
+				<div class="col-xs-4 text-right">
+					年龄：
+				</div>
+				<div class="col-xs-8">
+					<input type="text" class="form-control" name="" id="" value="23" />
+				</div>
+			</div>
+			<div class="col-lg-3 col-xs-4 row-void row-form">
+				<div class="col-xs-4 text-right">
+					岗位：
+				</div>
+				<div class="col-xs-8">
+					<select class="form-control select2">
+						<option selected="selected">销售总监</option>
+						<option>客户经理</option>
+						<option>渠道经理</option>
+						<option>人事主管</option>
+						<option>产品经理</option>
+						<option>java开发工程师</option>
+						<option>财务人员</option>
+					</select>
+				</div>
+			</div>
+			<div class="col-lg-3 col-xs-4 row-void row-form">
+				<div class="col-xs-4 text-right">
+					入职时间：
+				</div>
+				<div class="col-xs-8">
+					<input type="text" class="form-control" id="datepicker">
+				</div>
+			</div>
+			<div class="col-lg-3 col-xs-4 row-void row-form">
+				<div class="col-xs-4 text-right">
+					个性签名：
+				</div>
+				<div class="col-xs-8">
+					<input class="form-control"  type="text" name="" id="" value="技术只有起点，创新没有终点" />
+				</div>
+			</div>
+		</div>
+		<div class="btn-submit">
+	        <button type="button" class="btn btn-cancel">取消</button>
+	        <button type="button" class="btn btn-primary">保存</button>
+	    </div>
+	</div>	
+	
+	<!-- Select2 -->
+	<script src="{{ path.plugins }}select2/select2.full.min.js"></script>
+	<!-- bootstrap datepicker -->
+	<script src="{{ path.plugins }}datepicker/bootstrap-datepicker.js"></script>
+	<script src="{{ path.plugins }}datepicker/locales/bootstrap-datepicker.zh-CN.js"></script>
+	<!-- iCheck 1.0.1 -->
+	<script src="{{ path.plugins }}iCheck/icheck.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			//Initialize Select2 Elements
+			$(".select2").select2();
+			
+			//iCheck for checkbox and radio inputs
+		    $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+		      checkboxClass: 'icheckbox_minimal-blue',
+		      radioClass: 'iradio_minimal-blue'
+		    });
+		    //Date picker
+			$('#datepicker').datepicker({
+				language: 'zh-CN',
+				autoclose: true
+			});
+		});
+		
+	</script>
+</xmp>
+</div>
+{% endblock %} 
+
+{% block js %} 
+	<!-- Select2 -->
+	<script src="{{ path.plugins }}select2/select2.full.min.js"></script>
+	<!-- bootstrap datepicker -->
+	<script src="{{ path.plugins }}datepicker/bootstrap-datepicker.js"></script>
+	<script src="{{ path.plugins }}datepicker/locales/bootstrap-datepicker.zh-CN.js"></script>
+	<!-- iCheck 1.0.1 -->
+	<script src="{{ path.plugins }}iCheck/icheck.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			//Initialize Select2 Elements
+			$(".select2").select2();
+			
+			//iCheck for checkbox and radio inputs
+		    $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+		      checkboxClass: 'icheckbox_minimal-blue',
+		      radioClass: 'iradio_minimal-blue'
+		    });
+		    //Date picker
+			$('#datepicker').datepicker({
+				language: 'zh-CN',
+				autoclose: true
+			});
+		});
+		
+	</script>
+ {% endblock %}

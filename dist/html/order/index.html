@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<!-- Meta, title, CSS, favicons, etc. -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=9">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="keywords" content="HTML，CSS，JS，JavaScript，framework，bootstrap，front-end，web development，江苏跨境">
+		<meta name="description" content="江苏跨境电子商务服务有限公司">
+		<meta name="author" content="潘明星，尹喜晨">
+		<title>列表页面</title>
+		<!-- Bootstrap 3.3.6 -->
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="/css/font-awesome.min.css">
+		<!-- Ionicons -->
+		<link rel="stylesheet" href="/css/ionicons.min.css">
+		<!-- AdminJKJ style -->
+		<link rel="stylesheet" href="/css/adminjkj-1.0.281.min.css">
+		<link rel="stylesheet" href="/css/adminjkj-themes-1.0.0.min.css">
+		<!--子页面样式-->
+		 
+	<!-- daterange picker -->
+	<link rel="stylesheet" href="/plugins/daterangepicker/daterangepicker-bs3.css">
+	<!-- bootstrap datepicker -->
+	<link rel="stylesheet" href="/plugins/datepicker/datepicker3.css">
+	<!-- Select2 -->
+	<link rel="stylesheet" href="/plugins/select2/select2.min.css">
+	<!-- iCheck for checkboxes and radio inputs -->
+	<link rel="stylesheet" href="/plugins/iCheck/all.css">
+	<!-- dateTables -->
+	<link rel="stylesheet" href="/plugins/datatables/dataTables.bootstrap.css">
+
+		
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="/js/html5shiv.min.js"></script>
+		<script src="/js/respond.min.js"></script>
+		<![endif]-->   
+	</head>
+	<body class="" style=" overflow-x: auto;">
+  		<!-- Site wrapper -->
+		<div class=" page-body ">
+			<!--子页面内容-->
+			
+			<div class="page-body">
+				<div class="page-title">
+					帐号管理
+				
+					<button type="button" class="btn btn-confirm" data-toggle="modal" data-target="#myModal">
+						创建帐号
+					</button>
+				
+				</div>
+				<form id="formLessSearch" class="form-horizontal">
+					<div class="search-area">
+						<div class="search-group">
+							<label>帐号：</label>
+							<input class="form-control" name="Code" type="text" maxlength="30">
+						</div>
+				
+						<div class="search-group">
+							<label>性别：</label>
+							<select class="form-control">
+								<option selected="selected">请选择</option>
+								<option>男</option>
+								<option>女</option>
+							</select>
+						</div>
+				
+						<div class="search-group">
+							<label>职位：</label>
+							<select class="form-control select2">
+								<option selected="selected">销售总监</option>
+								<option>客户经理</option>
+								<option>渠道经理</option>
+								<option>人事主管</option>
+								<option>产品经理</option>
+								<option>java开发工程师</option>
+								<option>财务人员</option>
+							</select>
+						</div>
+					</div>
+					<div class="search-group">
+						<button class="btn btn-confirm" type="button" onclick="refreshDatas()">查询</button>
+						<a class="more-criteria" href="javascript:moreConditions()">更多条件∨</a>
+					</div>
+				</form>
+				
+				<form id="formMoreSearch" class="form-horizontal">
+					<div class="search-area">
+						<div class="search-group">
+							<label>主订单号：</label>
+							<input class="form-control" name="Code" type="text" maxlength="30">
+						</div>
+				
+						<div class="search-group">
+							<label>经营单位：</label>
+							<select class="form-control">
+								<option selected="selected">Alabama</option>
+								<option>Alaska</option>
+								<option>California</option>
+								<option>Delaware</option>
+								<option>Tennessee</option>
+								<option>Texas</option>
+								<option>Washington</option>
+							</select>
+						</div>
+				
+						<div class="search-group">
+							<label>订单状态：</label>
+							<select class="form-control select2">
+								<option selected="selected">Alabama</option>
+								<option>Alaska</option>
+								<option>California</option>
+								<option>Delaware</option>
+								<option>Tennessee</option>
+								<option>Texas</option>
+								<option>Washington</option>
+							</select>
+						</div>
+				
+						<div class="search-group">
+							<label>下单日期：</label>
+							<input type="text" class="form-control" id="datepicker">
+						</div>
+				
+						<div class="search-group">
+							<label>出口日期：</label>
+							<input type="text" class="form-control" id="reservation">
+						</div>
+				
+						<div class="search-group">
+							<label>checkbox：</label>
+			                <input type="checkbox" class="minimal" checked>
+			                <input type="checkbox" class="minimal">
+			                <input type="radio" name="radio1" class="minimal" checked>
+			                <input type="radio" name="radio1" class="minimal">
+						</div>
+					</div>
+					<div class="search-group">
+						<button class="btn btn-confirm" type="button" onclick="refreshDatas()">查询</button>
+						<a id="linkLess" class="close-criteria" href="javascript:lessConditions()">收起条件∧</a>
+					</div>
+				</form>
+				
+				<table id="example2" class="table table-bordered table-hover" width="100%">
+	                <thead>
+			            <tr>
+			                <th>First Name</th>
+			                <th>Last Name</th>
+			                <th>Position</th>
+			                <th>Office</th>
+			                <th>Start date</th>
+			                <th>Salary</th>
+			                <th>操作</th>
+			            </tr>
+			        </thead>
+	            </table>
+				
+				<!-- Modal -->
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				  <div class="modal-dialog" role="document">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+				      </div>
+				      <div class="modal-body">
+				        ...
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				        <button type="button" class="btn btn-primary">Save changes</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+			</div>
+
+		</div>
+		
+		<!-- jquery 2.2.3 -->
+		<script src="/plugins/jquery/jquery-2.2.3.min.js"></script>
+		<!-- Bootstrap 3.3.6 -->
+		<script src="/js/bootstrap.min.js"></script>
+		<!-- SlimScroll -->
+		<script src="/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+		<!-- FastClick -->
+		<script src="/plugins/fastclick/fastclick.js"></script>
+		<!-- Notify -->
+		<script src="/plugins/bootstrap-notify/bootstrap-notify.js"></script>
+
+		<script src="/js/adminjkj-1.0.281.min.js" type="text/javascript"></script>
+		<!--子页面脚本-->
+		 
+	<!-- Select2 -->
+	<script src="/plugins/select2/select2.full.min.js"></script>
+	<!-- InputMask -->
+	<script src="/plugins/input-mask/jquery.inputmask.js"></script>
+	<script src="/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+	<script src="/plugins/input-mask/jquery.inputmask.extensions.js"></script>
+	<!-- date-range-picker -->
+	<script src="/plugins/daterangepicker/moment.min.js"></script>
+	<script src="/plugins/daterangepicker/daterangepicker.js"></script>
+	<!-- bootstrap datepicker -->
+	<script src="/plugins/datepicker/bootstrap-datepicker.js"></script>
+	<!-- iCheck 1.0.1 -->
+	<script src="/plugins/iCheck/icheck.min.js"></script>
+	<!-- DataTables -->
+	<script src="/plugins/datatables/jquery.dataTables.min.js"></script>
+	<script src="/plugins/datatables/dataTables.bootstrap.min.js"></script>
+	
+	<script type="text/javascript">
+		$(function() {
+			//top.$.jkj.data.app.richNavTabs[0].addNavTab('baidu2','百度2','page','http://www.baidu.com');
+			//$.jkj.data.app.richNavTabs[0].addNavTab('baidu2','百度2','page','http://www.baidu.com');
+			$('#addMenu').click(function(){
+				$.jkj.richNavTabs.get('#pageTabs').addNavTab('baidu3','百度3','page','http://www.baidu.com');
+				$.jkj.richNavTabs.get('#pageTabs').displayDefaultNavTab({
+					id: "#pageTabs",
+					showNavTab: null,
+					backward: ".nav-control-backward",
+					forward: ".nav-control-forward",
+					canHidenNavControl: true,
+					tabsScroll: ".nav-tabs-wrapper"
+				});
+			});
+			$('#openSel').click(function(){
+				$.jkj.richNavTabs.get('#pageTabs').addNavTab('openSelCompany','委托下单','page','/html/order/detail-new.html');
+			});
+			$('#openDetail').click(function(){
+				$.jkj.richNavTabs.get('#pageTabs').addNavTab('details','详情','page','/html/order/detail-new.html');
+			});
+			
+			//Initialize Select2 Elements
+			$(".select2").select2();
+
+			//Date range picker
+			$('#reservation').daterangepicker(null,
+				function(start, end, label) {
+					console.log(start.toISOString(), end.toISOString(), label);
+				});
+
+			//Date picker
+			$('#datepicker').datepicker({
+				autoclose: true
+			});
+
+			//iCheck for checkbox and radio inputs
+			$('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+				checkboxClass: 'icheckbox_minimal-blue',
+				radioClass: 'iradio_minimal-blue'
+			});
+			
+			$('#example').DataTable({
+		      "paging": true
+		    });
+
+		});
+		//较少的条件
+		function lessConditions() {
+		    if (activeFormId != 'formLessSearch') {
+		        $("#formMoreSearch").animate({ height: "50px" }, function () {
+		            $(this).css("height", "0");
+		            $("#formLessSearch").show();
+		        });
+		    }
+		    activeFormId = "formLessSearch";
+		    //passValue($("#formMoreSearch"), $("#formLessSearch"));
+		}
+		
+		//较多的条件 
+		function moreConditions() {
+		    var formMoreSearchH = $("#formMoreSearch .search-area").height();
+		    $("#formLessSearch").hide();
+		    $("#formMoreSearch").show().css("height", "50px").animate({ height: formMoreSearchH });
+		    activeFormId = "formMoreSearch";
+		    //passValue($("#formLessSearch"), $("#formMoreSearch"));
+		}
+		$(function () {
+				var myTable = $.jkj.dataTable.remote('#example2', function(data, callback, settings){
+						$.get('/data/tablelist.json',data,function(data){
+							/* 名称				    类型	 				描述
+							 * draw				integer		必要。Datatables发送的draw是多少那么服务器就返回多少。
+							 * 								这里注意，作者出于安全的考虑，强烈要求把这个转换为整形，
+							 * 								即数字后再返回，而不是纯粹的接受然后返回，这是 为了防止
+							 * 								跨站脚本（XSS）攻击。
+							 * recordsTotal		integer		必要。即没有过滤的记录数（数据库里总共记录数）
+							 * recordsFiltered	integer		必要。过滤后的记录数（如果有接收到前台的过滤条件，则返回
+							 *  							的是过滤后的记录数）。
+							 * data				arrayType	必要。表中中需要显示的数据。这是一个对象数组，也可以只是
+							 * 								数组，区别在于 纯数组前台就不需要用 columns绑定数据，会自
+							 * 								动按照顺序去显示 ，而对象数组则需要使用 columns绑定数据才
+							 * 								能正常显示。 
+							 * error			string		可选。你可以定义一个错误来描述服务器出了问题后的友好提示。
+							*/
+							callback(data);
+						});
+					}, {
+						//"stripeClasses": [ 'warning','info'],
+				    	"columns": [
+							{ "data": "first_name", "orderable": true},
+							{ "data": "last_name", "searchable": true  },
+							{ "data": "position" },
+							{ "data": "office", "render": function ( data, type, row, meta ) {
+								//type数据类型有这些值：filter、display、type、sort，根据不同的数据类型，该方法会被多次调用。
+									//if(type==="display" || type==="type" ){
+							    		return '<a href="http://www.baidu.com">'+data+'</a>';
+									//}
+						    	} 
+							},
+							{ "data": "start_date" },
+							{ "data": "salary", "className": "text-right" },
+							{ "data": null, "defaultContent": "<button>编辑</button>"}
+			        	]
+				});
+				
+			});
+	</script>
+ 
+	</body>
+</html>

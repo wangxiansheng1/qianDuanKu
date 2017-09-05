@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<!-- Meta, title, CSS, favicons, etc. -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=9">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="keywords" content="HTML，CSS，JS，JavaScript，framework，bootstrap，front-end，web development，江苏跨境">
+		<meta name="description" content="江苏跨境电子商务服务有限公司">
+		<meta name="author" content="潘明星，尹喜晨">
+		<title>查询页面-弹层</title>
+		<!-- Bootstrap 3.3.6 -->
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="/css/font-awesome.min.css">
+		<!-- Ionicons -->
+		<link rel="stylesheet" href="/css/ionicons.min.css">
+		<!-- AdminJKJ style -->
+		<link rel="stylesheet" href="/css/adminjkj-1.0.281.min.css">
+		<link rel="stylesheet" href="/css/adminjkj-themes-1.0.0.min.css">
+		<!--子页面样式-->
+		 
+	<!-- dateTables -->
+	<link rel="stylesheet" href="/plugins/datatables/dataTables.bootstrap.css">
+
+		
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="/js/html5shiv.min.js"></script>
+		<script src="/js/respond.min.js"></script>
+		<![endif]-->   
+	</head>
+	<body class="" style=" overflow-x: auto;">
+  		<!-- Site wrapper -->
+		<div class=" page-body ">
+			<!--子页面内容-->
+			
+<div class="page-body">
+	<!-- Button trigger modal -->
+	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+				                Launch demo modal</button>
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document" style="width: 1000px;">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">选择订单</h4>
+				</div>
+				<div class="modal-body">
+					<div class="page-container">
+						<form id="allOrderForm">
+					        <div class="row form-inline">
+					            <div class="col-xs-10">
+					                <div class="row">
+					                    <div class="col-xs-4 margin-bottom-10 text-right">
+					                        经营单位:
+					                        <select name="ordertype" style="width: 170px;">
+					                            
+					                                <option value="1" selected="selected">江苏跨境电子商务服务有限公司</option>
+					                            
+					                                <option value="2">南京贸互通电子商务有限公司</option>
+					                            
+					                                <option value="3">南京贸互达科技有限公司</option>
+					                            
+					                        </select>
+					                    </div>
+					                    <div class="col-xs-4 margin-bottom-10 text-right">
+					                        委托客户:
+					                        <input type="text" class="form-control">
+					                    </div>
+					                    <div class="col-xs-4 margin-bottom-10 text-right">
+					                        开票人:
+					                        <input type="text" class="form-contro">
+					                    </div>
+					                    <div class="col-xs-4 margin-bottom-10 text-right">
+					                        订单编号:
+					                        <input type="text" class="form-control">
+					                    </div>
+					                    <div class="col-xs-4 margin-bottom-10 text-right">
+					                        报关金额:
+					                        <input type="text" class="form-control">
+					                    </div>
+					                </div>
+					            </div>
+					            <div class="col-xs-2">
+					                <button class="btn btn-primary" style="margin-left:0;" type="submit">查询</button>
+					            </div>
+					        </div>
+					    </form>
+					</div>
+					<div class="page-container">
+						<table id="example" class="table table-bordered table-striped">
+			                <thead>
+				                <tr>
+				                  <th>下单日期</th>
+				                  <th>订单号</th>
+				                  <th>委托客户</th>
+				                  <th>出口口岸</th>
+				                  <th>目的国</th>
+				                  <th>报关币种</th>
+				                  <th>报关金额</th>
+				                  <th>订单状态</th>
+				                  <th>操作</th>
+				                </tr>
+			                </thead>
+			                <tbody>
+						        <tr>
+						            <td>2017-02-15</td>
+						            <td><a>MHD2017000890E</a></td>
+						            <td><a>安徽珂欣茧业有限公司</a></td>
+						            <td>南海三山</td>
+						            <td>中国台湾</td>
+						            <td>美元</td>
+						            <td>234.00</td>
+						            <td>完善中</td>
+						            <td><a>详情</a> <a>编辑</a> <a>取消</a></td>
+						        </tr>
+						        <tr>
+						            <td>2017-02-18</td>
+						            <td><a>MHD2017000890E</a></td>
+						            <td><a>安徽珂欣茧业有限公司</a></td>
+						            <td>南海三山</td>
+						            <td>中国台湾</td>
+						            <td>美元</td>
+						            <td>234.00</td>
+						            <td>完善中</td>
+						            <td><a>详情</a> <a>编辑</a> <a>取消</a></td>
+						        </tr>
+						        <tr>
+						            <td>2017-02-20</td>
+						            <td><a>MHD2017000890E</a></td>
+						            <td><a>安徽珂欣茧业有限公司</a></td>
+						            <td>南海三山</td>
+						            <td>中国台湾</td>
+						            <td>美元</td>
+						            <td>234.00</td>
+						            <td>完善中</td>
+						            <td><a>详情</a> <a>编辑</a> <a>取消</a></td>
+						        </tr>
+						        <tr>
+						            <td>2017-02-10</td>
+						            <td><a>MHD2017000890E</a></td>
+						            <td><a>安徽珂欣茧业有限公司</a></td>
+						            <td>南海三山</td>
+						            <td>中国台湾</td>
+						            <td>美元</td>
+						            <td>234.00</td>
+						            <td>完善中</td>
+						            <td><a>详情</a> <a>编辑</a> <a>取消</a></td>
+						        </tr>
+						        <tr>
+						            <td>2017-02-11</td>
+						            <td><a>MHD2017000890E</a></td>
+						            <td><a>安徽珂欣茧业有限公司</a></td>
+						            <td>南海三山</td>
+						            <td>中国台湾</td>
+						            <td>美元</td>
+						            <td>234.00</td>
+						            <td>完善中</td>
+						            <td><a>详情</a> <a>编辑</a> <a>取消</a></td>
+						        </tr>
+						        <tr>
+						            <td>2017-02-07</td>
+						            <td><a>MHD2017000890E</a></td>
+						            <td><a>安徽珂欣茧业有限公司</a></td>
+						            <td>南海三山</td>
+						            <td>中国台湾</td>
+						            <td>美元</td>
+						            <td>234.00</td>
+						            <td>完善中</td>
+						            <td><a>详情</a> <a>编辑</a> <a>取消</a></td>
+						        </tr>
+						        <tr>
+						            <td>2017-01-30</td>
+						            <td><a>MHD2017000890E</a></td>
+						            <td><a>安徽珂欣茧业有限公司</a></td>
+						            <td>南海三山</td>
+						            <td>中国台湾</td>
+						            <td>美元</td>
+						            <td>234.00</td>
+						            <td>完善中</td>
+						            <td><a>详情</a> <a>编辑</a> <a>取消</a></td>
+						        </tr>
+						        <tr>
+						            <td>2016-08-15</td>
+						            <td><a>MHD2017000890E</a></td>
+						            <td><a>安徽珂欣茧业有限公司</a></td>
+						            <td>南海三山</td>
+						            <td>中国台湾</td>
+						            <td>美元</td>
+						            <td>234.00</td>
+						            <td>完善中</td>
+						            <td><a>详情</a> <a>编辑</a> <a>取消</a></td>
+						        </tr>
+						        <tr>
+						            <td>2017-02-15</td>
+						            <td><a>MHD2017000890E</a></td>
+						            <td><a>安徽珂欣茧业有限公司</a></td>
+						            <td>南海三山</td>
+						            <td>中国台湾</td>
+						            <td>美元</td>
+						            <td>234.00</td>
+						            <td>完善中</td>
+						            <td><a>详情</a> <a>编辑</a> <a>取消</a></td>
+						        </tr>
+						        <tr>
+						            <td>2017-01-12</td>
+						            <td><a>MHD2017000890E</a></td>
+						            <td><a>安徽珂欣茧业有限公司</a></td>
+						            <td>南海三山</td>
+						            <td>中国台湾</td>
+						            <td>美元</td>
+						            <td>234.00</td>
+						            <td>完善中</td>
+						            <td><a>详情</a> <a>编辑</a> <a>取消</a></td>
+						        </tr>
+						        <tr>
+						            <td>2017-02-15</td>
+						            <td><a>MHD2017000890E</a></td>
+						            <td><a>安徽珂欣茧业有限公司</a></td>
+						            <td>南海三山</td>
+						            <td>中国台湾</td>
+						            <td>美元</td>
+						            <td>234.00</td>
+						            <td>完善中</td>
+						            <td><a>详情</a> <a>编辑</a> <a>取消</a></td>
+						        </tr>
+						        <tr>
+						            <td>2016-07-15</td>
+						            <td><a>MHD2017000890E</a></td>
+						            <td><a>安徽珂欣茧业有限公司</a></td>
+						            <td>南海三山</td>
+						            <td>中国台湾</td>
+						            <td>美元</td>
+						            <td>234.00</td>
+						            <td>完善中</td>
+						            <td><a>详情</a> <a>编辑</a> <a>取消</a></td>
+						        </tr>
+						        <tr>
+						            <td>2016-08-15</td>
+						            <td><a>MHD2017000890E</a></td>
+						            <td><a>安徽珂欣茧业有限公司</a></td>
+						            <td>南海三山</td>
+						            <td>中国台湾</td>
+						            <td>美元</td>
+						            <td>234.00</td>
+						            <td>完善中</td>
+						            <td><a>详情</a> <a>编辑</a> <a>取消</a></td>
+						        </tr>
+						        <tr>
+						            <td>2017-02-19</td>
+						            <td><a>MHD2017000890E</a></td>
+						            <td><a>安徽珂欣茧业有限公司</a></td>
+						            <td>南海三山</td>
+						            <td>中国台湾</td>
+						            <td>美元</td>
+						            <td>234.00</td>
+						            <td>完善中</td>
+						            <td><a>详情</a> <a>编辑</a> <a>取消</a></td>
+						        </tr>
+						    </tbody>
+			             </table>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary">确认选择</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+		</div>
+		
+		<!-- jquery 2.2.3 -->
+		<script src="/plugins/jquery/jquery-2.2.3.min.js"></script>
+		<!-- Bootstrap 3.3.6 -->
+		<script src="/js/bootstrap.min.js"></script>
+		<!-- SlimScroll -->
+		<script src="/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+		<!-- FastClick -->
+		<script src="/plugins/fastclick/fastclick.js"></script>
+		<!-- Notify -->
+		<script src="/plugins/bootstrap-notify/bootstrap-notify.js"></script>
+
+		<script src="/js/adminjkj-1.0.281.min.js" type="text/javascript"></script>
+		<!--子页面脚本-->
+		
+	<!-- DataTables -->
+	<script src="/plugins/datatables/jquery.dataTables.min.js"></script>
+	<script src="/plugins/datatables/dataTables.bootstrap.min.js"></script>
+	<script type="text/javascript">
+				$('#example').DataTable({
+			      "paging": true
+			    });
+	</script>
+
+	</body>
+</html>

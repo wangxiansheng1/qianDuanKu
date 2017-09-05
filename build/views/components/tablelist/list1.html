@@ -1,0 +1,333 @@
+{% extends "../../shared/layout.html" %} {% block title %}{% endblock %} {% block css %}
+			<link rel="stylesheet" href="{{ path.plugins }}datatables/dataTables.bootstrap.css"> {% endblock %} {% block content %}
+				<div class="row">
+	            	<div class="col-xs-12">
+						<table id="example" class="table table-bordered table-striped" width="100%">
+							<thead>
+								<tr>
+									<th>下单日期</th>
+									<th>订单号</th>
+									<th>委托客户</th>
+									<th>出口口岸</th>
+									<th>目的国</th>
+									<th>报关币种</th>
+									<th>报关金额</th>
+									<th>订单状态</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="text-center">2017-02-15</td>
+									<td>
+										<a>MHD2017000890E</a>
+										<a class="table-yellow">金</a>
+									</td>
+									<td>
+										<a>安徽珂欣茧业有限公司</a>
+									</td>
+									<td class="text-center">南海三山</td>
+									<td>中国台湾</td>
+									<td class="text-center">美元</td>
+									<td class="text-right">12,234.00</td>
+									<td class="text-center">完善中</td>
+									<td>
+										<button type="button">编辑</button>
+										<button type="button">取消</button>
+									</td>
+								</tr>
+								<tr>
+									<td class="text-center">2017-02-15</td>
+									<td>
+										<a>MHD2017000890E</a>
+										<a class="table-green">金</a>
+									</td>
+									<td>
+										<a>安徽珂欣茧业有限公司</a>
+									</td>
+									<td class="text-center">南海三山</td>
+									<td>中国台湾</td>
+									<td class="text-center">美元</td>
+									<td class="text-right">2,034.00</td>
+									<td class="text-center">完善中</td>
+									<td>
+										<button type="button">编辑</button>
+										<button type="button">取消</button>
+									</td>
+								</tr>
+								<tr>
+									<td class="text-center">2017-02-15</td>
+									<td>
+										<a>MHD2017000890E</a>
+										<a class="table-red">金</a>
+									</td>
+									<td>
+										<a>安徽珂欣茧业有限公司</a>
+									</td>
+									<td class="text-center">南海三山</td>
+									<td>中国台湾</td>
+									<td class="text-center">美元</td>
+									<td class="text-right">234.00</td>
+									<td class="text-center">完善中</td>
+									<td>
+										<button type="button">编辑</button>
+										<button type="button">取消</button>
+									</td>
+								</tr>
+								<tr>
+									<td class="text-center">2017-02-15</td>
+									<td>
+										<a>MHD2017000890E</a>
+										<a class="table-blue">金</a>
+									</td>
+									<td>
+										<a>安徽珂欣茧业有限公司</a>
+									</td>
+									<td class="text-center">南海三山</td>
+									<td>中国台湾</td>
+									<td class="text-center">美元</td>
+									<td class="text-right">234.00</td>
+									<td class="text-center">完善中</td>
+									<td>
+										<button type="button">编辑</button>
+										<button type="button">取消</button>
+									</td>
+								</tr>
+								<tr>
+									<td class="text-center">2017-02-15</td>
+									<td>
+										<a>MHD2017000890E</a>
+										<a class="table-purple">金</a>
+									</td>
+									<td>
+										<a>安徽珂欣茧业有限公司</a>
+									</td>
+									<td class="text-center">南海三山</td>
+									<td>中国台湾</td>
+									<td class="text-center">美元</td>
+									<td class="text-right">234.00</td>
+									<td class="text-center">完善中</td>
+									<td>
+										<button type="button">编辑</button>
+										<button type="button">取消</button>
+									</td>
+								</tr>
+								<tr>
+									<td class="text-center">2017-02-15</td>
+									<td>
+										<a>MHD2017000890E</a>
+										<a class="table-darkgreen">金</a>
+									</td>
+									<td>
+										<a>安徽珂欣茧业有限公司</a>
+									</td>
+									<td class="text-center">南海三山</td>
+									<td>中国台湾</td>
+									<td class="text-center">美元</td>
+									<td class="text-right">234.00</td>
+									<td class="text-center">完善中</td>
+									<td>
+										<button type="button">编辑</button>
+										<button type="button">取消</button>
+									</td>
+								</tr>
+								<tr>
+									<td class="text-center">2017-02-15</td>
+									<td>
+										<a>MHD2017000890E</a>
+									</td>
+									<td>
+										<a>安徽珂欣茧业有限公司</a>
+									</td>
+									<td class="text-center">南海三山</td>
+									<td>中国台湾</td>
+									<td class="text-center">美元</td>
+									<td class="text-right">234.00</td>
+									<td class="text-center">完善中</td>
+									<td>
+										<button type="button">编辑</button>
+										<button type="button">取消</button>
+									</td>
+								</tr>
+								<tr>
+									<td class="text-center">2017-02-15</td>
+									<td>
+										<a>MHD2017000890E</a>
+									</td>
+									<td>
+										<a>安徽珂欣茧业有限公司</a>
+									</td>
+									<td class="text-center">南海三山</td>
+									<td>中国台湾</td>
+									<td class="text-center">美元</td>
+									<td class="text-right">1,555,222.00</td>
+									<td class="text-center">完善中</td>
+									<td>
+										<button type="button">编辑</button>
+										<button type="button">取消</button>
+									</td>
+								</tr>
+								<tr>
+									<td class="text-center">2017-02-15</td>
+									<td>
+										<a>MHD2017000890E</a>
+									</td>
+									<td>
+										<a>安徽珂欣茧业有限公司</a>
+									</td>
+									<td class="text-center">南海三山</td>
+									<td>中国台湾</td>
+									<td class="text-center">美元</td>
+									<td class="text-right">234.00</td>
+									<td class="text-center">完善中</td>
+									<td>
+										<button type="button">编辑</button>
+										<button type="button">取消</button>
+									</td>
+								</tr>
+								<tr>
+									<td class="text-center">2017-02-15</td>
+									<td>
+										<a>MHD2017000890E</a>
+									</td>
+									<td>
+										<a>安徽珂欣茧业有限公司</a>
+									</td>
+									<td class="text-center">南海三山</td>
+									<td>中国台湾</td>
+									<td class="text-center">美元</td>
+									<td class="text-right">234.00</td>
+									<td class="text-center">完善中</td>
+									<td>
+										<button type="button">编辑</button>
+										<button type="button">取消</button>
+									</td>
+								</tr>
+								<tr>
+									<td class="text-center">2017-02-15</td>
+									<td>
+										<a>MHD2017000890E</a>
+									</td>
+									<td>
+										<a>安徽珂欣茧业有限公司</a>
+									</td>
+									<td class="text-center">南海三山</td>
+									<td>中国台湾</td>
+									<td class="text-center">美元</td>
+									<td class="text-right">234.00</td>
+									<td class="text-center">完善中</td>
+									<td>
+										<button type="button">编辑</button>
+										<button type="button">取消</button>
+									</td>
+								</tr>
+								<tr>
+									<td class="text-center">2017-02-15</td>
+									<td>
+										<a>MHD2017000890E</a>
+									</td>
+									<td>
+										<a>安徽珂欣茧业有限公司</a>
+									</td>
+									<td class="text-center">南海三山</td>
+									<td>中国台湾</td>
+									<td class="text-center">美元</td>
+									<td class="text-right">234.00</td>
+									<td class="text-center">完善中</td>
+									<td>
+										<button type="button">编辑</button>
+										<button type="button">取消</button>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+<div class="container-fluid">			
+	<i class="fa fa-file-code-o"></i> 
+	<a href="javascript:;" data-xmp = "">展开代码</a>
+<xmp>
+	<table id="example" class="table table-bordered table-striped" width="100%">
+		<thead>
+			<tr>
+				<th>下单日期</th>
+				<th>订单号</th>
+				<th>委托客户</th>
+				<th>出口口岸</th>
+				<th>目的国</th>
+				<th>报关币种</th>
+				<th>报关金额</th>
+				<th>订单状态</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="text-center">2017-02-15</td>
+				<td>
+					<a>MHD2017000890E</a>
+					<a class="table-yellow">金</a>
+				</td>
+				<td>
+					<a>安徽珂欣茧业有限公司</a>
+				</td>
+				<td class="text-center">南海三山</td>
+				<td>中国台湾</td>
+				<td class="text-center">美元</td>
+				<td class="text-right">12,234.00</td>
+				<td class="text-center">完善中</td>
+				<td>
+					<button type="button">编辑</button>
+					<button type="button">取消</button>
+				</td>
+			</tr>
+			......
+			......
+		</tbody>
+	</table>
+	<script type="text/javascript">
+		//var dataSet=[];
+		$(function() {
+			var myTable = $.jkj.dataTable.local('#example',{
+				//"data": dataSet,
+				"columns": [
+					{ "orderable": true },
+					{ "searchable": true},
+					{ "searchable": true},
+					{ "searchable": true},
+					{ "searchable": true},
+					null,
+					{ "orderable": true },
+					null,
+					null
+				]
+			});
+		});
+	</script>
+</xmp>
+</div>
+			
+{% endblock %} {% block js %}
+			<script src="{{ path.plugins }}datatables/jquery.dataTables.js"></script>
+			<script src="{{ path.plugins }}datatables/dataTables.bootstrap.js"></script>
+
+			<script type="text/javascript">
+				//var dataSet=[];
+				$(function() {
+					var myTable = $.jkj.dataTable.local('#example',{
+						//"data": dataSet,
+						"columns": [
+							{ "orderable": true },
+							{ "searchable": true},
+							{ "searchable": true},
+							{ "searchable": true},
+							{ "searchable": true},
+							null,
+							{ "orderable": true },
+							null,
+							null
+						]
+					});
+				});
+			</script>
+{% endblock %}

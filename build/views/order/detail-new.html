@@ -1,0 +1,764 @@
+{% extends "../shared/layout.html" %} 
+
+{% block title %}订单详情{% endblock %} 
+
+{% block css %} 
+
+{% endblock %} 
+
+{% block content %}
+			<div class="page-body details-group">
+				<div class="page-container">
+					<div class="navbar-fixed-top">
+			            <div class="page-title" style=" margin: 10px 0 0 0;">
+			                订单详情
+			            </div>
+			            <div class="fixed-menu">
+			                <ul>
+			                    <li><a href="javascript:void(0)">生成装箱单</a></li>
+			                    <li>
+			                        <a>生成发票 <i class="fa fa-caret-down"></i></a>
+			                        <ul>
+			                            <li><a href="javascript:void(0)">生成商业发票</a></li>
+			                            <li><a href="javascript:void(0)">生成形式发票</a></li>
+			                        </ul>
+			                    </li>
+			                    <li>
+			                        <a>生成合同 <i class="fa fa-caret-down"></i></a>
+			                        <ul>
+			                            <li><a href="javascript:void(0)">生成采购合同</a></li>
+			                            <li><a href="javascript:void(0)">生成销售合同</a></li>
+			                        </ul>
+			                    </li>
+			                    <li><a href="javascript:void(0)">生成报关单草单</a></li>
+			                    <li><a href="javascript:void(0)">委托确认函</a></li>
+			                </ul>
+			            </div>
+			            <div class="clearfix"></div>
+			            <div>
+			            	<table class="tableD">
+							    <tbody>
+							    	<tr>
+								        <th>订单号：</th>
+								        <td>JKJ2017000148E</td>
+								        <th>委托客户：</th>
+								        <td><a href="">砀山县新帛纺织服装有限公司</a></td>
+								        <th>经营单位：</th>
+								        <td>江苏跨境电子商务服务有限公司</td>
+								        <th>委托下单日期：</th>
+								        <td>2017-02-23</td>
+								    </tr>
+								</tbody>
+			            	</table>
+			            </div>
+			            <div class="divSlide">
+			                <div class="orderProcess" id="divStatus">
+			                    <ul>
+			                        
+			                        <li class="on"><span>提交</span></li>
+			                        <li class="on"><span>完善</span></li>
+			                        <li><span>审核</span></li>
+			                        <li><span>确认委托函</span></li>
+			                        
+			                        <li class=" "><span>待报关</span></li>
+			                        <li class=""><span>报关完成</span></li>
+			
+			                        
+			                        <li><span>待退税</span></li>
+			                        <li><span>已退税</span></li>
+			                        
+			                        <li><span>订单完成</span></li>
+			                        <li><span>订单关闭</span></li>
+			                        
+			                    </ul>
+			                    <div class="clearfix"></div>
+			                </div>
+			            </div>
+			            <div class="fixed-anchor">
+			                <ul>
+			                    <li onclick="scrollToo('#divReceiptAndDeclareMain',300);">收汇与报关方式</li>
+			                    <li onclick="scrollToo('#divProductAndSupplierMain',300);">产品及开票人</li>
+			                    <li onclick="scrollToo('#divCustomsInfoMain',300);">报关信息</li>
+			                    <li onclick="scrollToo('#divLogisticsServiceMain',300);">物流服务</li>
+			                    <li onclick="scrollToo('#divOrderFinancialMain',300);">金融服务</li>
+			                    <li onclick="scrollToo('#divOrderExecuteFeedBackMain',300);">申报反馈</li>
+			                    <li onclick="scrollToo('#divOrderPurchaseInvoiceMain',300);">采购发票</li>
+			                    <li onclick="scrollToo('#divOrderAccountLogsMain',300);">对账单</li>
+			                    <li onclick="scrollToo('#divOrderDocumentsMain',300);">附件</li>
+			                </ul>
+			            </div>
+			            <div class="clearfix"></div>
+			        </div>
+			    </div>
+		        <div class="page-container" style="margin-top: 220px;">
+		            <div class="form-title">
+		               	 收汇与报关方式<label class="right"><a class="btn btn-confirm" href="javascript:void(0)">编辑</a></label>
+		            </div>
+		            <div id="divReceiptAndDeclare">
+						<table class="tableD">
+						    <tbody>
+						    	<tr>
+							        <td style="width: 50%">
+							            <div class="form-inline">
+							                <label class="form-name">结算方式：</label>
+							                <label class="search-group">
+							                    D/P
+							                </label>
+							                <br>
+							                
+							            </div>
+							
+							            <div class="form-inline">
+							                <label class="form-name">订单报关币种：</label>
+							                
+							                <label class="search-group">
+							                    美元
+							                </label>
+							            </div>
+							
+							            <div class="form-inline">
+							                <label class="form-name">订单联系人：</label>
+							                <label class="search-group">
+							                    程正兵
+							                </label>
+							                <label class="search-group">
+							                    13819700924
+							                </label>
+							                <label class="search-group">
+							                    723126200@qq.com
+							                </label>
+							            </div>
+							
+							            <div class="form-inline">
+							                <label class="form-name">付款人：</label>
+							                <label class="search-group">
+							                    FKR1611040002
+							                </label>
+							                <label class="search-group">
+							                    1/LEADER INNOVATIONS LIMITED2/FLAT/RM 01 21/F
+							                </label>
+							                <label class="search-group">
+							                    香港
+							                </label>
+							            </div>
+							        </td>
+							        <td>
+							            
+							            <div class="form-inline">
+							                <label class="form-name">出口口岸：</label>
+							                
+							                <label class="search-group">
+							                    广州海关
+							                </label>
+							                
+							                <label class="search-group">
+							                    南海九江
+							                </label>
+							                
+							                <label class="search-group"></label>
+							            </div>
+							
+							            <div class="form-inline">
+							                <label class="form-name">报关方式：</label>
+							                
+							                <label class="search-group">
+							                    委托贸互达报关
+							                </label>
+							                
+							            </div>
+							
+							            <div class="form-inline">
+							                <label class="form-name">收货人：</label>
+							                <label class="search-group">
+							                    WORLD　BEST　INTERNATIONAL　INVES
+							                </label>
+							                <label class="search-group">
+							                    wwwww
+							                </label>
+							                <label class="search-group">
+							                    香港
+							                </label>
+							            </div>
+							        </td>
+							    </tr>
+							</tbody>
+						</table>
+					</div>
+			    </div>
+			    
+			    <div class="page-container">
+		            <div class="form-title">
+		                产品及开票人<label class="right"><a class="btn btn-confirm" href="javascript:void(0)">编辑</a></label>
+		            </div>
+		            <div id="divProductAndSupplier">
+						<form id="orderProduct_form">
+						    <table class="tableD">
+						        <tbody>
+						        	<tr>
+							            <td style="width: 50%">
+							                <div class="form-inline">
+							                    <label class="form-name">成交方式：</label>
+							                    
+							                    <label class="search-group">FOB</label>
+							                    
+							                    <br>
+							
+							                    
+							                </div>
+							                <div class="form-inline">
+							                    <label class="form-name">原产国或地区：</label>
+							                    
+							
+							                    <label class="search-group">中国</label>
+							                </div>
+							                <div class="form-inline">
+							                    <label class="form-name">商品及开票人：</label>
+							                </div>
+							            </td>
+							            <td>
+							                <div class="form-inline">
+							                    <label class="form-name">开票方式：</label>
+							                    
+							                    <label class="search-group">指定货物报关单价</label>
+							                    
+							                </div>
+							            </td>
+							        </tr>
+							    </tbody>
+						    </table>
+						    
+						    <div class="modal-gray product">
+						        <label class="search-group"><b>1 餐桌</b></label>
+						        <label class="search-group">HSCode：<span><a href="javascript:void(0)">9403609990</a></span></label>
+						        <label class="search-group">英文品名：table</label>
+						        
+						        <label class="search-group"><a>申报要素</a></label>
+						        
+						        <table class="table table-bordered">
+						            <thead class="bordered-themeprimary">
+						                <tr>
+						                    <th>货值(USD)</th>
+						                    <th>申报数量及单位</th>
+						                    <th>法定数量和单位</th>
+						                    <th>单价(USD)</th>
+						                    <th>开票金额(CNY)</th>
+						                    <th>开票人</th>
+						                </tr>
+						            </thead>
+						            <tbody>
+						                <tr>
+						                    <td>1,000.00
+						                    </td>
+						                    <td>
+						                        10.0000件
+						                    </td>
+						                    <td>
+						                        10.0000件
+						                        10.0000千克
+						                        
+						                    </td>
+						                    <td>100.0000
+						                    </td>
+						                    <td>----</td>
+						                    <td>
+						                        温州德豪鞋业有限公司
+						                    </td>
+						                </tr>
+						            </tbody>
+						            <tfoot>
+						                <tr>
+						                    <td colspan="8" style="position: relative;">&nbsp;
+						                            <div style="position: absolute; top: 8px; right: 10px">
+						                                
+						                                净重(千克):0.0000
+						                                &nbsp;毛重(千克):0.0000
+						                                &nbsp;包装数量及种类:0.00纸箱
+						                                &nbsp;包装体积(m³):0.0000
+						                            </div>
+						                    </td>
+						                </tr>
+						            </tfoot>
+						        </table>
+						    </div>
+						    
+						    <div style="position: relative; height: 40px">
+						        <div style="position: absolute; top: 5px; right: 10px;">
+						            <b>总申报数量：<span>10.0000</span></b>
+						            &nbsp;&nbsp;&nbsp;&nbsp;
+						            <b>总货值：<span>1,000.00</span></b>
+						            <div class="clearfix"></div>
+						        </div>
+						    </div>
+						    <div class="form-inline">
+						        <label class="form-name">总包装数量及种类：</label>
+						        
+						        <label class="search-group">12.00纸箱 </label>
+						    </div>
+						    <div class="form-inline">
+						        <label class="form-name">总净重：</label>
+						        <label class="search-group">12.0000千克</label>
+						    </div>
+						    <div class="form-inline">
+						        <label class="form-name">总毛重：</label>
+						        <label class="search-group">12.0000千克</label>
+						    </div>
+						    <div class="form-inline">
+						        <label class="form-name">总体积：</label>
+						        <label class="search-group">123.0000立方米</label>
+						    </div>
+						</form>
+					</div>
+		        </div>
+		        
+		        <div class="page-container">
+		            <div class="form-title">
+		                物流服务
+		                <span id="od_logisticsStatus">
+							<label style="margin-left: 80px; margin-bottom: 0;">
+							    物流单号：
+							        <a>JWL2017000155E</a>
+							    
+							</label>
+							<label style="color: #ff6600; margin-bottom: 0; ">
+							    （执行中）
+							</label>
+		                </span>
+		                <label id="Label1"></label>
+		                
+		                <label class="right"><a class="btn btn-confirm" href="javascript:void(0)">编辑</a></label>
+		            </div>
+		            <div id="divLogisticsService">
+						<form>
+						    <div class="row form-inline">
+						        <div class="col-xs-12">
+						            <label class="form-name"><b>物流信息</b></label>
+						        </div>
+						        <div class="col-xs-6">
+						            <label class="form-name">服务类型：</label>
+						            <label>
+						                委托物流
+						            </label>
+						        </div>
+						        
+						        <!--是否拼单-->
+						        <div class="col-xs-6">
+						
+						            <label class="form-name">是否拼单：</label>
+						            <label>否</label>
+						        </div>
+						        
+						        <!--委托物流-->
+						        
+						        <!--空运-->
+						        <div class="col-xs-6">
+						
+						            <label class="form-name">物流方式：</label>
+						            <label>空运</label>
+						        </div>
+						        
+						
+						        <div class="col-xs-6" style="display:none">
+						
+						            <label class="form-name">是否拼箱：</label>
+						            <label></label>&nbsp;&nbsp;
+						                
+						        </div>
+						        <div style="display:none">
+						            <!--拖车-->
+						            <div class="col-xs-12 margin-top-10">
+						
+						                <label><b>拖车信息</b></label>
+						            </div>
+						            <div class="col-xs-6" style="display:none">
+						
+						                <label class="form-name">是否拼箱：</label>
+						                <label></label>&nbsp;&nbsp;
+						                    
+						            </div>
+						            <div class="col-xs-6">
+						
+						                <label class="form-name">提货/做箱地址：</label>
+						                <label>
+						                    &nbsp;&nbsp;
+						                    &nbsp;&nbsp;
+						                    &nbsp;&nbsp;
+						                    
+						                </label>
+						            </div>
+						            <div class="col-xs-6">
+						
+						                <label class="form-name">送货地址：</label>
+						                <label>
+						                    &nbsp;&nbsp;
+						                    &nbsp;&nbsp;
+						                    &nbsp;&nbsp;
+						                    
+						                </label>
+						            </div>
+						            <div class="col-xs-6">
+						
+						                <label class="form-name">预计提货时间：</label>
+						                <label></label>
+						            </div>
+						            <div class="col-xs-6">
+						
+						                <label class="form-name">联系人：</label>
+						                <label></label>
+						                <label></label>
+						            </div>
+						        </div>
+						
+						        <div style="">
+						            <!--订舱-->
+						            <div class="col-xs-12 margin-top-10">
+						
+						                <label class="form-name"><b>订舱信息</b></label>
+						            </div>
+						            <div class="col-xs-6" style="display:none">
+						
+						                <label class="form-name">是否拼箱：</label>
+						                <label></label>&nbsp;&nbsp;
+						                    
+						            </div>
+						            <div class="col-xs-6">
+						
+						                <label class="form-name">起运港：</label>
+						                <label>美川（MIKAWA）</label>
+						            </div>
+						            <div class="col-xs-6">
+						
+						                <label class="form-name">目的港：</label>
+						                <label>中山（ZHONGSHAN）</label>
+						            </div>
+						            <div class="col-xs-6">
+						
+						                <label class="form-name">是否到门：</label>
+						                <label>否</label>
+						                <label></label>
+						            </div>
+						            <div class="col-xs-6" style="">
+						
+						                <label class="form-name">服务类型：</label>
+						                <label>转飞</label>
+						            </div>
+						            <div class="col-xs-6" style="">
+						
+						                <label class="form-name">是否指定航空公司：</label>
+						                <label>否</label>
+						                <label></label>
+						            </div>
+						            <div class="col-xs-6" style="display:none">
+						
+						                <label class="form-name">是否指定船公司：</label>
+						                <label></label>
+						                <label></label>
+						            </div>
+						            <div class="col-xs-6">
+						
+						                <label class="form-name">预计货好时间：</label>
+						                <label>2017-02-28</label>
+						            </div>
+						            <div class="col-xs-6" style="display:none">
+						
+						                <label class="form-name">提单类型：</label>
+						                <label></label>
+						            </div>
+						            <div class="col-xs-6">
+						
+						                <label class="form-name"><i class="ico-hint"></i>备注：</label>
+						                <label></label>
+						            </div>
+						        </div>
+						        
+						        <div class="col-xs-12 margin-top-10">
+						            <label class="form-name"><b>装箱信息</b></label>
+						        </div>
+						        <div class="col-xs-6">
+						
+						            <label class="form-name">总装箱件数：</label>
+						            <label>123</label>
+						        </div>
+						        <div class="col-xs-6">
+						
+						            <label class="form-name">总毛重（kg）：</label>
+						            <label>123.0000</label>
+						        </div>
+						        <div class="col-xs-6">
+						
+						            <label class="form-name">总体积（m³）：</label>
+						            <label>333.0000</label>
+						        </div>
+						        <div class="col-xs-6">
+						
+						            <label class="form-name">通知人：</label>
+						            <label>测试</label>
+						            <label>122222</label>
+						        </div>
+						        <div class="col-xs-6">
+						
+						            <label class="form-name">物流付费方式：</label>
+						            <label>预付</label>
+						        </div>
+						        
+						    </div>
+						
+						    <!--装箱单-->
+						    <div class="row form-inline" style="">
+						        <div class="col-xs-12 margin-top-10">
+						            <label class="form-name"><b>装箱单：</b></label>
+						            <label class="right"><a class="btn btn-confirm">编辑</a></label>
+						        </div>
+						    </div>
+						        <div class="row form-inline">
+						            <div class="col-xs-12">
+						                <table class="table table-bordered table-data">
+						                    <tbody><tr>
+						                        <th rowspan="4" style="width: 15%">标记唛码</th>
+						                        <td rowspan="4" style="width: 35%; vertical-align:top">
+						                            N/M
+						                        </td>
+						                        <th style="width: 15%">离厂日期</th>
+						                        <td style="width: 35%">
+						                            
+						                        </td>
+						                    </tr>
+						                    <tr>
+						                        <th>装货港</th>
+						                        <td>
+						                            广州海关
+						                        </td>
+						                    </tr>
+						                    <tr>
+						                        <th>卸货港</th>
+						                        <td>
+						                            中山
+						                        </td>
+						                    </tr>
+						                    <tr>
+						                        <th>目的地</th>
+						                        <td>
+						                            <label>
+						                                中国
+						                            </label>
+						                        </td>
+						                    </tr>
+						                </tbody></table>
+						            </div>
+						        </div>
+						        
+						        <!--订单商品信息-->
+						        <div class="modal-gray">
+						            <table class="table table-bordered">
+						                <thead class="bordered-themeprimary">
+						                    <tr>
+						                        <th>序号</th>
+						                        <th>商品名称</th>
+						                        <th>包装数量及种类</th>
+						                        <th>包装体积(m³)</th>
+						                        <th>数量</th>
+						                        <th>净重(kg)</th>
+						                        <th>毛重(kg)</th>
+						                    </tr>
+						                </thead>
+						                <tbody>
+						                    
+						                    <tr>
+						                        <td>
+						                            1
+						                        </td>
+						                        <td style="text-align: left">
+						                            <a href="javascript:void(0)">餐桌</a>
+						                        </td>
+						                        <td style="text-align: right">
+						                            0.00纸箱
+						                        </td>
+						                        <td style="text-align: right">
+						                            0.0000
+						                        </td>
+						                        <td style="text-align: right">
+						                            10.0000件
+						                        </td>
+						                        <td style="text-align: right">
+						                            0.0000
+						                        </td>
+						                        <td style="text-align: right">
+						                            0.0000
+						                        </td>
+						                    </tr>
+						                    
+						                </tbody>
+						            </table>
+						        </div>
+						
+						        <!--装箱基础信息-->
+						        <table class="table table-bordered table-data">
+						            <tbody><tr>
+						                <th style="width: 15%;">整体包装</th>
+						                <td colspan="3">
+						                    
+						                    <label>
+						                        纸箱
+						                    </label>
+						                    <label>
+						                        
+						                    </label>
+						                </td>
+						            </tr>
+						            <tr>
+						                <th>总包装件数</th>
+						                <td style="width: 35%;">
+						                    12.00
+						                </td>
+						                <th style="width: 15%;">总毛重(kg)</th>
+						                <td style="width: 35%;">
+						                    12.0000
+						                </td>
+						            </tr>
+						            <tr>
+						                <th>总体积(m³)</th>
+						                <td colspan="3">
+						                    123.0000
+						                </td>
+						            </tr>
+						            <tr>
+						                <th>是否拼箱</th>
+						                <td colspan="3">
+						                    
+						                    
+						                </td>
+						            </tr>
+						                <tr style="display:none">
+						                    <th>是否拼车</th>
+						                    <td colspan="3">
+						                        
+						                    
+						                    </td>
+						                </tr>
+						        </tbody>
+						    </table>
+						</form>
+					</div>
+		        </div>
+		        <div class="btn-submit">
+				    <button type="button" class="btn btn-cancel">撤销申报</button>
+		        	<button type="button" class="btn btn-confirm">申请完成</button>
+				</div>
+				
+				<div class="page-container">
+					<div class="form-title">跟踪记录</div>
+					<div class="tabbable">
+						<ul id="myTab" class="nav nav-tabs">
+							<li class="active">
+								<a href="#tab1" data-toggle="tab">
+									 主订单跟踪记录
+								</a>
+							</li>
+							<li><a href="#tab2" data-toggle="tab">基础订单跟踪记录</a></li>
+							<li><a href="#tab3" data-toggle="tab">物流子订单跟踪记录</a></li>
+						</ul>
+						<div class="tab-content">
+							<div class="tab-pane fade in active" id="tab1">
+								<table class="table table-bordered">
+					                <thead>
+					                    <tr>
+					                        <th style="width: 160px">时间</th>
+					                        <th>操作</th>
+					                        <th style="width: 80px">操作人</th>
+					                    </tr>
+					                </thead>
+					                <tbody>
+					                    
+					                    <tr>
+					                        <td>2017年02月27日 14:16</td>
+					                        <td title="主订单进入执行中">主订单进入执行中</td>
+					                        <td>包雅兰</td>
+					                    </tr>
+					                    
+					                    <tr>
+					                        <td>2017年02月27日 14:15</td>
+					                        <td title="订单提交成功">订单提交成功</td>
+					                        <td>包雅兰</td>
+					                    </tr>
+					                    
+					                    <tr>
+					                        <td>2017年02月27日 14:14</td>
+					                        <td title="订单草稿创建成功">订单草稿创建成功</td>
+					                        <td>包雅兰</td>
+					                    </tr>
+					                    
+					                </tbody>
+					            </table>
+							</div>
+							<div class="tab-pane fade" id="tab2">
+								<table class="table table-bordered">
+					                <thead>
+					                    <tr>
+					                        <th style="width: 160px">时间</th>
+					                        <th>操作</th>
+					                        <th style="width: 80px">操作人</th>
+					                    </tr>
+					                </thead>
+					                <tbody>
+					                    
+					                    <tr>
+					                        <td>2017年02月27日 14:15</td>
+					                        <td title="订单已通过审核">订单已通过审核</td>
+					                        <td title="王大扣">王大扣</td>
+					                    </tr>
+					                    
+					                    <tr>
+					                        <td>2017年02月27日 14:15</td>
+					                        <td title="订单已提交审核">订单已提交审核</td>
+					                        <td title="包雅兰">包雅兰</td>
+					                    </tr>
+					                    
+					                </tbody>
+					            </table>
+							</div>
+							<div class="tab-pane fade" id="tab3">
+								<table class="table table-bordered">
+					                <thead>
+					                    <tr>
+					                        <th style="width: 160px">时间</th>
+					                        <th>操作</th>
+					                        <th style="width: 80px">操作人</th>
+					                    </tr>
+					                </thead>
+					                <tbody>
+					                    
+					                    <tr>
+					                        <td>2017年02月27日 14:16</td>
+					                        <td title="物流子订单进入执行中">物流子订单进入执行中</td>
+					                        <td>包雅兰</td>
+					                    </tr>
+					                    
+					                </tbody>
+					            </table>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+
+			</div>
+{% endblock %} 
+
+{% block js %} 
+	<script type="text/javascript">
+		$(document).ready(function () {
+            $(document).scroll(function () {
+                var top = $(document).scrollTop();
+                if (top > 50) {
+                    $(".divSlide").slideUp("slow");
+                    $(".navbar-fixed-top").css("background-color", "#FFF");
+                }
+                else {
+                    $(".divSlide").slideDown("slow");
+                    $(".navbar-fixed-top").css("background", "none");
+                }
+            });
+        });
+
+	</script>
+ {% endblock %}

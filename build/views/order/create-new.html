@@ -1,0 +1,110 @@
+{% extends "../shared/layout.html" %} {% block title %}编辑页面-弹层{% endblock %} {% block css %} {% endblock %} {% block content %}
+<div class="page-body">
+	<!-- Button trigger modal -->
+	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+				                Launch demo modal</button>
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document" style="width: 1000px;">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">新增收款</h4>
+				</div>
+				<div class="modal-body">
+					<form>
+						<h2 class="text-center">收款单</h2>
+						<table class="table table-bordered table-data">
+							<tbody>
+								<tr>
+									<th style="width: 15%">银行流水号</th>
+									<td style="width: 35%">
+										<input type="text" name="BankCode" value="" data-required="" >
+									</td>
+									<th style="width: 15%">收款日期</th>
+									<td>
+
+										<input readonly="readonly" type="text" style="" >
+
+									</td>
+								</tr>
+								<tr>
+									<th>付款方</th>
+									<td>
+
+										<input type="text" id="" value="" style="width: 178px;" />
+										<a href="javascript:gatherEdit_openAddPayer()">新增付款人</a>
+									</td>
+									<th>金额</th>
+									<td>
+										<div style="float: left">
+											<input type="text" style="width: 170px" name="ForeignAmount" value="" >
+										</div>
+										<div style="float: left">
+											<select style="width: 90px" name="CurrencyID" data-required="" >
+												<option value="">--请选择--</option>
+												<option value="318">美元</option>
+												<option value="999">欧元</option>
+												<option value="137">加元</option>
+												<option value="317">英镑</option>
+												<option value="151">人民币</option>
+												<option value="188">港币</option>
+												<option value="202">日元</option>
+												<option value="208">韩元</option>
+												<option value="113">澳元</option>
+
+											</select>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>收款银行</th>
+									<td>
+										<div style="float: left">
+											<select name="OurCompanyType" style="width: 130px" data-required="">
+												<option value="">--请选择--</option>
+
+												<option value="1">江苏跨境电子商务服务有限公司</option>
+
+												<option value="2">南京贸互通电子商务有限公司</option>
+
+												<option value="3">南京贸互达科技有限公司</option>
+
+											</select>
+										</div>
+										<div style="float: left">
+											<select name="GatherBankId" style="width: 130px" data-required="">
+												<option value="">--请选择--</option>
+											</select>
+										</div>
+									</td>
+									<th>大写金额</th>
+									<td></td>
+								</tr>
+								<tr>
+									<th>备注</th>
+									<td colspan="3">
+										<textarea data-maxlength="500" name="Remark"></textarea>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="text-right">
+							<span>制单信息：</span>
+							<span>卞智伟</span>
+							<span>2017-03-13 14:17</span>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary">保存</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %} {% block js %}
+<script type="text/javascript">
+</script>
+{% endblock %}

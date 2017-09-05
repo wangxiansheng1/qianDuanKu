@@ -1,0 +1,25 @@
+{
+	"name":{
+		"normal":"AdminJKJ",
+		"lower":"adminjkj"
+	},
+	"html":{
+		"page":{
+			"keywords":"HTML，CSS，JS，JavaScript，framework，bootstrap，front-end，web development，江苏跨境",
+			"description":"江苏跨境电子商务服务有限公司",
+			"author":"倪伟，王鹏"
+		}
+	},
+	"path":{
+		"dist":"/AdminJKJ/dist/",
+		"plugins":"/AdminJKJ/plugins/",
+		"src":"/AdminJKJ/src/"
+	},
+	"version": {
+		"main": "1.0.281.20170615", 
+		"css":"1.0.281",
+		"theme":"1.0.0",
+		"js":"1.0.281",
+		"widgets":"1.0.0"
+	}
+}

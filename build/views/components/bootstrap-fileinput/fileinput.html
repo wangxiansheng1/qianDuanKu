@@ -1,0 +1,105 @@
+{% extends "../../shared/layout.html" %} {% block title %}{% endblock %} 
+
+{% block css %}<link rel="stylesheet" href="{{ path.plugins }}bootstrap-fileinput/fileinput.css"> {% endblock %} 
+
+{% block content %}
+	<div id="testUpload"></div>
+	
+<div class="container-fluid">			
+	<i class="fa fa-file-code-o"></i> 
+	<a href="javascript:;" data-xmp = "">展开代码</a>
+<xmp>
+	<div id="testUpload"></div>
+	
+	<!-- bootstrap-fileinput.js -->
+	<script src="{{ path.plugins }}bootstrap-fileinput/fileinput.js"></script>
+	<script src="{{ path.plugins }}bootstrap-fileinput/fileinput_locale_zh.js"></script>
+	<!-- page script -->
+	<script>
+		function upload() {
+			var ids = [];
+			ids.push(998);
+			ids.push(999);
+			ids.push(1000);
+	
+			var titles = [];
+			var item = {};
+			item.name = '疑点';
+			item.fileType = 1;
+			titles.push(item);
+			var item2 = {};
+			item2.name = '授信';
+			item2.fileType = 2;
+			titles.push(item2);
+			var item3 = {};
+			item3.name = '其他';
+			item3.fileType = 3;
+			titles.push(item3);
+			var files;
+			$.ajax({
+				type: "get",
+				url: "/AdminJKJ/src/data/upload.json",
+				success: function(result) {
+					if(result.code == 0) {
+						files = result.files;
+						$("#testUpload").upload({
+							fileServerUrl: 'http://local.maohd.com:8083/files', // you must set a valid URL here else you will get an error
+							files: files,
+							tabs: titles,
+							saveFile: null
+						});
+					}
+				}
+			});
+		}
+		upload();
+	</script>
+</xmp>
+</div>
+{% endblock %} 
+
+{% block js %}
+<!-- bootstrap-fileinput.js -->
+<script src="{{ path.plugins }}bootstrap-fileinput/fileinput.js"></script>
+<script src="{{ path.plugins }}bootstrap-fileinput/fileinput_locale_zh.js"></script>
+<!-- page script -->
+<script>
+	function upload() {
+		var ids = [];
+		ids.push(998);
+		ids.push(999);
+		ids.push(1000);
+
+		var titles = [];
+		var item = {};
+		item.name = '疑点';
+		item.fileType = 1;
+		titles.push(item);
+		var item2 = {};
+		item2.name = '授信';
+		item2.fileType = 2;
+		titles.push(item2);
+		var item3 = {};
+		item3.name = '其他';
+		item3.fileType = 3;
+		titles.push(item3);
+		var files;
+		$.ajax({
+			type: "get",
+			url: "/AdminJKJ/src/data/upload.json",
+			success: function(result) {
+				if(result.code == 0) {
+					files = result.files;
+					$("#testUpload").upload({
+						fileServerUrl: 'http://local.maohd.com:8083/files', // you must set a valid URL here else you will get an error
+						files: files,
+						tabs: titles,
+						saveFile: null
+					});
+				}
+			}
+		});
+	}
+	upload();
+</script>
+{% endblock %}

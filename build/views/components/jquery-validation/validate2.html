@@ -1,0 +1,326 @@
+{% extends "../../shared/layout.html" %}
+{% block title %}
+{% endblock %}
+
+{% block css %}
+{% endblock %}
+{% block content %}
+            <div class="page-body">
+                <h3>默认表单</h3>
+                <form id="defaultForm" method="post" class="form-horizontal tooltip-validate" action="#">
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">姓名：</label>
+                        <div class="col-lg-2">
+                            <input type="text" class="form-control required" name="firstName" placeholder="名" />
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="text" class="form-control required" name="lastName" placeholder="姓" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">用户名：</label>
+                        <div class="col-lg-4">
+                            <input type="text" class="form-control required abc" name="username" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">邮箱：</label>
+                        <div class="col-lg-4">
+                            <input type="text" class="form-control required email" minlength="10" maxlength="20" name="email" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">密码：</label>
+                        <div class="col-lg-4">
+                            <input type="password" class="form-control required password" id="password" name="password" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">再次输入密码：</label>
+                        <div class="col-lg-4">
+                            <input type="password" class="form-control required" equalTo="#password" name="confirmPassword" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">年龄：</label>
+                        <div class="col-lg-4">
+                            <input type="text" class="form-control required digits" name="age" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">数字：</label>
+                        <div class="col-lg-4">
+                            <input type="text" class="form-control required number" name="number" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">范围数字：</label>
+                        <div class="col-lg-4">
+                            <input type="text" class="form-control required number" range="[5,10]" name="numberRange" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">邮政编码：</label>
+                        <div class="col-lg-4">
+                            <input type="text" class="form-control required zipCode" name="zipCode" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">性别：</label>
+                        <div class="col-lg-4">
+                            <div class="radio-list">
+                                <div class="radio-inline">
+                                    <label>
+                                        <input type="radio" name="gender" value="male"/> 男
+                                    </label>
+                                </div>
+                                <div class="radio-inline">
+                                    <label>
+                                        <input type="radio" name="gender" value="female"/> 女
+                                    </label>
+                                </div>
+                                <div class="radio-inline">
+                                    <label>
+                                        <input type="radio" name="gender" value="other"/> 其他
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">生日：</label>
+                        <div class="col-lg-4">
+                            <input type="text" class="form-control required dateISO" name="birthday" />
+                            <span class="help-block">(YYYY/MM/DD)</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">语言：</label>
+                        <div class="col-lg-4">
+                            <div class="checkbox-list">
+                                <div class="checkbox-inline">
+                                    <label>
+                                        <input type="checkbox" name="languages[]" value="english" /> 英语
+                                    </label>
+                                </div>
+                                <div class="checkbox-inline">
+                                    <label>
+                                        <input type="checkbox" name="languages[]" value="french" /> 法语
+                                    </label>
+                                </div>
+                                <div class="checkbox-inline">
+                                    <label>
+                                        <input type="checkbox" name="languages[]" value="german" /> 德语
+                                    </label>
+                                </div>
+                                <div class="checkbox-inline">
+                                    <label>
+                                        <input type="checkbox" name="languages[]" value="russian" /> 俄语
+                                    </label>
+                                </div>
+                                <div class="checkbox-inline">
+                                    <label>
+                                        <input type="checkbox" name="languages[]" value="other" /> 其他语言
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">编程语言：</label>
+                        <div class="col-lg-4">
+                            <div class="checkbox-list">
+                                <div class="checkbox-inline">
+                                    <label>
+                                        <input type="checkbox" name="programs[]" value="net" /> Javascript
+                                    </label>
+                                </div>
+                                <div class="checkbox-inline">
+                                    <label>
+                                        <input type="checkbox" name="programs[]" value="java" /> Java
+                                    </label>
+                                </div>
+                                <div class="checkbox-inline">
+                                    <label>
+                                        <input type="checkbox" name="programs[]" value="c" /> C/C++
+                                    </label>
+                                </div>
+                                <div class="checkbox-inline">
+                                    <label>
+                                        <input type="checkbox" name="programs[]" value="php" /> PHP
+                                    </label>
+                                </div>
+                                <div class="checkbox-inline">
+                                    <label>
+                                        <input type="checkbox" name="programs[]" value="perl" /> Perl
+                                    </label>
+                                </div>
+                                <div class="checkbox-inline">
+                                    <label>
+                                        <input type="checkbox" name="programs[]" value="ruby" /> Ruby
+                                    </label>
+                                </div>
+                                <div class="checkbox-inline">
+                                    <label>
+                                        <input type="checkbox" name="programs[]" value="python" /> Python
+                                    </label>
+                                </div>
+                                <div class="checkbox-inline">
+                                    <label>
+                                        <input type="checkbox" name="programs[]" value="javascript" /> .Net
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">主页：</label>
+                        <div class="col-lg-4">
+                            <input type="text" class="form-control required url" name="homePage" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-lg-9 col-lg-offset-3">
+                            <button type="submit" class="btn btn-primary" name="signup" value="Sign up">提交</button>
+                            <button type="button" class="btn btn-info" id="validateBtn">验证</button>
+                            <button type="button" class="btn btn-cancel" id="resetBtn">重置</button>
+                        </div>
+                    </div>
+                </form>
+                <h3>模态框表单</h3>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                    弹出模态框</button>
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                        aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">标题</h4>
+                            </div>
+                            <form id="modalForm" class="form-horizontal tooltip-validate">
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label class="col-lg-4 control-label">用户名：</label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control required abc" name="username"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-lg-4 control-label">邮箱：</label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control required email" minlength="10"
+                                                   maxlength="20" name="email"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-lg-4 control-label">密码：</label>
+                                        <div class="col-lg-6">
+                                            <input type="password" class="form-control required" id="modalPassword"
+                                                   name="password"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-lg-4 control-label">再次输入密码：</label>
+                                        <div class="col-lg-6">
+                                            <input type="password" class="form-control required"
+                                                   equalTo="#modalPassword" name="confirmPassword"/>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary">保存</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+{% endblock %}
+
+{% block js %}
+            <!-- jquery validation -->
+            <script src="{{ path.plugins }}jquery-validation/jquery.validate.js"></script>
+            <script src="{{ path.plugins }}jquery-validation/additional-methods.js"></script>
+            <script src="{{ path.plugins }}jquery-validation/messages_zh.js"></script>
+
+            <script>
+                var validator;
+                $(function () {
+                    validator = $.jkj.validate('#defaultForm', {
+                        tooltipOptions: {
+                            tooltip: false
+                        },
+                        rules: {
+                            username: {
+                                remote: '{{ path.src }}data/validateFalseData.json'
+                            },
+                            email: {
+                                remote: '{{ path.src }}data/validateTrueData.json'
+                            },
+                            gender: {
+                                required: true
+                            },
+                            'languages[]': {
+                                required: true
+                            },
+                            'programs[]': {
+                                required: true
+                            }
+                        },
+                        messages: {
+                            username: {
+                                remote: '用户名已存在'
+                            },
+                            email: {
+                                remote: '邮箱已存在'
+                            },
+                            lastName: {
+                                required: '请输入lastName'
+                            }
+                        },
+                        submitHandler: function (form) {
+                            $.jkj.notify.showInfo('提交表单！')
+                        }
+                    });
+
+                    $.jkj.validate('#modalForm', {
+                        submitHandler: function (form) {
+                            $.jkj.notify.showInfo('提交Modal表单！')
+                        }
+                    });
+                });
+
+                $('#validateBtn').click(function () {
+                    $('#defaultForm').valid();//主动验证表单
+                });
+
+                $('#resetBtn').click(function () {
+                    validator.resetForm();
+                    $('#defaultForm')[0].reset();
+                });
+
+            </script>
+{% endblock %}

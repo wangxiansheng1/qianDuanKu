@@ -1,0 +1,35 @@
+{
+	"code": 0,
+    "list": [
+        {
+            "id": 1,
+            "realName": "江鹏",
+            "companyName": "江苏跨境"
+        },
+        {
+            "id": 2,
+            "realName": "黄伟",
+            "companyName": "江苏跨境2"
+        },
+        {
+            "id": 3,
+            "realName": "孙全亚",
+            "companyName": "南京贸互通"
+        },
+        {
+            "id": 4,
+            "realName": "潘明星",
+            "companyName": "南京贸互达"
+        },
+        {
+            "id": 5,
+            "realName": "卞智伟",
+            "companyName": "三宝科技"
+        },
+        {
+            "id": 6,
+            "realName": "章刚",
+            "companyName": "三宝科技2"
+        }
+    ]
+}

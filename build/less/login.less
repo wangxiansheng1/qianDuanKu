@@ -1,0 +1,145 @@
+/*
+ * Page: Login
+ * ----------------------
+ */
+
+.navi {
+    margin: 0 auto;
+    padding: 0px;
+    width: 100%;
+    background: #FFF;
+    width:1200px;
+    .navi-logo {
+        background: url(../images/ico_logo.png) no-repeat;
+        height: 55px;
+        width: 256px;
+        display:inline-block;
+    }
+}
+
+.body {
+    background: url(../images/bg-login.jpg) 50%;
+    background-size:cover;
+    height: 600px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    border:none;
+    .form {
+        margin-top:110px;
+        margin-right:20px;
+        width:359px;
+        height:365px;
+        background:url(../images/img-loginArea.jpg) 0 0 no-repeat;
+        float:right;
+        position:relative;
+        input[type='text'], input[type='password']{
+            padding:0 10px;
+            width: 265px;
+            height:40px;
+            position:absolute;
+            left:66px;
+            border:none;
+            background:none;
+            &:focus{
+                outline: none;
+            }
+        }
+        input[type='text']{
+            top:122px;
+        }
+        input[type='password']{
+            top:162px;
+        }
+        [type='submit'] {
+            width: 305px;
+            height:40px;
+            background:#4f94f3;
+            color:#FFF;
+            font-size:18px;
+            border:none;
+            position:absolute;
+            top:275px;
+            left:28px;
+            cursor:pointer;
+        }
+        label {
+            font-size:13px;
+            position:absolute;
+            top:225px;
+            left:28px;
+            &.error-msg{
+                left: auto;
+                right: 30px;
+                color: #d7180b;
+            }
+        }
+        .animate {
+            width:147px;
+            height:80px;
+            position:absolute;
+            top:42px;
+            left:115px;
+            overflow:hidden;
+            .hand-2, .hand-3{
+                width:40px;
+                height:48px;
+                display:inline-block;
+                position:absolute;
+                z-index:8;
+            }
+            .hand-2 {
+                background:url(../images/ico-hand-2.png) 0 0 no-repeat;
+                animation:hand2 2s linear infinite alternate;           
+            }
+            .hand-3 {
+                background:url(../images/ico-hand-3.png) 0 0 no-repeat;
+                animation:hand3 2s linear infinite alternate;
+            }
+        }
+        .hand-1 {
+            width:121px;
+            height:18px;
+            background:url(../images/ico-hand-1.png) 0 0 no-repeat;
+            display:inline-block;
+            position:absolute;
+            top:108px;
+            left:130px;
+            animation:hand1 2s linear infinite alternate;
+            z-index:9;
+        }
+    }
+}
+
+.foot{
+    padding: 20px 0;
+    background-color: #fff;
+    p{
+        color: #666;
+        margin: 10px;
+        text-align: center;
+        a{
+            color: #666;
+        }
+    }
+}
+
+@keyframes hand1{
+    from {opacity:100 }
+    49% {opacity:100}
+    50% {opacity:0}
+    81% {opacity:0 }
+    to {opacity:0 }
+}
+
+@keyframes hand2{
+    from { top:70px; left:0;}
+    50% { top:70px; left:0;}
+    to {top:32px;left:30px; }
+}
+@keyframes hand3{
+    from { top:70px; right:0;}
+    50% { top:70px; right:0;}
+    to {top:32px;right:30px; }
+}
+

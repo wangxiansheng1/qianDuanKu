@@ -1,0 +1,330 @@
+{% extends "../../shared/layout.html" %} 
+{% block title %}
+{% endblock %} 
+
+{% block css %}
+			<!-- daterange picker -->
+			<link rel="stylesheet" href="{{ path.plugins }}daterangepicker/daterangepicker-bs3.css">
+			<!-- bootstrap datepicker -->
+			<link rel="stylesheet" href="{{ path.plugins }}datepicker/datepicker3.css">
+			<!-- Select2 -->
+			<link rel="stylesheet" href="{{ path.plugins }}select2/select2.min.css">
+			<!-- iCheck for checkboxes and radio inputs -->
+			<link rel="stylesheet" href="{{ path.plugins }}iCheck/all.css">
+			<!-- dateTables -->
+			<link rel="stylesheet" href="{{ path.plugins }}datatables/dataTables.bootstrap.css">
+{% endblock %} 
+{% block content %}
+				<div>
+					<h3>input输入</h3>
+					<div class="row row-void row-form">
+						<div class="col-xs-1 text-right">订单号：</div>
+						<div class="col-xs-3"><input type="text" class="form-control" value=""></div>
+					</div>
+				</div>
+
+<div class="container-fluid">			
+	<i class="fa fa-file-code-o"></i> 
+	<a href="javascript:;" data-xmp = "">展开代码</a>
+<xmp>
+	<div>
+		<h3>input输入</h3>
+		<div class="row row-void row-form">
+			<div class="col-xs-1 text-right">订单号：</div>
+			<div class="col-xs-3"><input type="text" class="form-control" value=""></div>
+		</div>
+	</div>
+</xmp>
+</div>
+
+				<div>
+					<h3>select</h3>
+					<div class="row row-void row-form">
+						<div class="col-xs-1 text-right">订单状态：</div>
+						<div class="col-xs-3">
+							<select class="form-control" name="">
+								<option value="">全部</option>
+								<option value="">草稿</option>
+								<option value="">完善中</option>
+								<option value="">审核中</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				
+<div class="container-fluid">			
+	<i class="fa fa-file-code-o"></i> 
+	<a href="javascript:;" data-xmp = "">展开代码</a>
+<xmp>
+	<h3>select</h3>
+	<div class="row row-void row-form">
+		<div class="col-xs-1 text-right">订单状态：</div>
+		<div class="col-xs-3">
+			<select class="form-control" name="">
+				<option value="">全部</option>
+				<option value="">草稿</option>
+				<option value="">完善中</option>
+				<option value="">审核中</option>
+			</select>
+		</div>
+	</div>
+</xmp>
+</div>
+				
+				<div>
+					<h3>datepicker</h3>
+					<div class="row row-void row-form">
+						<div class="col-xs-1 text-right">下单日期：</div>
+						<div class="col-xs-3"><input type="text" class="form-control" id="datepicker"></div>
+					</div>
+				</div>
+				
+<div class="container-fluid">			
+	<i class="fa fa-file-code-o"></i> 
+	<a href="javascript:;" data-xmp = "">展开代码</a>
+<xmp>
+	
+	<div>
+		<h3>datepicker</h3>
+		<div class="row row-void row-form">
+			<div class="col-xs-1 text-right">下单日期：</div>
+			<div class="col-xs-3"><input type="text" class="form-control" id="datepicker"></div>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+		//Date picker
+		$('#datepicker').datepicker({
+			language: 'zh-CN',
+			autoclose: true,
+    		//todayHighlight: true,
+    		format: 'yyyy-mm-dd'
+		});
+	</script>
+</xmp>
+</div>
+				
+				<div>
+					<h3>daterangepicker</h3>
+					<div class="row row-void row-form">
+						<div class="col-xs-1 text-right">出口日期：</div>
+						<div class="col-xs-3"><input type="text" class="form-control" id="reservation"></div>
+					</div>
+				</div>
+				
+<div class="container-fluid">			
+	<i class="fa fa-file-code-o"></i> 
+	<a href="javascript:;" data-xmp = "">展开代码</a>
+<xmp>
+	<div>
+		<h3>daterangepicker</h3>
+		<div class="row row-void row-form">
+			<div class="col-xs-1 text-right">出口日期：</div>
+			<div class="col-xs-3"><input type="text" class="form-control" id="reservation"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		//Date range picker
+        var startDate= '2017-02-19';
+        var endDate= '2018-02-26';
+        $.jkj.daterangepicker('#reservation',{
+        	startDate: startDate,
+			endDate: endDate
+        });
+	</script>
+</xmp>
+</div>
+				
+				<div>
+					<h3>自动选择</h3>
+					<div class="row row-void row-form">
+						<div class="col-xs-1 text-right">订单状态：</div>
+						<div class="col-xs-3">
+							<select class="form-control select2">
+								<option selected="selected">Alabama</option>
+								<option>Alaska</option>
+								<option>California</option>
+								<option>Delaware</option>
+								<option>Tennessee</option>
+								<option>Texas</option>
+								<option>Washington</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				
+<div class="container-fluid">			
+	<i class="fa fa-file-code-o"></i> 
+	<a href="javascript:;" data-xmp = "">展开代码</a>
+<xmp>
+	<h3>自动选择</h3>
+	<div class="row row-void row-form">
+		<div class="col-xs-1 text-right">订单状态：</div>
+		<div class="col-xs-3">
+			<select class="form-control select2">
+				<option selected="selected">Alabama</option>
+				<option>Alaska</option>
+				<option>California</option>
+				<option>Delaware</option>
+				<option>Tennessee</option>
+				<option>Texas</option>
+				<option>Washington</option>
+			</select>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+		//Initialize Select2 Elements
+		$(".select2").select2();
+	</script>
+</xmp>
+</div>				
+				
+				<div>
+					<h3>iCheck - Checkbox & Radio Inputs</h3>
+					<div class="row row-void row-form">
+						<div class="col-xs-1 text-right">iCheck：</div>
+						<div class="col-xs-3">
+							<input type="checkbox" class="minimal" checked>
+			                <input type="checkbox" class="minimal">
+			                <input type="radio" name="radio1" class="minimal" checked>
+			                <input type="radio" name="radio1" class="minimal">
+						</div>
+					</div>
+				</div>
+				
+<div class="container-fluid">			
+	<i class="fa fa-file-code-o"></i> 
+	<a href="javascript:;" data-xmp = "">展开代码</a>
+<xmp>
+	<h3>iCheck - Checkbox & Radio Inputs</h3>
+	<div class="row row-void row-form">
+		<div class="col-xs-1 text-right">iCheck：</div>
+		<div class="col-xs-3">
+			<input type="checkbox" class="minimal" checked>
+            <input type="checkbox" class="minimal">
+            <input type="radio" name="radio1" class="minimal" checked>
+            <input type="radio" name="radio1" class="minimal">
+		</div>
+	</div>
+	<script type="text/javascript">
+		//iCheck for checkbox and radio inputs
+		$('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+			checkboxClass: 'icheckbox_minimal-blue',
+			radioClass: 'iradio_minimal-blue'
+		});
+	</script>
+</xmp>
+</div>				
+				
+				<div>
+					<h3>Textarea</h3>
+					<div class="row row-void row-form">
+						<div class="col-xs-1 text-right">输入文本：</div>
+						<div class="col-xs-11"><textarea rows="3" style="width: 100%; height: 60px" placeholder="Enter ..."></textarea></div>
+					</div>
+				</div>
+				
+<div class="container-fluid">			
+	<i class="fa fa-file-code-o"></i> 
+	<a href="javascript:;" data-xmp = "">展开代码</a>
+<xmp>
+	<h3>Textarea</h3>
+	<div class="row row-void row-form">
+		<div class="col-xs-1 text-right">输入文本：</div>
+		<div class="col-xs-11"><textarea rows="3" style="width: 100%; height: 60px" placeholder="Enter ..."></textarea></div>
+	</div>
+</xmp>
+</div>
+			
+{% endblock %}
+			
+{% block js %}
+			<!-- Select2 -->
+			<script src="{{ path.plugins }}select2/select2.full.min.js"></script>
+			<!-- date-range-picker -->
+			<script src="{{ path.plugins }}daterangepicker/moment.js"></script>
+			<script src="{{ path.plugins }}daterangepicker/daterangepicker.js"></script>
+			<!-- bootstrap datepicker -->
+			<script src="{{ path.plugins }}datepicker/bootstrap-datepicker.js"></script>
+			<script src="{{ path.plugins }}datepicker/locales/bootstrap-datepicker.zh-CN.js"></script>
+			<!-- iCheck 1.0.1 -->
+			<script src="{{ path.plugins }}iCheck/icheck.min.js"></script>
+			<!-- DataTables -->
+			<script src="{{ path.plugins }}datatables/jquery.dataTables.min.js"></script>
+			<script src="{{ path.plugins }}datatables/dataTables.bootstrap.min.js"></script>
+			
+			<script type="text/javascript">
+				$(function() {
+					//top.$.jkj.data.app.richNavTabs[0].addNavTab('baidu2','百度2','page','http://www.baidu.com');
+					//$.jkj.data.app.richNavTabs[0].addNavTab('baidu2','百度2','page','http://www.baidu.com');
+					$('#addMenu').click(function(){
+						$.jkj.richNavTabs.get('#pageTabs').addNavTab('baidu3','百度3','page','http://www.baidu.com');
+						$.jkj.richNavTabs.get('#pageTabs').displayDefaultNavTab({
+							id: "#pageTabs",
+							showNavTab: null,
+							backward: ".nav-control-backward",
+							forward: ".nav-control-forward",
+							canHidenNavControl: true,
+							tabsScroll: ".nav-tabs-wrapper"
+						});
+					});
+					$('#openSel').click(function(){
+						$.jkj.richNavTabs.get('#pageTabs').addNavTab('openSelCompany','委托下单','page','/AdminJKJ/src/pages/order/detail-new.html');
+					});
+					$('#openDetail').click(function(){
+						$.jkj.richNavTabs.get('#pageTabs').addNavTab('details','详情','page','/AdminJKJ/src/pages/order/detail-new.html');
+					});
+					
+					//Initialize Select2 Elements
+					$(".select2").select2();
+		
+					//Date range picker
+			        var startDate= '2017-02-19';
+			        var endDate= '2018-02-26';
+			        $.jkj.daterangepicker('#reservation',{
+			        	startDate: startDate,
+						endDate: endDate
+			        });
+			        //$('#reservation').clearDate();
+					//Date picker
+					$('#datepicker').datepicker({
+						language: 'zh-CN',
+						autoclose: true,
+                		//todayHighlight: true,
+                		format: 'yyyy-mm-dd'
+					});
+		
+					//iCheck for checkbox and radio inputs
+					$('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+						checkboxClass: 'icheckbox_minimal-blue',
+						radioClass: 'iradio_minimal-blue'
+					});
+					
+					$('#example').DataTable({
+				      "paging": true
+				    });
+		
+				});
+				//较少的条件
+				function lessConditions() {
+				    if (activeFormId != 'formLessSearch') {
+				        $("#formMoreSearch").animate({ height: "50px" }, function () {
+				            $(this).css("height", "0");
+				            $("#formLessSearch").show();
+				        });
+				    }
+				    activeFormId = "formLessSearch";
+				    //passValue($("#formMoreSearch"), $("#formLessSearch"));
+				}
+				
+				//较多的条件 
+				function moreConditions() {
+				    var formMoreSearchH = $("#formMoreSearch .search-area").height();
+				    $("#formLessSearch").hide();
+				    $("#formMoreSearch").show().css("height", "50px").animate({ height: formMoreSearchH });
+				    activeFormId = "formMoreSearch";
+				    //passValue($("#formLessSearch"), $("#formMoreSearch"));
+				}
+			</script>
+{% endblock %}

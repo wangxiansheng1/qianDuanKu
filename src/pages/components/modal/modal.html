@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<!-- Meta, title, CSS, favicons, etc. -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=9">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="keywords" content="HTML，CSS，JS，JavaScript，framework，bootstrap，front-end，web development，江苏跨境">
+		<meta name="description" content="江苏跨境电子商务服务有限公司">
+		<meta name="author" content="潘明星，尹喜晨">
+		<title></title>
+		<!-- Bootstrap 3.3.6 -->
+		<link rel="stylesheet" href="/AdminJKJ/src/css/bootstrap.css">
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="/AdminJKJ/src/css/font-awesome.css">
+		<!-- Ionicons -->
+		<link rel="stylesheet" href="/AdminJKJ/src/css/ionicons.css">
+		<!-- AdminJKJ style -->
+		<link rel="stylesheet" href="/AdminJKJ/src/css/adminjkj-1.0.281.css">
+		<link rel="stylesheet" href="/AdminJKJ/src/css/adminjkj-themes-1.0.0.css">
+		<!--子页面样式-->
+		
+                <!-- Select2 -->
+                <link rel="stylesheet" href="/AdminJKJ/plugins/select2/select2.css">
+
+		
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="/AdminJKJ/src/js/html5shiv.js"></script>
+		<script src="/AdminJKJ/src/js/respond.js"></script>
+		<![endif]-->   
+	</head>
+	<body class="" style=" overflow-x: auto;">
+  		<!-- Site wrapper -->
+		<div class=" page-body ">
+			<!--子页面内容-->
+			
+
+                <!-- 弹出基本消息 -->
+                <button type="button" id="button1" class="btn btn-primary btn-lg"> 弹出基本消息 </button>
+
+                <!-- 弹出自定义内容 -->
+                <button type="button" id="button2" class="btn btn-primary btn-lg"> 弹出自定义内容 </button>
+
+                <!-- 弹出远程页面 -->
+                <button type="button" id="button3" class="btn btn-primary btn-lg"> 弹出远程页面 </button>
+
+                <!-- 弹出确认框 -->
+                <button type="button" id="button4" class="btn btn-primary btn-lg"> 弹出确认框 </button>
+
+ <div class="container-fluid">
+	<i class="fa fa-file-code-o"></i>
+	<a href="javascript:;" data-xmp = "">展开代码</a>
+<xmp>
+    <!-- Select2 -->
+    <link rel="stylesheet" href="/AdminJKJ/plugins/select2/select2.css">
+
+
+	<!-- 弹出基本消息 -->
+    <button type="button" id="button1" class="btn btn-primary btn-lg"> 弹出基本消息 </button>
+
+    <!-- 弹出自定义内容 -->
+    <button type="button" id="button2" class="btn btn-primary btn-lg"> 弹出自定义内容 </button>
+
+    <!-- 弹出远程页面 -->
+    <button type="button" id="button3" class="btn btn-primary btn-lg"> 弹出远程页面 </button>
+
+    <!-- 弹出确认框 -->
+    <button type="button" id="button4" class="btn btn-primary btn-lg"> 弹出确认框 </button>
+
+
+    <!-- jquery validation -->
+    <script src="/AdminJKJ/plugins/jquery-validation/jquery.validate.js"></script>
+    <script src="/AdminJKJ/plugins/jquery-validation/additional-methods.js"></script>
+    <script src="/AdminJKJ/plugins/jquery-validation/messages_zh.js"></script>
+
+    <!-- Select2 -->
+    <script src="/AdminJKJ/plugins/select2/select2.full.js"></script>
+    <script src="/AdminJKJ/plugins/select2/i18n/zh-CN.js"></script>
+
+    <!-- modal -->
+    <script>
+        $(function () {
+
+            //弹出基本消息
+            $('#button1').click(function () {
+                $.jkj.modal.show({
+                    title: '操作提示',
+                    content: '这是一条消息',
+                    footer:false
+                });
+            });
+
+            //弹出自定义内容
+            $('#button2').click(function () {
+                $.jkj.modal.show({
+                    header: false,
+                    content: function () {
+                        var $btn = $('<button class="btn btn-danger">测试按钮</button>');
+                        $btn.click(function () {
+                            $.jkj.notify.showError('测试按钮');
+                        });
+                        return $btn;
+                    }
+                });
+            });
+
+            //弹出远程页面
+            $('#button3').click(function () {
+                $.jkj.modal.show({
+                    title: '新增账户',
+                    beforeSend: function(){
+
+                    },
+                    content: {
+                        type: 'GET',
+                        url: '/AdminJKJ/src/pages/components/modal/form.html',
+                        success: function (modal) {
+                            $.jkj.select2.local('#select');
+                            $.jkj.validate('#form', {
+                                submitHandler: function () {
+                                    $.jkj.modal.hide(modal);
+                                    $.jkj.notify.showSuccess('提交表单');
+                                }
+                            });
+                        }
+                    },
+                    buttons:[
+                        {
+                            label: '自定义按钮1', //按钮文本
+                            cssClass: 'btn-info', //按钮额外class
+                            action: function (modal) { //按钮点击回调
+                                $('#form').submit();
+                            }
+                        }
+                    ]
+                });
+            });
+
+            //弹出确认框
+            $('#button4').click(function () {
+                $.jkj.modal.confirm("确定删除该对象吗?",
+                    function () {
+                        $.jkj.notify.showSuccess('确定');
+                    }, function () {
+                        $.jkj.notify.showError('取消');
+                    }
+                );
+            });
+
+        });
+    </script>
+</xmp>
+</div>
+
+
+		</div>
+		
+		<!-- jquery 2.2.3 -->
+		<script src="/AdminJKJ/plugins/jquery/jquery-2.2.3.min.js"></script>
+		<!-- Bootstrap 3.3.6 -->
+		<script src="/AdminJKJ/src/js/bootstrap.js"></script>
+		<!-- SlimScroll -->
+		<script src="/AdminJKJ/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+		<!-- FastClick -->
+		<script src="/AdminJKJ/plugins/fastclick/fastclick.js"></script>
+		<!-- Notify -->
+		<script src="/AdminJKJ/plugins/bootstrap-notify/bootstrap-notify.js"></script>
+
+		<script src="/AdminJKJ/src/js/adminjkj-1.0.281.js" type="text/javascript"></script>
+		<!--子页面脚本-->
+		
+
+            <!-- jquery validation -->
+            <script src="/AdminJKJ/plugins/jquery-validation/jquery.validate.js"></script>
+            <script src="/AdminJKJ/plugins/jquery-validation/additional-methods.js"></script>
+            <script src="/AdminJKJ/plugins/jquery-validation/messages_zh.js"></script>
+
+            <!-- Select2 -->
+            <script src="/AdminJKJ/plugins/select2/select2.full.js"></script>
+            <script src="/AdminJKJ/plugins/select2/i18n/zh-CN.js"></script>
+
+			<!-- modal -->
+            <script>
+                $(function () {
+
+                    //弹出基本消息
+                    $('#button1').click(function () {
+                        $.jkj.modal.show({
+                            title: '操作提示',
+                            content: '这是一条消息',
+                            footer:false
+                        });
+                    });
+
+                    //弹出自定义内容
+                    $('#button2').click(function () {
+                        $.jkj.modal.show({
+                            header: false,
+                            content: function () {
+                                var $btn = $('<button class="btn btn-danger">测试按钮</button>');
+                                $btn.click(function () {
+                                    $.jkj.notify.showError('测试按钮');
+                                });
+                                return $btn;
+                            }
+                        });
+                    });
+
+                    //弹出远程页面
+                    $('#button3').click(function () {
+                        $.jkj.modal.show({
+                            title: '新增账户',
+                            beforeSend: function(){
+
+                            },
+                            content: {
+                                type: 'GET',
+                                url: '/AdminJKJ/src/pages/components/modal/form.html',
+                                success: function (modal) {
+                                    $.jkj.select2.local('#select');
+                                    $.jkj.validate('#form', {
+                                        submitHandler: function () {
+                                            $.jkj.modal.hide(modal);
+                                            $.jkj.notify.showSuccess('提交表单');
+                                        }
+                                    });
+                                }
+                            },
+                            buttons:[
+                                {
+                                    label: '自定义按钮1', //按钮文本
+                                    cssClass: 'btn-info', //按钮额外class
+                                    action: function (modal) { //按钮点击回调
+                                        $('#form').submit();
+                                    }
+                                }
+                            ]
+                        });
+                    });
+
+                    //弹出确认框
+                    $('#button4').click(function () {
+                        $.jkj.modal.confirm("确定删除该对象吗?",
+                            function () {
+                                $.jkj.notify.showSuccess('确定');
+                            }, function () {
+                                $.jkj.notify.showError('取消');
+                            }
+                        );
+                    });
+
+                });
+            </script>
+
+
+	</body>
+</html>

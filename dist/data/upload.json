@@ -1,0 +1,29 @@
+{
+	"code":0,
+    "files": [
+        {
+            "id": 997,
+            "filename": "测试1",
+            "fileType": 1,
+            "extension": "pdf"
+        },
+        {
+            "id": 998,
+            "filename": "测试2",
+            "fileType": 2,
+            "extension": "xlsx"
+        },
+        {
+            "id": 999,
+            "filename": "测试3",
+            "fileType": 3,
+            "extension": "word"
+        },
+        {
+            "id": 1000,
+            "filename": "测试4",
+            "fileType": 1,
+            "extension": "png"
+        }
+    ]
+}

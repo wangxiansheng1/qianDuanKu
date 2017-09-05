@@ -1,0 +1,109 @@
+/*
+ * 组件: richNavTabs 富导航标签
+ * --------------
+ */
+
+.richNavTabs{
+    .content-header{
+        border: none;
+        padding: 0;
+        width: auto !important;
+        .nav-control {
+            span{
+                font-size: 20px;
+                padding: 0;
+                margin: 0;
+            }
+        }
+        .nav-control-backward{
+            float: left;
+        }
+        .nav-control-forward{
+            float: right;
+        }
+        .nav-tabs-wrapper{
+            display: block;
+            overflow: hidden;
+            height: 27px;
+            border-bottom: 1px solid #c6c6c6;
+            .nav-tabs{
+                display: table;
+                height: 26px;
+                border-bottom:none;
+                white-space: nowrap;
+                li{
+                    float: none;
+                    margin: 0 0 -1px 0;
+                    height: 27px;
+                    border-right: 1px solid #c6c6c6;
+                    a{
+                        border: none;
+                        border-radius: 0;
+                        display: inline-block;
+                        height: 27px;
+                        line-height: 26px;
+                        margin: 0;
+                        padding: 0 20px 0 10px;
+                        filter: inherit;
+                        text-align: left;
+                        width: 120px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        transition: 0.3s;
+                        .span{
+                            padding: 5px;
+                        }
+                        .nav-tabs-close{
+                            position: absolute;
+                            padding: 6px;
+                            right: 1px;
+                            opacity: 0.6;
+                            cursor: pointer;
+                        }
+                        
+                    }
+                }
+            }
+            .nav{
+                li{
+                    display: inline-block;
+                }
+            }
+        }
+    }
+    .content{
+       .tab-content{
+           overflow: hidden;
+           .tab-pane{
+               overflow: auto;
+           }
+       }
+    }
+    .contextMenu{
+        display: none;
+        position: absolute;
+        text-align: left;
+        z-index: 100;
+        -webkit-box-shadow: 2px 2px 3px #777;  
+        -moz-box-shadow: 2px 2px 3px #777;  
+        box-shadow: 2px 2px 3px #777;  
+        ul{
+            display: block;
+            list-style: outside none none;
+            margin: 0;
+            padding: 1px;
+            width: 100px;
+            li{
+                cursor: pointer;
+                display: :block;
+                list-style: none;
+                padding: 3px;
+                
+                &:hover{
+                    background: rgb(182,189,210);
+                }
+            }
+        }
+    }
+}

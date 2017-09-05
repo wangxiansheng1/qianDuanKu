@@ -1,0 +1,55 @@
+{% extends "../../shared/layout.html" %} 
+{% block title %}
+{% endblock %} 
+
+{% block css %}{% endblock %} 
+
+{% block content %}
+<div class="container-fluid" style="z-index: 9999; position: relative;">			
+	<i class="fa fa-file-code-o"></i> 
+	<a href="javascript:;" data-xmp = "">展开代码</a>
+<xmp>
+	<script type="text/javascript">
+		var myLayer;
+		$(function() {
+			myLayer = $.jkj.layer.mask();
+			setTimeout(function(){
+				myLayer.close();
+				setTimeout(function(){
+					myLayer = $.jkj.layer.mask();
+				},1000);
+			},1000);
+		});
+		
+	</script>
+</xmp>
+<h5>myLayer.close(); 关闭蒙版/h5>
+<h5>$.jkj.layer.mask(myLayer.id);	当前页面创建蒙版</h5>
+<h5>$.jkj.layer.maskParent(myLayer.id);	父页面创建蒙版</h5>
+<h5>$.jkj.layer.maskTop(myLayer.id);	顶级页面创建蒙版</h5>
+<h5>$.jkj.layer.remove(myLayer.id);	移除指定层</h5>
+<h5>$.jkj.layer.removeAll();	移除所有层(蒙版，加载，加载含内容)</h5>
+</div>
+{% endblock %}
+			
+{% block js %}
+			
+			<script type="text/javascript">
+				var myLayer;
+				$(function() {
+					myLayer = $.jkj.layer.mask();
+					setTimeout(function(){
+						myLayer.close();
+						setTimeout(function(){
+							myLayer = $.jkj.layer.mask();
+						},1000);
+					},1000);
+					
+				});
+				
+				//myLayer.close();
+				//$.jkj.layer.remove(myLayer.id);
+				//$.jkj.layer.removeAll();
+			</script>
+			
+{% endblock %}

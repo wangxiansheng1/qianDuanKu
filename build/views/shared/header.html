@@ -1,0 +1,215 @@
+			<header class="main-header" id="header">
+				<a class="logo">
+			      <!-- mini logo for sidebar mini 50x50 pixels -->
+			      <span class="logo-mini"><b></b>MHD</span>
+			      <!-- logo for regular state and mobile devices -->
+			      <span class="logo-lg"><img src="{{ path.src }}images/ico-logo.png" alt="贸互达管理系统"></span>
+			    </a>
+				<!-- Header Navbar: style can be found in header.less -->
+				<nav class="navbar navbar-static-top">
+					<!-- Sidebar toggle button-->
+					<a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="fa fa-fw fa-caret-left" ></span>
+						<span class="fa fa-fw fa-caret-right" style="display: none;margin-left: -7px;"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</a>
+					<div class="navbar-custom-menu">
+						<ul class="nav navbar-nav">
+							<!-- Messages: style can be found in dropdown.less-->
+							<li class="dropdown messages-menu">
+								<a href="#" class="dropdown-toggle wave">
+									<i class="fa fa-envelope-o"></i>
+									<span class="label label-success">4</span>
+								</a>
+							</li>
+							<!-- Notifications: style can be found in dropdown.less -->
+							<li class="dropdown notifications-menu">
+								<a href="#" class="dropdown-toggle wave">
+									<i class="fa fa-bell-o"></i>
+									<span class="label label-warning">10</span>
+								</a>
+							</li>
+							<!-- Tasks: style can be found in dropdown.less -->
+							<li class="dropdown tasks-menu">
+								<a href="#" class="dropdown-toggle">
+									<i class="fa fa-flag-o"></i>
+									<span class="label label-danger">0</span>
+								</a>
+							</li>
+							<!-- User Account: style can be found in dropdown.less -->
+							<li class="dropdown user user-menu">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+									<img src="{{ path.src }}images/ico-photo.png" class="user-image" alt="User Image">
+									<span class="hidden-xs">帐号管理</span>
+								</a>
+								<ul class="dropdown-menu">
+									<!-- User image -->
+									<li class="user-header">
+										<img src="{{ path.src }}images/ico-photo.png" class="img-circle" alt="User Image">
+										<p>
+											Admin
+											<small>系统管理员</small>
+										</p>
+									</li>
+									<!-- Menu Footer-->
+									<li class="user-footer">
+										<div class="pull-left">
+											<a href="#" class="btn btn-default btn-flat" data-toggle="modal" data-target="#setSystem">设&nbsp;置</a>
+										</div>
+										<div class="pull-right">
+											<a href="#" class="btn btn-default btn-flat">登&nbsp;出</a>
+										</div>
+									</li>
+								</ul>
+							</li>
+							<!-- Control Sidebar Toggle Button -->
+							<!--<li>
+								<a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+							</li>-->
+						</ul>
+					</div>
+				</nav>
+			</header>
+			<!-- Modal -->
+			<div class="modal fade set-system" id="setSystem" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			  <div class="modal-dialog" role="document" style="">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title" id="myModalLabel">系统设置</h4>
+			      </div>
+			      <div class="modal-body">
+			      	<ul id="myTab" class="nav nav-tabs nav-tabs-first">
+						<li class="active">
+							<a href="#home" data-toggle="tab">
+								<i class="fa fa-cog"></i> 基本设置
+							</a>
+						</li>
+						<li>
+							<a href="#ios" data-toggle="tab">
+								<i class="fa fa-shield"></i> 安全设置
+							</a>
+						</li>
+					</ul>
+					<div id="myTabContent" class="tab-content">
+						<div class="tab-pane fade in active" id="home" style="background: #f0f0f1;">
+							<ul class="nav nav-tabs nav-tabs-second">
+								<li class="active"><a href="#ios1" data-toggle="tab">个人信息</a></li>
+								<li><a href="#home1" data-toggle="tab">头像设置</a></li>	
+							</ul>
+							<div class="tab-content">
+								<div class="tab-pane fade" id="home1">
+									<form>
+										<div class="row">
+											<div class="col-xs-12">
+												<div class="row-void row-form form-group">
+													<div class="col-xs-2 text-right">
+														设置头像：
+													</div>
+													<div class="col-xs-8">
+														<input type="file" class="form-control required" name="username" id="" value="" />
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="btn-submit">
+											<button type="submit" class="btn btn-confirm">头像设置</button>
+										</div>
+									</form>
+								</div>
+								<div class="tab-pane fade in active" id="ios1">
+									<form>
+										<div class="row">
+											<div class="col-xs-12">
+												<div class="row-void row-form form-group">
+													<div class="col-xs-2 text-right">
+														帐号名：
+													</div>
+													<div class="col-xs-8">
+														<input type="text" class="form-control required" name="username" id="" value="" />
+													</div>
+												</div>
+											</div>
+											<div class="col-xs-12">
+												<div class="row-void row-form form-group">
+													<div class="col-xs-2 text-right">
+														年龄：
+													</div>
+													<div class="col-xs-8">
+														<input type="text" class="form-control required" name="age" id="" value="" />
+													</div>
+												</div>
+											</div>
+											<div class="col-xs-12">
+												<div class="row-void row-form form-group">
+													<div class="col-xs-2 text-right">
+														性别：
+													</div>
+													<div class="col-xs-8">
+														<label><input class="minimal" type="radio" name="sex" id="" value=""/> 男</label>
+														<label><input class="minimal" type="radio" name="sex" id="" value="" /> 女</label>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="btn-submit">
+											<button type="submit" class="btn btn-confirm">修改信息</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="ios" style="background: #f0f0f1;">
+							<ul class="nav nav-tabs nav-tabs-second">
+								<li class="active"><a href="#home2" data-toggle="tab"> 修改密码</a></li>
+							</ul>
+							<div class="tab-content">
+								<div class="tab-pane fade in active" id="home2">
+									<form>
+										<div class="row">
+											<div class="col-xs-12">
+												<div class="row-void row-form form-group">
+													<div class="col-xs-3 text-right">
+														原密码：
+													</div>
+													<div class="col-xs-7">
+														<input type="text" class="form-control required" name="password" id="" value="" />
+													</div>
+												</div>
+											</div>
+											<div class="col-xs-12">
+												<div class="row-void row-form form-group">
+													<div class="col-xs-3 text-right">
+														新密码：
+													</div>
+													<div class="col-xs-7">
+														<input type="text" class="form-control required" name="newpassword" id="" value="" />
+													</div>
+												</div>
+											</div>
+											<div class="col-xs-12">
+												<div class="row-void row-form form-group">
+													<div class="col-xs-3 text-right">
+														确认新密码：
+													</div>
+													<div class="col-xs-7">
+														<input type="text" class="form-control required" name="confirmpassword" id="" value="" />
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="btn-submit">
+											<button type="submit" class="btn btn-confirm">修改密码</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+			     </div>
+			    </div>
+			  </div>
+			</div>

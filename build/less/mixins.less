@@ -1,0 +1,666 @@
+//AdminJKJ mixins
+//===============
+@import (reference) "core";
+
+//Changes the color and the hovering properties of the navbar
+.navbar-variant(@color; @font-color: rgba(255, 255, 255, 0.8); @hover-color: #f6f6f6; @hover-bg: rgba(0, 0, 0, 0.1)) {
+  background-color: @color;
+  //Navbar links
+  .nav > li > a {
+    color: @font-color;
+  }
+
+  .nav > li > a:hover,
+  .nav > li > a:active,
+  .nav > li > a:focus,
+  .nav .open > a,
+  .nav .open > a:hover,
+  .nav .open > a:focus,
+  .nav > .active > a {
+    background: @hover-bg;
+    color: @hover-color;
+  }
+
+  //Add color to the sidebar toggle button
+  .sidebar-toggle {
+    color: @font-color;
+    &:hover {
+      color: @hover-color;
+      background: @hover-bg;
+    }
+  }
+}
+
+//Logo color variation
+.logo-variant(@bg-color; @color: #fff; @border-bottom-color: transparent; @border-bottom-width: 0) {
+  background-color: @bg-color;
+  color: @color;
+  border-bottom: @border-bottom-width solid @border-bottom-color;
+
+  &:hover {
+    background-color: darken(@bg-color, 1%);
+  }
+}
+
+//Box solid color variantion creator
+.box-solid-variant(@color; @text-color: #fff) {
+  border: 1px solid @color;
+  > .box-header {
+    color: @text-color;
+    background: @color;
+    background-color: @color;
+    a,
+    .btn {
+      color: @text-color;
+    }
+  }
+}
+
+//Direct Chat Variant
+.direct-chat-variant(@bg-color; @color: #fff) {
+  .right > .direct-chat-text {
+    background: @bg-color;
+    border-color: @bg-color;
+    color: @color;
+    &:after,
+    &:before {
+      border-left-color: @bg-color;
+    }
+  }
+}
+
+//border radius creator
+.border-radius(@radius) {
+  border-radius: @radius;
+}
+
+//Different radius each side
+.border-radius(@top-left;
+@top-right
+;
+@bottom-left
+;
+@bottom-right
+)
+{
+  border-top-left-radius: @top-left
+;
+  border-top-right-radius: @top-right
+;
+  border-bottom-right-radius: @bottom-right
+;
+  border-bottom-left-radius: @bottom-left
+;
+}
+
+//Gradient background
+.gradient(@color: #F5F5F5, @start: #EEE, @stop: #FFF) {
+  background: @color;
+  background: -webkit-gradient(linear,
+  left bottom,
+  left top,
+  color-stop(0, @start),
+  color-stop(1, @stop));
+  background: -ms-linear-gradient(bottom,
+  @start,
+  @stop);
+  background: -moz-linear-gradient(center bottom,
+  @start 0%,
+  @stop 100%);
+  background: -o-linear-gradient(@stop,
+  @start);
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@stop,@start));
+}
+
+//Added 2.1.0
+//Skins Mixins
+
+//Dark Sidebar Mixin
+.skin-dark-sidebar(@link-hover-border-color) {
+  // Sidebar background color (Both .wrapper and .left-side are responsible for sidebar bg color)
+  .wrapper,
+  .main-sidebar,
+  .left-side {
+    background-color: @sidebar-dark-bg;
+  }
+  //User Panel (resides in the sidebar)
+  .user-panel {
+    > .info, > .info > a {
+      color: #fff;
+    }
+  }
+  //Sidebar Menu. First level links
+  .sidebar-menu > li {
+    //Section Headning
+    &.header {
+      color: lighten(@sidebar-dark-bg, 20%);
+      background: darken(@sidebar-dark-bg, 4%);
+    }
+    //links
+    > a {
+      border-left: 3px solid transparent;
+    }
+    //Hover and active states
+    &:hover > a, &.active > a {
+      color: @sidebar-dark-hover-color;
+      background: @sidebar-dark-hover-bg;
+      border-left-color: @link-hover-border-color;
+    }
+    //First Level Submenu
+    > .treeview-menu {
+      margin: 0;
+      background: @sidebar-dark-submenu-bg;
+      .treeview-menu {
+          background: @sidebar-dark-submenu2-bg;
+          .treeview-menu {
+              background: @sidebar-dark-submenu3-bg;
+            }
+        }
+    }
+  }
+  //All links within the sidebar menu
+  .sidebar a {
+    color: @sidebar-dark-color;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  //All submenus
+  .treeview-menu {
+    > li {
+      > a {
+        color: @sidebar-dark-submenu-color;
+      }
+      &.active > a, > a:hover {
+        color: @sidebar-dark-submenu-hover-color;
+        background: @sidebar-dark-submenu3-bg;
+      }
+    }
+  }
+  //The sidebar search form
+  .sidebar-form {
+    .border-radius(3px);
+    border: 1px solid lighten(@sidebar-dark-bg, 10%);
+    margin: 10px 10px;
+    input[type="text"], .btn {
+      box-shadow: none;
+      background-color: lighten(@sidebar-dark-bg, 10%);
+      border: 1px solid transparent;
+      height: 35px;
+      //.transition(all @transition-speed @transition-fn);
+    }
+    input[type="text"] {
+      color: #666;
+      .border-radius(2px, 0, 2px, 0);
+      &:focus,
+      &:focus + .input-group-btn .btn {
+        background-color: #fff;
+        color: #666;
+      }
+      &:focus + .input-group-btn .btn {
+        border-left-color: #fff;
+
+      }
+    }
+    .btn {
+      color: #999;
+      .border-radius(0, 2px, 0, 2px);
+    }
+  }
+}
+
+//Light Sidebar Mixin
+.skin-light-sidebar(@icon-active-color) {
+  // Sidebar background color (Both .wrapper and .left-side are responsible for sidebar bg color)
+  .wrapper,
+  .main-sidebar,
+  .left-side {
+    background-color: @sidebar-light-bg;
+  }
+  .content-wrapper,
+  .main-footer {
+    border-left: 1px solid @gray-lte;
+  }
+  //User Panel (resides in the sidebar)
+  .user-panel {
+    > .info, > .info > a {
+      color: @sidebar-light-color;
+    }
+  }
+  //Sidebar Menu. First level links
+  .sidebar-menu > li {
+    .transition(border-left-color .3s ease);
+    //border-left: 3px solid transparent;
+    //Section Headning
+    &.header {
+      color: lighten(@sidebar-light-color, 25%);
+      background: @sidebar-light-bg;
+    }
+    //links
+    > a {
+      border-left: 3px solid transparent;
+      font-weight: 600;
+    }
+    //Hover and active states
+    &:hover > a,
+    &.active > a {
+      color: @sidebar-light-hover-color;
+      background: @sidebar-light-hover-bg;
+    }
+    &:hover > a {
+
+    }
+    &.active {
+      border-left-color: @icon-active-color;
+      > a {
+        font-weight: 600;
+      }
+    }
+    //First Level Submenu
+    > .treeview-menu {
+      background: @sidebar-light-submenu-bg;
+    }
+  }
+  //All links within the sidebar menu
+  .sidebar a {
+    color: @sidebar-light-color;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  //All submenus
+  .treeview-menu {
+    > li {
+      > a {
+        color: @sidebar-light-submenu-color;
+      }
+      &.active > a,
+      > a:hover {
+        color: @sidebar-light-submenu-hover-color;
+      }
+      &.active > a {
+        font-weight: 600;
+      }
+    }
+  }
+  //The sidebar search form
+  .sidebar-form {
+    .border-radius(3px);
+    border: 1px solid @gray-lte;  //darken(@sidebar-light-bg, 5%);
+    margin: 10px 10px;
+    input[type="text"],
+    .btn {
+      box-shadow: none;
+      background-color: #fff; //darken(@sidebar-light-bg, 3%);
+      border: 1px solid transparent;
+      height: 35px;
+      //.transition(all @transition-speed @transition-fn);
+    }
+    input[type="text"] {
+      color: #666;
+      .border-radius(2px, 0, 2px, 0);
+      &:focus,
+      &:focus + .input-group-btn .btn {
+        background-color: #fff;
+        color: #666;
+      }
+      &:focus + .input-group-btn .btn {
+        border-left-color: #fff;
+      }
+    }
+    .btn {
+      color: #999;
+      .border-radius(0, 2px, 0, 2px);
+    }
+  }
+  @media (min-width: @screen-sm-min) {
+    &.sidebar-mini.sidebar-collapse {
+      .sidebar-menu > li > .treeview-menu {
+        border-left: 1px solid @gray-lte;
+      }
+    }
+  }
+}
+
+//page-body
+.page-body{
+    padding: 15px;
+    min-width: 1120px;
+    //page-title
+    .page-title{
+        margin: 0 -15px 20px;
+        padding: 0 15px;
+        font-size: 16px;
+        height: 38px;
+        line-height: 38px;
+        border-bottom: 3px solid @light-blue;
+        color: #000;
+        position: relative;
+        font-weight: bold;
+        .page-state{
+            margin-left: 30px;
+            display: inline-block;
+            font-size: 13px;
+            font-weight: normal;
+            a{
+                color: @light-black;
+                margin-left: 10px;
+            }
+        }
+        .btn{
+            float: right;
+        }
+    }
+    //search Area
+    > form{
+        overflow: hidden;
+        .search-area{
+            float: left;
+            width: 910px;
+            .search-group{
+                margin: 0 20px 15px 0;
+                display: inline-block;
+                position: relative;
+                vertical-align: top;
+                label{
+                    margin-right: 0;
+                    width: 91px;
+                    text-align: right;
+                    font-weight: normal;
+                    vertical-align: middle;
+                }
+                .form-control{
+                    width: 180px;
+                    display: inline-block;
+                    height: 30px;
+                    padding: 0 10px 0 5px;
+                }
+            }    
+        }
+        @media only screen and (min-width: 1390px)  {
+            .search-area{
+                margin-right: 20px;
+                width: auto;
+                max-width: 1162px;
+                .search-group {
+                    margin-right:7px;
+                }
+            }
+        }
+        .search-group{
+            margin: 0 20px 20px 0;
+            display: inline-block;
+            .more-criteria, .close-criteria{
+                color: @light-black;
+            }
+        }
+        
+        select, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"]{
+            height: 30px;
+            line-height: 30px;
+            padding-left: 5px;
+            padding-right: 10px;
+            vertical-align: middle;
+            background: #FFF;
+            .border-radius(5px);
+            word-wrap: normal;
+            -moz-background-clip: padding!important;
+            background-clip: padding-box!important;
+            color: @light-black;
+            background-color: #fbfbfb;
+            border: 1px solid @light-gray;
+            font-family: inherit;
+            font-size: 13px;
+            -webkit-transition: -webkit-box-shadow .45s,border-color .45s ease-in-out;
+            -moz-transition: -moz-box-shadow .45s,border-color .45s ease-in-out;
+            -o-transition: box-shadow .45s,border-color .45s ease-in-out;
+            transition: box-shadow .45s,border-color .45s ease-in-out;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+        }
+    }
+    form#formMoreSearch {
+        height: 0;
+        display: block;
+    }
+}
+
+
+//tab
+.tabbable{
+    .nav-tabs {
+        display:table;
+        width:100%;
+        -webkit-box-shadow:none;
+        -moz-box-shadow:none;
+        box-shadow:none;
+        border:1px solid #c6c6c6;
+        border-bottom:0;
+        background:#e5e8ef;
+        > li{
+            float:none;
+            display: table-cell;
+            >a{
+                padding: 10px 0;
+                line-height: 15px;
+                text-align: center;
+                color: #333;
+                &:hover, &:focus{
+                    color: #262626;
+                    background-color: transparent;
+                    border-color: transparent;
+                }
+            }
+            &.active{
+                border-bottom:1px solid #FFF;
+                position:relative;
+                z-index:9;
+                >a{
+                    &, &:hover, &:focus{
+                        margin-top:0;
+                        border:none;
+                        border-top: 3px solid #008cee;
+                        border-right:1px solid #c6c6c6;
+                        box-shadow: none;
+                        background:#FFF;
+                    }
+                }
+            }
+            &:first-child{
+                >a{
+                    border-left:none;
+                }
+            }
+        }
+    }
+    .tab-content {
+        margin-top:-1px;
+        padding: 16px 12px;
+        position: relative;
+        -webkit-box-shadow:none;
+        -moz-box-shadow:none;
+        box-shadow:none;
+        border:1px solid #c6c6c6;
+        background:#FFF;
+    }
+}
+.tabs-left{
+    .nav-tabs{
+        display:initial;
+        width:auto;
+    }
+    >li{
+        display:block;
+    }
+    .page-title{
+        margin:0 0 20px;
+    }
+    .tab-content-mh{
+        >.tab-pane{
+            min-height:220px;
+        }
+    }
+}
+
+.margin-bottom-10{
+    margin-bottom: 10px;
+}
+
+//row row-void
+.row{
+    margin-right: -5px;
+    margin-left: -5px;
+    .form-control{
+        padding-top: 0;
+        padding-bottom: 0;
+        height: 30px;
+        padding-left:10px;
+        padding-right: 10px;
+        font-size: 13px;
+        &:focus{
+            border-color:#40a7f2;
+        }
+    }
+}
+.make-grid-columns() {
+  // Common styles for all sizes of grid columns, widths 1-12
+  .col(@index) {
+    // initial
+    @item: ~".col-xs-@{index}, .col-sm-@{index}, .col-md-@{index}, .col-lg-@{index}";
+    .col((@index + 1), @item);
+  }
+  .col(@index, @list) when (@index =< @grid-columns) {
+    // general; "=<" isn't a typo
+    @item: ~".col-xs-@{index}, .col-sm-@{index}, .col-md-@{index}, .col-lg-@{index}";
+    .col((@index + 1), ~"@{list}, @{item}");
+  }
+  .col(@index, @list) when (@index > @grid-columns) {
+    // terminal
+    @{list} {
+      // Inner gutter via padding
+      padding: 5px;
+    }
+  }
+  .col(1); // kickstart it
+}
+.make-grid-columns();
+.row-void{
+    margin: 0;
+    .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12{
+        padding: 0;
+    }
+}
+.row-form{
+    .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12{
+        padding: 5px 2px;
+        line-height: 30px;
+    }
+}
+.sidebar-mini {
+    .img-normal{
+        margin-left: 10px;
+    }
+    &.sidebar-collapse {
+        .img-normal{
+            margin-left: 0;
+        }
+    }
+}
+label{
+    margin-bottom: 0;
+}
+.margin-top-10{
+    .margin-top(10px);
+}
+.margin-top-20{
+    .margin-top(20px);
+}
+.margin-top-30{
+    .margin-top(30px);
+}
+.margin-bottom-10{
+    .margin-bottom(10px);
+}
+.margin-bottom-20{
+    .margin-bottom(20px);
+}
+.margin-bottom-30{
+    .margin-bottom(30px);
+}
+.margin-left-10{
+    .margin-left(10px);
+}
+.margin-left-20{
+    .margin-left(20px);
+}
+.margin-left-30{
+    .margin-left(30px);
+}
+.margin-right-10{
+    .margin-right(10px);
+}
+.margin-right-20{
+    .margin-right(20px);
+}
+.margin-right-30{
+    .margin-right(30px);
+}
+.layer-loading{
+    height: 95px;
+    background: url(../images/loading.gif) center no-repeat;
+}
+.daterangepicker.dropdown-menu{
+    width: 494px;
+}
+xmp{
+    height: 100px;
+    border: 1px solid #ccc;
+    overflow-y: hidden;
+    overflow-x: auto;
+    transition: .3s;
+}
+.auditProcess{
+    margin:20px auto;
+    text-align:center;
+    ul{
+        display:inline-block;
+        li{
+            width:76px;
+            height:26px;
+            line-height:26px;
+            text-align:center;
+            color:#7b7b7b;
+            background:url(../images/ico-images.png) -78px 0 no-repeat;
+            float:left;
+            text-indent: -10px;
+            list-style:none;
+            margin-left: 50px;
+            &.on{
+                color: #FFF;
+                background-position: 0 0 ;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 100px) and (max-width: 768px) {
+    .fixed .content-wrapper, .fixed .right-side{
+        padding-top: 100px;
+    }
+    .main-sidebar, .left-side{
+        top: 0;
+    }
+    .richNavTabs .content .tab-content{
+        margin-top: -50px;
+        padding-top: 50px;
+    }
+    .richNavTabs .content .tab-content .tab-pane{
+        -webkit-overflow-scrolling: touch;   
+        overflow-y: scroll;  
+        padding-bottom: 50px;
+    }
+    body.sidebar-mini{
+        min-width: 1200px !important;
+    }
+}

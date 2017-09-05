@@ -1,0 +1,970 @@
+{% extends "../shared/layout.html" %} 
+
+{% block title %}编辑订单{% endblock %} 
+
+{% block css %} 
+
+{% endblock %} 
+
+{% block content %}
+			<div class="page-body">
+				<div class="page-container">
+			        <div class="page-title">
+			            委托下单
+			        </div>
+			        <div class="form-inline">
+			            <form>
+			            	<table class="tableD">
+							    <tbody>
+							    	<tr>
+								        <th>委托客户：</th>
+								        <td><a href="">砀山县新帛纺织服装有限公司</a></td>
+								        <th>经营单位：</th>
+								        <td><label>
+					                        <input type="radio" name="ywzt" />江苏跨境电子商务服务有限公司</label>
+					                    	<label><input type="radio" name="ywzt" />南京贸互通电子商务服务公司</label>
+								        </td>
+								        <th>委托下单日期：</th>
+								        <td><input type="text" /></td>
+								    </tr>
+								</tbody>
+			            	</table>
+			            </form>
+			        </div>
+		        </div>
+				
+				<div class="page-container">
+			        <form>
+			            <div class="form-title">收汇与报关方式</div>
+			            <div class="row form-inline">
+			                <div class="col-xs-12">
+			                    <label class="form-name"><span class="red">*</span>结算方式：</label>
+			                    <label class="search-group">
+			                        <input type="radio" name="jskj" data-myradio="" onclick="radioShow();" />电汇TT</label>
+			                    <label class="search-group">
+			                        <input type="radio" name="jskj" data-myradio="" onclick="radioShow();" />信用证L/C</label>
+			                    <label class="search-group">
+			                        <input type="radio" name="jskj" data-myradio="" onclick="radioShow();" />D/A</label>
+			                    <label class="search-group">
+			                        <input type="radio" name="jskj" data-myradio="" onclick="radioShow();" />D/P</label>
+			                    <label class="search-group">
+			                        <input type="radio" name="jskj" data-myradio="" onclick="radioShow();" />其他</label>
+			                </div>
+			            </div>
+			            <fieldset class="form-inline" style="display: none;">
+			                <div>
+			                    <label>
+			                        前TT
+			                    <input type="text" style="width: 60px" />
+			                        %</label>
+			                    <label>
+			                        后TT
+			                    <input type="text" style="width: 60px" />
+			                        %</label>
+			                    <label>
+			                        (<span class="red">*</span>出运后
+			                    <input type="text" style="width: 60px" />
+			                        天)</label>
+			                </div>
+			            </fieldset>
+			            <fieldset class="form-inline" style="display: none;">
+			                <div>
+			                    <label>信用证编号<input type="text" /></label>
+			                    <label>
+			                        <input type="radio" name="xyzbh" />即期</label>
+			                    <label>
+			                        <input type="radio" name="xyzbh" />远期</label>
+			                    <label>
+			                        <input type="text" style="width: 60px" />
+			                        天</label>
+			                </div>
+			            </fieldset>
+			            <fieldset class="form-inline" style="display: none;">
+			                <div>
+			                    <label>
+			                        <span class="red">*</span>出运日后
+			                    <input type="text" style="width: 60px" />
+			                        天</label>
+			                </div>
+			            </fieldset>
+			            <fieldset class="form-inline" style="display: none;">
+			            </fieldset>
+			            <fieldset class="form-inline" style="display: none;">
+			                <div>
+			                    <label>
+			                        其他方式
+			                    <input type="text" /></label>
+			                </div>
+			            </fieldset>
+			            <div class="row form-inline">
+			                <div class="col-xs-12">
+			                    <label class="form-name"><span class="red">*</span>计划收汇完成日期：</label>
+			                    <input class="search-group" type="text" />
+			                </div>
+			            </div>
+			            <div class="row form-inline">
+			                <div class="col-xs-12">
+			                    <label class="form-name"><span class="red">*</span>出口口岸：</label>
+			                    <select class="search-group">
+			                        <option>上海海关</option>
+			                    </select>
+			                    <select class="search-group">
+			                        <option>外港海关</option>
+			                    </select>
+			                </div>
+			            </div>
+			
+			            <div class="row form-inline">
+			                <div class="col-xs-12">
+			                    <label class="form-name"><span class="red">*</span>订单报关币种：</label>
+			                    <select class="search-group">
+			                        <option>美元</option>
+			                    </select>
+			                </div>
+			            </div>
+			
+			            <div class="row form-inline">
+			                <div class="col-xs-12">
+			                    <label class="form-name"><span class="red">*</span>报关方式：</label>
+			                    <label class="search-group">
+			                        <input type="radio" name="bgfs" data-myradio="partent" onclick="radioShow();" />委托贸互达报关</label>
+			                    <label class="search-group">
+			                        <input type="radio" name="bgfs" data-myradio="" onclick="radioShow();" />自行报关</label>
+			                </div>
+			            </div>
+			            <fieldset class="form-inline" style="display: none;"></fieldset>
+			            <fieldset class="form-inline" style="display: none;">
+			                <div>
+			                    <label><span class="red">*</span>报关形式：</label>
+			                    <label>
+			                        <input type="radio" name="bgxs" data-myradio="" onclick="radioShow();" />有纸化报关（贸互达提供纸质报关资料）</label>
+			                    <label>
+			                        <input type="radio" name="bgxs" data-myradio="" onclick="radioShow();" />无纸化报关（委托函确认后提供报关资料下载）</label>
+			                </div>
+			            </fieldset>
+			            <fieldset class="form-inline myradio-children0" style="display: none;">
+			                <div>
+			                    <div class="row form-inline">
+			
+			                        <div class="col-xs-12">
+			                            <div class="form-list">
+			                                <ul>
+			                                    <li>
+			                                        <label>
+			                                            <input type="radio" name="yzhbg" />
+			                                            <span>志伟</span>
+			                                            <span>北京市东城区</span>
+			                                            <span>东长安街1号东方广场W1座</span>
+			                                            <span>13000000000</span>
+			                                        </label>
+			                                    </li>
+			                                    <li>
+			                                        <label>
+			                                            <input type="radio" name="yzhbg" />
+			                                            <span>志伟</span>
+			                                            <span>北京市东城区</span>
+			                                            <span>东长安街1号东方广场W1座</span>
+			                                            <span>13000000000</span>
+			                                        </label>
+			                                    </li>
+			                                    <li>
+			                                        <label>
+			                                            <input type="radio" name="yzhbg" />
+			                                            <span>志伟</span>
+			                                            <span>北京市东城区</span>
+			                                            <span>东长安街1号东方广场W1座</span>
+			                                            <span>13000000000</span>
+			                                        </label>
+			                                    </li>
+			                                    <li>
+			                                        <label>
+			                                            <input type="radio" name="yzhbg" />
+			                                            <span>志伟</span>
+			                                            <span>北京市东城区</span>
+			                                            <span>东长安街1号东方广场W1座</span>
+			                                            <span>13000000000</span>
+			                                        </label>
+			                                    </li>
+			                                </ul>
+			                                <a class="add-list">新增联系人</a>
+			                                <div class="chevron-down">
+			                                    <i class="fa fa-chevron-down"></i>
+			                                </div>
+			
+			                            </div>
+			                        </div>
+			                    </div>
+			                </div>
+			            </fieldset>
+			            <fieldset class="form-inline myradio-children0" style="display: none;">
+			                <div>
+			                    <label>
+			                        无纸化报关
+			                    <input type="text" /></label>
+			                </div>
+			            </fieldset>
+			
+			            <div class="row form-inline">
+			                <div style="margin-left: 15px;">
+			                    <label class="form-name"><span class="red">*</span>订单联系人：</label>
+			                </div>
+			                <div class="col-xs-10" style="padding-left: 0;">
+			                    <div class="form-list">
+			                        <ul>
+			                            <li>
+			                                <label>
+			                                    <input type="radio" name="ddlxr" />
+			                                    <span>志伟</span>
+			                                    <span>13000000000</span>
+			                                    <span>zhiwei@qq.com</span>
+			                                </label>
+			                            </li>
+			                            <li>
+			                                <label>
+			                                    <input type="radio" name="ddlxr" />
+			                                    <span>志伟</span>
+			                                    <span>13000000000</span>
+			                                    <span>zhiwei@qq.com</span>
+			                                </label>
+			                            </li>
+			                            <li>
+			                                <label>
+			                                    <input type="radio" name="ddlxr" />
+			                                    <span>志伟</span>
+			                                    <span>13000000000</span>
+			                                    <span>zhiwei@qq.com</span>
+			                                </label>
+			                            </li>
+			                            <li>
+			                                <label>
+			                                    <input type="radio" name="ddlxr" />
+			                                    <span>志伟</span>
+			                                    <span>13000000000</span>
+			                                    <span>zhiwei@qq.com</span>
+			                                </label>
+			                            </li>
+			                        </ul>
+			                        <a class="add-list">新增联系人</a>
+			                        <div class="chevron-down">
+			                            <i class="fa fa-chevron-down"></i>
+			                        </div>
+			
+			                    </div>
+			                </div>
+			            </div>
+			
+			            <div class="row form-inline">
+			                <div style="margin-left: 15px;">
+			                    <label class="form-name"><span class="red">*</span>收货人：</label>
+			                </div>
+			                <div class="col-xs-10" style="padding-left: 0;">
+			                    <div class="form-list">
+			                        <ul>
+			                            <li>
+			                                <label>
+			                                    <input type="radio" name="skr" />
+			                                    <span>GREAT TIME INDUSTRIAL (HK) LTD</span>
+			                                    <span>0/F, Lee King Industrial Building, 12 Ng Fong Street, Sanpokong, Kowloon</span>
+			                                    <span>中国香港</span>
+			                                </label>
+			                            </li>
+			                            <li>
+			                                <label>
+			                                    <input type="radio" name="skr" />
+			                                    <span>GREAT TIME INDUSTRIAL (HK) LTD</span>
+			                                    <span>0/F, Lee King Industrial Building, 12 Ng Fong Street, Sanpokong, Kowloon</span>
+			                                    <span>中国香港</span>
+			                                </label>
+			                            </li>
+			                            <li>
+			                                <label>
+			                                    <input type="radio" name="skr" />
+			                                    <span>GREAT TIME INDUSTRIAL (HK) LTD</span>
+			                                    <span>0/F, Lee King Industrial Building, 12 Ng Fong Street, Sanpokong, Kowloon</span>
+			                                    <span>中国香港</span>
+			                                </label>
+			                            </li>
+			                            <li>
+			                                <label>
+			                                    <input type="radio" name="skr" />
+			                                    <span>GREAT TIME INDUSTRIAL (HK) LTD</span>
+			                                    <span>0/F, Lee King Industrial Building, 12 Ng Fong Street, Sanpokong, Kowloon</span>
+			                                    <span>中国香港</span>
+			                                </label>
+			                            </li>
+			                        </ul>
+			                        <a class="add-list">新增联系人</a>
+			                        <div class="chevron-down">
+			                            <i class="fa fa-chevron-down"></i>
+			                        </div>
+			
+			                    </div>
+			                </div>
+			            </div>
+			
+			            <div class="row form-inline">
+			                <div style="margin-left: 15px;">
+			                    <label class="form-name"><span class="red">*</span>付款人：</label>
+			                </div>
+			                <div class="col-xs-10" style="padding-left: 0;">
+			                    <div class="form-list">
+			                        <ul>
+			                            <li>
+			                                <label>
+			                                    <input type="radio" name="fkr" />
+			                                    <span>F10259</span>
+			                                    <span>GREAT TIME INDUSTRIAL (HK) LTD</span>
+			                                    <span>中国香港</span>
+			                                </label>
+			                            </li>
+			                            <li>
+			                                <label>
+			                                    <input type="radio" name="fkr" />
+			                                    <span>F10259</span>
+			                                    <span>GREAT TIME INDUSTRIAL (HK) LTD</span>
+			                                    <span>中国香港</span>
+			                                </label>
+			                            </li>
+			                            <li>
+			                                <label>
+			                                    <input type="radio" name="fkr" />
+			                                    <span>F10259</span>
+			                                    <span>GREAT TIME INDUSTRIAL (HK) LTD</span>
+			                                    <span>中国香港</span>
+			                                </label>
+			                            </li>
+			                            <li>
+			                                <label>
+			                                    <input type="radio" name="fkr" />
+			                                    <span>F10259</span>
+			                                    <span>GREAT TIME INDUSTRIAL (HK) LTD</span>
+			                                    <span>中国香港</span>
+			                                </label>
+			                            </li>
+			                        </ul>
+			                        <a class="add-list">新增联系人</a>
+			                        <div class="chevron-down">
+			                            <i class="fa fa-chevron-down"></i>
+			                        </div>
+			
+			                    </div>
+			                </div>
+			            </div>
+			            <div class="btn-submit">
+			                <button type="button" class="btn btn-cancel">保存草稿</button>
+			                <button type="button" class="btn btn-confirm" onclick="nextStep(this);">下一步</button>
+			            </div>
+			        </form>
+			    </div>
+		        <div class="page-container" style="display: none;">
+			        <form>
+			            <div class="form-title">产品及开票人</div>
+			            <div class="row form-inline">
+			                <div class="col-xs-12">
+			                    <label class="form-name"><span class="red">*</span>成交方式：</label>
+			                    <label class="search-group">
+			                        <input type="radio" name="cjfs" data-myradio="" onclick="radioShow();" />FOB</label>
+			                    <label class="search-group">
+			                        <input type="radio" name="cjfs" data-myradio="" onclick="radioShow();" />CIF</label>
+			                    <label class="search-group">
+			                        <input type="radio" name="cjfs" data-myradio="" onclick="radioShow();" />C&F</label>
+			                </div>
+			            </div>
+			            <fieldset class="form-inline" style="display: none;"></fieldset>
+			            <fieldset class="form-inline" style="display: none;">
+			                <div>
+			                    <label>
+			                        <span class="red">*</span>运费
+			                        <input type="text" /></label>
+			                    <label>
+			                        <span class="red">*</span>保费
+			                        <input type="text" /></label>
+			                    <label>
+			                        <span class="red">*</span>币种 
+			                        <select>
+			                            <option>美元</option>
+			                            <option>欧元</option>
+			                        </select>
+			                    </label>
+			                </div>
+			            </fieldset>
+			            <fieldset class="form-inline" style="display: none;">
+			                <div>
+			                    <label>
+			                        <span class="red">*</span>运费
+			                        <input type="text" /></label>
+			                    <label>
+			                        <span class="red">*</span>币种 
+			                        <select>
+			                            <option>美元</option>
+			                            <option>欧元</option>
+			                        </select>
+			                    </label>
+			                </div>
+			            </fieldset>
+			            <div class="row form-inline">
+			                <div class="col-xs-12">
+			                    <label class="form-name"><span class="red">*</span>开票方式：</label>
+			                    <label class="search-group">
+			                        <input type="radio" name="kpfs" />指定货物报关单价</label>
+			                    <label class="search-group">
+			                        <input type="radio" name="kpfs" />指定货物报关单价与含税开票金额</label>
+			                </div>
+			            </div>
+			            <div class="row form-inline">
+			                <div class="col-xs-12">
+			                    <label class="form-name"><span class="red">*</span>原产国或地区：</label>
+			                    <select class="search-group">
+			                        <option>中国</option>
+			                    </select>
+			                </div>
+			            </div>
+			            <div class="row form-inline">
+			                <div class="col-xs-12">
+			                    <label class="form-name"><span class="red">*</span>商品及开票人：</label>
+			                    <a class="right">选择商品</a>
+			                </div>
+			            </div>
+			            <div class="modal-gray">
+			                <label class="search-group"><b>1 不干胶贴纸型高级贴纸</b></label>
+			                <label class="search-group">HSCode：<span>1234567890</span></label>
+			                <label class="search-group">英文品名：<input type="text" /></label>
+			                <label class="search-group"><a>申报要素</a></label>
+			                <label class="right"><a>删除</a></label>
+			                <label class="right"><a>复制</a></label>
+			                <table class="table table-bordered">
+			                    <thead class="bordered-themeprimary">
+			                        <tr>
+			                            <th>总净重</th>
+			                            <th>申报数量及单位</th>
+			                            <th>货值（报关币种）</th>
+			                            <th>单价（报关币种）</th>
+			                            <th><span class="red">*</span>法定数量和单位</th>
+			                            <th>开票金额(CNY)</th>
+			                            <th><span class="red">*</span>开票人</th>
+			                        </tr>
+			                    </thead>
+			                    <tbody>
+			                        <tr>
+			                            <td>
+			                                <input type="text" style="width: 60px;" />
+			                                <input type="text" style="width: 30px; padding: 0;" placeholder="千克" />
+			                            </td>
+			                            <td>
+			                                <input type="text" style="width: 60px;" />
+			                                <select style="width: 40px;">
+			                                    <option>重量</option>
+			                                </select>
+			                                <select style="width: 40px;">
+			                                    <option>克</option>
+			                                </select>
+			                            </td>
+			                            <td>
+			                                <input type="text" style="width: 90px;" /></td>
+			                            <td>123</td>
+			                            <td>
+			                                <input type="text" style="width: 50px;" />
+			                                个
+			                                <input type="text" style="width: 50px;" />
+			                                个
+			                            </td>
+			                            <td>
+			                                <input type="text" style="width: 80px;" />
+			                            </td>
+			                            <td>
+			                                <select>
+			                                    <option>请选择</option>
+			                                    <option>南京三宝科技</option>
+			                                </select>
+			                            </td>
+			                        </tr>
+			                    </tbody>
+			                </table>
+			            </div>
+			            <div class="modal-gray">
+			                <label class="right"><b>总货值：<span>220,831.00</span></b></label>
+			                <label class="right"><b>总申报数量：<span>2344</span></b></label>
+			                <div class="clearfix"></div>
+			            </div>
+			            <div class="row form-inline">
+			                <div class="col-xs-12">
+			                    <label class="form-name">总净重：11千克</label>
+			                </div>
+			            </div>
+			
+			            <div class="btn-submit">
+			                <button type="button" class="btn btn-cancel">保存草稿</button>
+			                <button type="button" class="btn btn-confirm" onclick="lastStep(this);">上一步</button>
+			                <button type="button" class="btn btn-confirm" onclick="nextStep(this);">下一步</button>
+			            </div>
+			        </form>
+			    </div>
+		        <div class="page-container" style="display: none;">
+			        <form>
+			            <div class="form-title">报关信息</div>
+			            <div class="row form-inline">
+			                <div class="col-xs-12">
+			                    <label class="form-name">申报日期：</label>
+			                    <input class="search-group" type="text" />
+			                </div>
+			            </div>
+			            <div class="row form-inline">
+			                <div class="col-xs-12">
+			                    <label class="form-name"><span class="red">*</span>预计截关日期：</label>
+			                    <input class="search-group" type="text" />
+			                </div>
+			            </div>
+			            <div class="row form-inline">
+			                <div class="col-xs-12">
+			                    <label class="form-name"><span class="red">*</span>贸易国或地区：</label>
+			                    <input class="search-group" type="text" />
+			                </div>
+			            </div>
+			            <div class="row form-inline">
+			                <div class="col-xs-12">
+			                    <label class="form-name"><span class="red">*</span>指运港：</label>
+			                    <input class="search-group" type="text" />
+			                </div>
+			            </div>
+			            <div class="row form-inline">
+			                <div class="col-xs-12">
+			                    <label class="form-name"><span class="red">*</span>特殊关系确认：</label>
+			                    <label class="search-group">
+			                        <input type="radio" name="tsgx" data-myradio="" onclick="radioShow();" />是</label>
+			                    <label class="search-group">
+			                        <input type="radio" name="tsgx" data-myradio="" onclick="radioShow();" />否</label>
+			                </div>
+			            </div>
+			            <fieldset class="form-inline" style="display: none;"></fieldset>
+			            <fieldset class="form-inline" style="display: none;">
+			                <div>
+			                    <label><span class="red">*</span>价格影响确认</label>
+			                    <label>
+			                        <input type="radio" name="jgyx" />否</label>
+			                    <label>
+			                        <input type="radio" name="jgyx" />是</label>
+			                    <div class="red">如认可因特殊关系导致价格变动应选“是”，反之选”否”</div>
+			                </div>
+			            </fieldset>
+			            <div class="row form-inline">
+			                <div class="col-xs-12">
+			                    <label class="form-name"><span class="red">*</span>支付特许权使用费：</label>
+			                    <label class="search-group">
+			                        <input type="radio" name="zftxq" />是</label>
+			                    <label class="search-group">
+			                        <input type="radio" name="zftxq" />否</label>
+			                    <label class="search-group red">为取得知识产权权利人授权而支付的费用，如果价格含特许权使用费选“是”，反之选“否”</label>
+			                </div>
+			            </div>
+			            <div class="row form-inline">
+			                <div class="col-xs-12">
+			                    <label class="form-name"><span class="red">*</span>起运地：</label>
+			                    <input class="search-group" type="text" />
+			                </div>
+			            </div>
+			            <div class="row form-inline">
+			                <div class="col-xs-12">
+			                    <label class="form-name"><span class="red">*</span>最终目的国：</label>
+			                    <input class="search-group" type="text" />
+			                </div>
+			            </div>
+			            <div class="row form-inline">
+			                <div style="margin-left: 15px;">
+			                    <label class="form-name"><span class="red">*</span>境内货源地：</label>
+			                </div>
+			                <div class="col-xs-10" style="padding-left: 0;">
+			                    <div class="form-list">
+			                        <ul>
+			                            <li>
+			                                <label>
+			                                    <input type="radio" name="jnhyd" />
+			                                    <span>省
+			                                        <select style="width: 100px;">
+			                                            <option>请选择</option>
+			                                        </select>
+			                                        市
+			                                        <select style="width: 100px;">
+			                                            <option>请选择</option>
+			                                        </select>
+			                                        区
+			                                        <select style="width: 100px;">
+			                                            <option>请选择</option>
+			                                        </select>
+			                                        <input type="text" />
+			                                    </span>
+			                                    <span>13000000000</span>
+			                                    <span>zhiwei@qq.com</span>
+			                                </label>
+			                            </li>
+			                            <li>
+			                                <label>
+			                                    <input type="radio" name="jnhyd" />
+			                                    <span>南京马群2</span>
+			                                    <span>江苏省南京市马群小道10号</span>
+			                                    <span>志伟</span>
+			                                    <span>13000000000</span>
+			                                </label>
+			                            </li>
+			                            <li>
+			                                <label>
+			                                    <input type="radio" name="jnhyd" />
+			                                    <span>南京马群2</span>
+			                                    <span>江苏省南京市马群小道10号</span>
+			                                    <span>志伟</span>
+			                                    <span>13000000000</span>
+			                                </label>
+			                            </li>
+			                            <li>
+			                                <label>
+			                                    <input type="radio" name="jnhyd" />
+			                                    <span>南京马群2</span>
+			                                    <span>江苏省南京市马群小道10号</span>
+			                                    <span>志伟</span>
+			                                    <span>13000000000</span>
+			                                </label>
+			                            </li>
+			                        </ul>
+			                        <a class="add-list">新增联系人</a>
+			                        <div class="chevron-down">
+			                            <i class="fa fa-chevron-down"></i>
+			                        </div>
+			
+			                    </div>
+			                </div>
+			            </div>
+			
+			            <div class="btn-submit">
+			                <button type="button" class="btn btn-cancel">保存草稿</button>
+			                <button type="button" class="btn btn-confirm" onclick="lastStep(this);">上一步</button>
+			                <button type="button" class="btn btn-confirm" onclick="nextStep(this);">下一步</button>
+			            </div>
+			        </form>
+			    </div>
+		        <div class="page-container" style="display: none;">
+			        <form>
+			            <div class="form-title">物流服务</div>
+			            <div class="row form-inline">
+			                <div class="col-xs-12">
+			                    <label class="form-name"><span class="red">*</span>物流方式：</label>
+			                    <label class="search-group">
+			                        <input type="radio" name="wlfs" data-myradio="" onclick="radioShow();" />委托物流</label>
+			                    <label class="search-group">
+			                        <input type="radio" name="wlfs" data-myradio="" onclick="radioShow();" />自行安排</label>
+			                    <label class="search-group">
+			                        <input type="radio" name="wlfs" data-myradio="" onclick="radioShow();" />待定</label>
+			                </div>
+			            </div>
+			            <fieldset class="form-inline" style="display: none;">
+			                <div>
+			                    <label class="btn-font4">通知人：</label>
+			                    <label>
+			                        <input type="radio" name="tzr" />委托物流</label>
+			                    <div class="form-list">
+			                        <ul>
+			                            <li>
+			                                <label class="btn-font4"></label>
+			                                <label>
+			                                    <input type="radio" name="tzr" />
+			                                    <span>GREAT TIME INDUSTRIAL (HK) LTD</span>
+			                                    <span>0/F, Lee King Industrial Building, 12 Ng Fong Street, Sanpokong, Kowloon </span>
+			                                    <span>联系人</span>
+			                                    <span>13000000000</span>
+			                                </label>
+			                                <a>新增通知人</a>
+			                            </li>
+			                        </ul>
+			                    </div>
+			                    <label class="btn-font4">提单类型：</label>
+			                    <label>
+			                        <input type="radio" name="tdlx" />正本</label>
+			                    <label>
+			                        <input type="radio" name="tdlx" />电放</label>
+			                    <label>
+			                        <input type="radio" name="tdlx" />待定</label>
+			                    <br />
+			                    <label class="btn-font4"><span class="red">*</span>运输方式：</label>
+			                    <label>
+			                        <input type="radio" name="ysfs" />空运</label>
+			                    <label>
+			                        <input type="radio" name="ysfs" />海运</label>
+			                    <label>
+			                        <input type="radio" name="ysfs" />快递</label>
+			                    <label>
+			                        <input type="radio" name="ysfs" />中港陆运</label>
+			                </div>
+			            </fieldset>
+			            <fieldset class="form-inline" style="display: none;">
+			                <div>
+			                    <label><span class="red">*</span>运输方式</label>
+			                    <select>
+			                        <option>海运</option>
+			                    </select>
+			                    <label>
+			                        货代联系人
+			                        <input type="text" /></label>
+			                    <label>
+			                        联系电话
+			                        <input type="text" /></label>
+			                </div>
+			            </fieldset>
+			            <fieldset class="form-inline" style="display: none;"></fieldset>
+			            <div class="row form-inline">
+			                <div class="col-xs-12">
+			                    <label class="form-name"><span class="red">*</span>物流付费方式：</label>
+			                    <label class="search-group">
+			                        <input type="radio" name="wlfffs" />到付</label>
+			                    <label class="search-group">
+			                        <input type="radio" name="wlfffs" />预付</label>
+			                </div>
+			            </div>
+			            <div class="row form-inline">
+			                <div class="col-xs-12">
+			                    <label class="form-name">提单收货人：</label>
+			                    <label class="search-group">
+			                        <input type="radio" name="tdshr" />同收货人</label>
+			                    <label class="search-group">
+			                        <input type="radio" name="tdshr" />使用其他提单收货人</label>
+			                </div>
+			            </div>
+			
+			            <div class="btn-submit">
+			                <button type="button" class="btn btn-cancel">保存草稿</button>
+			                <button type="button" class="btn btn-confirm" onclick="lastStep(this);">上一步</button>
+			                <button type="button" class="btn btn-confirm" onclick="nextStep(this);">下一步</button>
+			            </div>
+			        </form>
+			    </div>
+		        <div class="page-container" style="display: none;">
+			        <form>
+			            <div class="form-title">金融服务</div>
+			            <div class="row form-inline">
+			                <div class="col-xs-12">
+			                    <label class="form-name">退税服务：</label>
+			                    <label class="search-group">
+			                        <input type="checkbox" />使用退税垫付</label>
+			                </div>
+			            </div>
+			            <div class="row form-inline">
+			                <div class="col-xs-12">
+			                    <label class="form-name">其他金融服务：</label>
+			                    <label class="search-group">
+			                        <input type="checkbox" data-myradio="" onclick="radioShow();" />
+			                        赊销易服务
+			                        <span class="red">只有通过金融准入的委托方，并使用委托报关及委托物流才可使用赊销易服务</span>
+			                    </label>
+			                </div>
+			            </div>
+			            <fieldset class="form-inline" style="display: none;">
+			                <div>
+			                    <div class="row">
+			                        <span class="col-xs-4">
+			                            <label>赊销限额占出口申报额比例：80%</label>
+			                        </span>
+			                        <span class="col-xs-4">
+			                            <label>中信保投保费率：4.00‰</label>
+			                        </span>
+			                        <span class="col-xs-4">
+			                            <label>赊销易服务费率：4.00‰</label>
+			                        </span>
+			                        <span class="col-xs-4">
+			                            <label>
+			                                赊销金额
+			                                <input type="text" />
+			                                USD</label>
+			                        </span>
+			                        <span class="col-xs-4">
+			                            <label>
+			                                <span class="red">*</span>结算账期
+			                                <input type="text" /></label>
+			                        </span>
+			                        <span class="col-xs-12">
+			                            <label>预估赊销易服务费：123 USD (赊销放款金额 ×账期 ×4.00‰)</label>
+			                        </span>
+			                    </div>
+			                </div>
+			            </fieldset>
+			
+			            <div class="btn-submit">
+			                <button type="button" class="btn btn-cancel">保存草稿</button>
+			                <button type="button" class="btn btn-confirm" onclick="lastStep(this);">上一步</button>
+			                <button type="button" class="btn btn-confirm" onclick="nextStep(this);">下一步</button>
+			            </div>
+			        </form>
+			    </div>
+		        <div class="page-container" style="display: none;">
+			        <form>
+			            <div class="form-title">附件<label class="right"><a>上传附件</a></label></div>
+			            <div class="tabbable">
+			                <ul class="nav nav-tabs" id="myTab">
+			                    <li class="active">
+			                        <a data-toggle="tab" href="#myTab1">报关单<br />
+			                            (<span class="red">1</span>)</a>
+			                    </li>
+			                    <li>
+			                        <a data-toggle="tab" href="#myTab2">报关预录单<br />
+			                            (<span class="red">1</span>)</a>
+			                    </li>
+			                    <li>
+			                        <a data-toggle="tab" href="#myTab3">提单/运单<br />
+			                            (<span class="red">1</span>)</a>
+			                    </li>
+			                    <li>
+			                        <a data-toggle="tab" href="#myTab4">采购发票/PI<br />
+			                            (<span class="red">1</span>)</a>
+			                    </li>
+			                    <li>
+			                        <a data-toggle="tab" href="#myTab5">销售发票/CI<br />
+			                            (<span class="red">1</span>)</a>
+			                    </li>
+			                    <li>
+			                        <a data-toggle="tab" href="#myTab6">采购合同<br />
+			                            (<span class="red">1</span>)</a>
+			                    </li>
+			                    <li>
+			                        <a data-toggle="tab" href="#myTab7">销售合同<br />
+			                            (<span class="red">1</span>)</a>
+			                    </li>
+			                    <li>
+			                        <a data-toggle="tab" href="#myTab8">装箱单<br />
+			                            (<span class="red">1</span>)</a>
+			                    </li>
+			                    <li>
+			                        <a data-toggle="tab" href="#myTab9">中信保电子申报单<br />
+			                            (<span class="red">1</span>)</a>
+			                    </li>
+			                    <li>
+			                        <a data-toggle="tab" href="#myTab10">信用限额审批单<br />
+			                            (<span class="red">1</span>)</a>
+			                    </li>
+			                    <li>
+			                        <a data-toggle="tab" href="#myTab11">出口委托函<br />
+			                            (<span class="red">1</span>)</a>
+			                    </li>
+			                    <li>
+			                        <a data-toggle="tab" href="#myTab12">其他<br />
+			                            (<span class="red">1</span>)</a>
+			                    </li>
+			                </ul>
+			
+			                <div class="tab-content">
+			                    <div id="myTab1" class="tab-pane active">
+			                        <ul style="list-style: none; margin-left: -40px" id="ulDocument">
+			                            <li style="float: left; margin-left: 15px; text-align: center" class="upload">
+			                                <a href="http://localhost:21839/20160721/01470c92c4be476a8ffdd233da7f8383.png" target="_blank" class="upload-png">
+			                                    <label title="报关单-EM截图_20165993947">报关单-EM截图_20165993947</label>
+			                                    <span></span>
+			                                </a>
+			                            </li>
+			                        </ul>
+			                        <div class="clearfix"></div>
+			                    </div>
+			
+			                    <div id="myTab2" class="tab-pane">
+			                        <ul style="list-style: none; margin-left: -40px" id="ul1">
+			                            <li style="float: left; margin-left: 15px; text-align: center" class="upload">
+			                                <a href="http://localhost:21839/20160721/01470c92c4be476a8ffdd233da7f8383.png" target="_blank" class="upload-png">
+			                                    <label title="报关单-EM截图_20165993947">报关单-EM截图_20165993947</label>
+			                                </a>
+			                            </li>
+			                        </ul>
+			                        <div class="clearfix"></div>
+			                    </div>
+			                    <div id="myTab3" class="tab-pane">
+			                        <ul style="list-style: none; margin-left: -40px" id="ul2">
+			                            <li style="float: left; margin-left: 15px; text-align: center" class="upload">
+			                                <a href="http://localhost:21839/20160721/01470c92c4be476a8ffdd233da7f8383.png" target="_blank" class="upload-png">
+			                                    <label title="报关单-EM截图_20165993947">报关单-EM截图_20165993947</label>
+			                                </a>
+			                            </li>
+			                        </ul>
+			                        <div class="clearfix"></div>
+			                    </div>
+			                    <div id="myTab4" class="tab-pane">
+			                        <p></p>
+			                    </div>
+			                    <div id="myTab5" class="tab-pane">
+			                        <p></p>
+			                    </div>
+			                    <div id="myTab6" class="tab-pane">
+			                        <p></p>
+			                    </div>
+			                    <div id="myTab7" class="tab-pane">
+			                        <p></p>
+			                    </div>
+			                    <div id="myTab8" class="tab-pane">
+			                        <p></p>
+			                    </div>
+			                    <div id="myTab9" class="tab-pane">
+			                        <p></p>
+			                    </div>
+			                    <div id="myTab10" class="tab-pane">
+			                        <p></p>
+			                    </div>
+			                    <div id="myTab11" class="tab-pane">
+			                        <p></p>
+			                    </div>
+			                    <div id="myTab12" class="tab-pane">
+			                        <p></p>
+			                    </div>
+			                </div>
+			            </div>
+			            <div class="btn-submit">
+			                <button type="button" class="btn btn-cancel">保存草稿</button>
+			                <button type="button" class="btn btn-confirm" onclick="lastStep(this);">上一步</button>
+			                <button type="submit" class="btn btn-confirm">提交</button>
+			            </div>
+			        </form>
+			    </div>
+		    </div>
+		
+{% endblock %} 
+
+{% block js %} 
+			<script type="text/javascript">
+		        function radioShow() {
+		            var myradio = $("[data-myradio]");
+		            var fieldset = $("fieldset");
+		            var mradio = $("[data-myradio=partent]");
+		            for (i = 0; i < fieldset.length; i++) {
+		                if (myradio[i].checked) {
+		                    //fieldset[i].style.display = "block";
+		                    $(fieldset[i]).fadeIn();
+		                }
+		                else {
+		                    fieldset[i].style.display = "none";
+		                    //$(fieldset[i]).fadeOut();
+		                }
+		            }
+		            for (i = 0; i < mradio.length; i++) {
+		                if (mradio[i].checked) {
+		                    $(".myradio-children" + i).hide();
+		                }
+		            }
+		
+		        }
+		        function nextStep(item) {
+		            var parents = $(item).parents(".page-container");
+		            parents.find("select").attr("disabled", "disabled");
+		            parents.find("input").attr("disabled", "disabled");
+		            $(item).parent().fadeOut();
+		            parents.next().fadeIn();
+		            parents.next().find("input").eq(0).focus();
+		        }
+		        function lastStep(item) {
+		            var parents = $(item).parents(".page-container");
+		            parents.fadeOut();
+		            parents.prev().find("select").removeAttr("disabled");
+		            parents.prev().find("input").removeAttr("disabled");
+		            parents.prev().find(".btn-submit").show();
+		            parents.prev().find("input").eq(0).focus();
+		        }
+		        $(function () {
+		            $(".fa-chevron-down").click(function () {
+		                $(this).parent().prevAll("ul").addClass("drop-down");
+		                $(this).hide();
+		            });
+		
+		
+		        });
+		    </script>
+ {% endblock %}
